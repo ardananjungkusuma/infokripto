@@ -21,10 +21,18 @@ Route::get('/', function () {
 // Route::get('/auth/login', 'AuthController@index')->name('login');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+// Auth::routes();
+Route::match(array('GET', 'POST'), '/auth/login', 'AuthController@login')->name('login');
+Route::get('/auth/logout', 'AuthController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
+    Route::get('/admin', 'AdminController@index');
 
-Route::get('/cwallet', 'CwalletController@index')->name('cwallet');
-Route::post('/cwallet/tambah', 'CwalletController@tambah');
+    Route::get('/cwallet', 'CwalletController@index')->name('cwallet');
+    Route::post('/cwallet/tambah', 'CwalletController@tambah');
+    Route::post('/cwallet/detail/{id}', 'CwalletController@detail');
+
+    Route::get('/coin', 'CwalletController@index')->name('cwallet');
+});

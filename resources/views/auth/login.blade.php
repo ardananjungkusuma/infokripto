@@ -1,73 +1,91 @@
-@extends('layouts.app')
+<!doctype html>
+<html class="no-js" lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login Admin</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+    <link rel="icon" href="{{ asset('assets/admin/favicon.ico') }}" type="image/x-icon" />
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/ionicons/dist/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/icon-kit/dist/css/iconkit.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/dist/css/theme.min.css') }}">
+    <script src="{{ asset('assets/admin/src/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+</head>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="auth-wrapper">
+        <div class="container-fluid h-100">
+            <div class="row flex-row h-100 bg-white">
+                <div class="col-xl-8 col-lg-6 col-md-5 p-0 d-md-block d-lg-block d-sm-none d-none">
+                    <div class="lavalite-bg"
+                        style="background-image: url('{{ asset('assets/admin/img/auth/login-bg.jpg') }}')">
+                        <div class="lavalite-overlay"></div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0">
+                    <div class="authentication-form mx-auto">
+                        <center>
+                            <a href="/"><img src="{{ asset('info-kripto.png') }}" width="300px"></a>
+                        </center>
+                        <br><br>
+                        <h3>Login Admin</h3>
+                        @if(session('notif'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('notif') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        @endif
+                        <form action="/auth/login" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="email" placeholder="Email" required>
+                                <i class="ik ik-user"></i>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                    required>
+                                <i class=" ik ik-lock"></i>
+                            </div>
+                            <div class="row">
+                                <div class="col text-right">
+                                    <a href="forgot-password.html">Forgot Password ?</a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                            <div class="sign-btn text-center">
+                                <button class="btn btn-primary">Login</button>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="{{ asset('assets/admin/src/js/vendor/jquery-3.3.1.min.js') }}"><\/script>')
+    </script>
+    <script src="{{ asset('assets/admin/plugins/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/plugins/screenfull/dist/screenfull.js') }}"></script>
+    <script src="{{ asset('assets/admin/dist/js/theme.js') }}"></script>
+</body>
+
+</html>

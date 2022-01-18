@@ -38,4 +38,10 @@ class CwalletController extends Controller
         $cwallet->save();
         return redirect('/cwallet')->with('notif', 'Data Crypto Wallet Berhasil Ditambah');
     }
+
+    public function detail($id)
+    {
+        $data_cwallet = Cwallet::find($id);
+        return view('admin.cwallet.detail', compact('data_cwallet'));
+    }
 }
