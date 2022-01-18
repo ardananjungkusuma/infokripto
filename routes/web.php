@@ -18,9 +18,13 @@ Route::get('/', function () {
 });
 
 
-Route::get('/auth/login', 'AuthController@index')->name('login');
+// Route::get('/auth/login', 'AuthController@index')->name('login');
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/cwallet', 'CwalletController@index')->name('cwallet');
+Route::post('/cwallet/tambah', 'CwalletController@tambah');

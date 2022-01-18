@@ -14,7 +14,7 @@ class CreateJenisNetworkTable extends Migration
     public function up()
     {
         Schema::create('jenis_network', function (Blueprint $table) {
-            $table->increments('id_jenis_network');
+            $table->bigIncrements('id_jenis_network');
             $table->string('nama_network');
             $table->string('singkatan_network');
             $table->timestamps();
