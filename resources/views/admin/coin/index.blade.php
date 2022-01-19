@@ -10,14 +10,14 @@
             </div>
             <div class="card-body">
                 <h4>Data Coin</h4>
-                <?= $this->session->flashdata("notif") ?>
-                <?php if ($this->session->flashdata('error')) {
-                ?>
-                <div class="alert alert-danger" role="alert">
-                    <?= $this->session->flashdata('error') ?>
+                @if(session('notif'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('notif') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <?php
-                } ?>
+                @endif
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     <i class="fa fa-plus"></i> Tambah Data
                 </button>
@@ -35,23 +35,23 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $no = 1;
-                                    foreach ($coin as $c) { ?>
+                                    $no = 1;?>
+                                    @foreach($data_coin as $c)
                                     <tr>
-                                        <td><?= $no ?></td>
-                                        <td><?= $c['nama_coin'] ?></td>
-                                        <td><?= $c['singkatan_coin'] ?></td>
+                                        <td>{{ $no  }}</td>
+                                        <td>{{ $c->nama_coin }}</td>
+                                        <td>{{ $c->singkatan_coin }}</td>
                                         <td>
-                                            <a href="<?= base_url() ?>coin/edit/<?= $c['id_jenis_coin'] ?>"
-                                                class="btn btn-warning"><i class="fa fa-pen"></i> Edit</a>
-                                            <a href="<?= base_url() ?>coin/hapus/<?= $c['id_jenis_coin'] ?>"
-                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data <?= $c['nama_coin'] ?>?');"
+                                            <a href="/coin/edit/{{ $c->id_jenis_coin }}" class="btn btn-warning"><i
+                                                    class="fa fa-pen"></i> Edit</a>
+                                            <a href="/coin/hapus/{{ $c->id_jenis_coin }}"
+                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $c->nama_coin }}?');"
                                                 class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
                                         </td>
                                     </tr>
                                     <?php
-                                        $no++;
-                                    } ?>
+                                        $no++; ?>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -74,7 +74,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/coin/tambahCoin" method="POST">
+                <form action="/coin/tambah" method="POST">
+                    @if($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ implode('', $errors->all(':message')) }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                    @csrf
                     <div class="form-group">
                         <label style="font-weight: bold;">Nama Coin</label>
                         <input type="text" class="form-control" placeholder="nama" name="nama_coin" required>

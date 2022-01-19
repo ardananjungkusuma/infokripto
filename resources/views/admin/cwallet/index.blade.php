@@ -86,13 +86,18 @@
             </div>
             <div class="modal-body">
                 <form action="/cwallet/tambah" method="POST">
+                    @if($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ implode('', $errors->all(':message')) }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
                     @csrf
-                    <div class="form-group{{ $errors->has('nama_wallet') ? ' has-error' : '' }}">
+                    <div class="form-group">
                         <label style="font-weight: bold;">Nama Aplikasi</label>
                         <input type="text" class="form-control" placeholder="Nama" name="nama_wallet" required>
-                        @if($errors->has('nama_wallet'))
-                        <span class="help-block">{{ $errors->first('nama_wallet') }}</span>
-                        @endif
                     </div>
                     <div class="form-group">
                         <label style="font-weight: bold;">Ukuran Aplikasi (Satuan mb)</label>
@@ -127,10 +132,10 @@
                         <input type="text" class="form-control" placeholder="Link Playstore" name="link_playstore"
                             required>
                     </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-primary">Tambah Data</button>
+                    </:message>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Tambah Data</button>
                 </form>
             </div>
         </div>

@@ -34,5 +34,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::post('/cwallet/tambah', 'CwalletController@tambah');
     Route::post('/cwallet/detail/{id}', 'CwalletController@detail');
 
-    Route::get('/coin', 'CwalletController@index')->name('cwallet');
+    Route::get('/coin', 'CoinController@index')->name('coin');
+    Route::post('/coin/tambah', 'CoinController@tambah');
+    Route::match(array('GET', 'POST'), '/coin/edit/{id?}', 'CoinController@edit');
 });
