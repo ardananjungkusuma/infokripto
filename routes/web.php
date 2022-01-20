@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Auth::routes();
+Route::get('/auth', 'AuthController@index');
 Route::match(array('GET', 'POST'), '/auth/login', 'AuthController@login')->name('login');
 Route::get('/auth/logout', 'AuthController@logout');
 
@@ -37,4 +38,5 @@ Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::get('/coin', 'CoinController@index')->name('coin');
     Route::post('/coin/tambah', 'CoinController@tambah');
     Route::match(array('GET', 'POST'), '/coin/edit/{id?}', 'CoinController@edit');
+    Route::get('/coin/hapus/{id}', 'CoinController@hapus');
 });

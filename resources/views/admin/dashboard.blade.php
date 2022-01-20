@@ -27,7 +27,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="state">
                                 <h6>Coin Terdaftar</h6>
-                                {{-- <h2><?= $jumlahcoin->jumlahcoin ?></h2> --}}
+                                <h2>{{ $count_coin }}</h2>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-coins"></i>

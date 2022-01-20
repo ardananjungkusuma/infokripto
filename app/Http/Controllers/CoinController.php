@@ -10,7 +10,7 @@ class CoinController extends Controller
 {
     public function index()
     {
-        $data_coin = Coin::all();
+        $data_coin = Coin::orderBy('nama_coin')->get();
         return view('admin.coin.index', compact('data_coin'));
     }
 
@@ -53,5 +53,11 @@ class CoinController extends Controller
 
             return redirect('/coin')->with('notif', 'Data Coin ' . $request->nama_coin .  ' Berhasil Diedit');
         }
+    }
+
+    public function hapus($id)
+    {
+        Coin::where('id_jenis_coin', $id)->delete();
+        return redirect('/coin')->with('notif', 'Sukses Menghapus Coin!');
     }
 }
