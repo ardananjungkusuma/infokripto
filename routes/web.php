@@ -33,10 +33,17 @@ Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
 
     Route::get('/cwallet', 'CwalletController@index')->name('cwallet');
     Route::post('/cwallet/tambah', 'CwalletController@tambah');
-    Route::post('/cwallet/detail/{id}', 'CwalletController@detail');
+    Route::get('/cwallet/detail/{id}', 'CwalletController@detail');
+    Route::match(array('GET', 'POST'), '/cwallet/edit/{id?}', 'CwalletController@edit');
+    Route::get('/cwallet/hapus/{id}', 'CwalletController@hapus');
 
     Route::get('/coin', 'CoinController@index')->name('coin');
     Route::post('/coin/tambah', 'CoinController@tambah');
     Route::match(array('GET', 'POST'), '/coin/edit/{id?}', 'CoinController@edit');
     Route::get('/coin/hapus/{id}', 'CoinController@hapus');
+
+    Route::get('/cnetwork', 'CnetworkController@index')->name('cnetwork');
+    Route::post('/cnetwork/tambah', 'CnetworkController@tambah');
+    Route::match(array('GET', 'POST'), '/cnetwork/edit/{id?}', 'CnetworkController@edit');
+    Route::get('/cnetwork/hapus/{id}', 'CnetworkController@hapus');
 });

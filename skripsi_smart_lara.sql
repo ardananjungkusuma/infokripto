@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 08:28 AM
+-- Generation Time: Jan 20, 2022 at 05:23 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -49,7 +49,17 @@ INSERT INTO `crypto_wallet` (`id_wallet`, `nama_wallet`, `ukuran_aplikasi`, `nft
 (1, 'Trust Wallet', 13.33, 1, 4.70, 2, 10000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp', '2022-01-18 06:03:31', '2022-01-18 06:03:31'),
 (2, 'Safepal', 32.28, 1, 4.40, 3, 500000, '2021-11-17', 'https://play.google.com/store/apps/details?id=io.safepal.wallet', '2022-01-18 00:12:28', '2022-01-18 00:12:28'),
 (3, 'Enjin Wallet', 32.18, 1, 4.40, 2, 1000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.enjin.mobile.wallet', '2022-01-18 07:16:19', '2022-01-18 07:16:19'),
-(4, 'TokenPocket', 33.12, 0, 4.30, 3, 1000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=vip.mytokenpocket', '2022-01-18 07:17:39', '2022-01-18 07:17:39');
+(4, 'TokenPocket', 33.12, 0, 4.30, 3, 1000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=vip.mytokenpocket', '2022-01-18 07:17:39', '2022-01-18 07:17:39'),
+(5, 'imToken', 81.54, 1, 4.20, 2, 500000, '2021-11-17', 'https://play.google.com/store/apps/details?id=im.token.app', '2022-01-20 15:33:57', '2022-01-20 15:33:57'),
+(6, 'TronLink Wallet', 30.79, 0, 4.30, 2, 1000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.tronlinkpro.wallet', '2022-01-20 15:34:30', '2022-01-20 15:34:30'),
+(7, 'MyEtherWallet (MEW)', 43.81, 0, 4.40, 3, 500000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.myetherwallet.mewwallet', '2022-01-20 15:35:02', '2022-01-20 15:35:02'),
+(8, 'ZilPay', 35.00, 0, 3.70, 3, 100000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.zilpaymobile', '2022-01-20 15:35:38', '2022-01-20 15:35:38'),
+(9, 'Coin98 Wallet', 29.79, 1, 4.20, 4, 100000, '2021-11-17', 'https://play.google.com/store/apps/details?id=coin98.crypto.finance.media', '2022-01-20 15:36:10', '2022-01-20 15:36:10'),
+(10, 'XUMM', 30.00, 0, 4.80, 2, 100000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.xrpllabs.xumm', '2022-01-20 15:56:03', '2022-01-20 15:56:03'),
+(11, 'Solflare', 13.00, 1, 4.60, 3, 10000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.solflare.mobile', '2022-01-20 15:56:36', '2022-01-20 15:56:36'),
+(12, 'Algorand Wallet', 28.00, 0, 4.70, 2, 100000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.algorand.android', '2022-01-20 15:57:07', '2022-01-20 15:57:07'),
+(13, 'Slope Wallet', 57.00, 1, 4.50, 3, 50000, '2021-12-15', 'https://play.google.com/store/apps/details?id=com.wd.wallet', '2022-01-20 15:57:51', '2022-01-20 15:57:51'),
+(14, 'Maiar Wallet', 68.00, 0, 4.20, 2, 500000, '2021-12-15', 'https://play.google.com/store/apps/details?id=com.elrond.maiar.wallet', '2022-01-20 15:58:17', '2022-01-20 15:58:17');
 
 -- --------------------------------------------------------
 
@@ -175,12 +185,66 @@ INSERT INTO `jenis_coin` (`id_jenis_coin`, `nama_coin`, `singkatan_coin`, `creat
 --
 
 CREATE TABLE `jenis_network` (
-  `id_jenis_network` int(10) UNSIGNED NOT NULL,
+  `id_jenis_network` bigint(20) UNSIGNED NOT NULL,
   `nama_network` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `singkatan_network` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `jenis_network`
+--
+
+INSERT INTO `jenis_network` (`id_jenis_network`, `nama_network`, `singkatan_network`, `created_at`, `updated_at`) VALUES
+(1, 'Algorand', 'ALGO', '2022-01-20 14:48:06', '2022-01-20 15:31:09'),
+(2, 'Arbitrum', 'ARETH', '2022-01-20 14:48:25', '2022-01-20 14:48:25'),
+(3, 'Avalanche', 'AVAX', '2022-01-20 14:48:34', '2022-01-20 14:48:34'),
+(4, 'Binance Coin', 'BEP-2', '2022-01-20 14:48:44', '2022-01-20 14:48:44'),
+(5, 'Binance Smart Chain', 'BEP-20', '2022-01-20 14:48:56', '2022-01-20 14:48:56'),
+(6, 'Bitcoin', 'BTC', '2022-01-20 14:49:07', '2022-01-20 14:49:07'),
+(7, 'Bitcoin Cash', 'BCH', '2022-01-20 14:49:15', '2022-01-20 14:49:15'),
+(8, 'Boba Network', 'BOBA', '2022-01-20 14:50:05', '2022-01-20 14:50:05'),
+(9, 'BOScoin', 'BOS', '2022-01-20 14:55:16', '2022-01-20 14:55:16'),
+(10, 'Callisto', 'CLO', '2022-01-20 14:55:24', '2022-01-20 14:55:24'),
+(11, 'Celo', 'CELO', '2022-01-20 14:55:34', '2022-01-20 14:55:34'),
+(12, 'Cosmos', 'ATOM', '2022-01-20 14:55:49', '2022-01-20 14:55:49'),
+(13, 'Cronos Coin', 'CRO', '2022-01-20 15:16:21', '2022-01-20 15:16:21'),
+(14, 'Elrond', 'eGold', '2022-01-20 15:16:28', '2022-01-20 15:16:28'),
+(15, 'EOS', 'EOS', '2022-01-20 15:16:37', '2022-01-20 15:16:37'),
+(16, 'Ethereum', 'ERC-20', '2022-01-20 15:16:43', '2022-01-20 15:16:43'),
+(17, 'Ethereum Classic', 'ETC', '2022-01-20 15:16:50', '2022-01-20 15:16:50'),
+(18, 'Fantom', 'FTM', '2022-01-20 15:16:56', '2022-01-20 15:16:56'),
+(19, 'Filecoin', 'FIL', '2022-01-20 15:17:03', '2022-01-20 15:17:03'),
+(20, 'GateChain', 'GT', '2022-01-20 15:17:13', '2022-01-20 15:17:13'),
+(21, 'Hoo Smart Chain', 'HOO', '2022-01-20 15:17:23', '2022-01-20 15:17:23'),
+(22, 'GoChain', 'GO', '2022-01-20 15:17:29', '2022-01-20 15:17:29'),
+(23, 'Huobi Eco Chain', 'HECO', '2022-01-20 15:17:36', '2022-01-20 15:17:36'),
+(24, 'IOST', 'IOST', '2022-01-20 15:17:42', '2022-01-20 15:17:42'),
+(25, 'Jingtum Tech', 'SWTC', '2022-01-20 15:17:50', '2022-01-20 15:17:50'),
+(26, 'KardiaChain', 'KAI', '2022-01-20 15:17:56', '2022-01-20 15:17:56'),
+(27, 'Klaytn', 'KLAY', '2022-01-20 15:18:05', '2022-01-20 15:18:05'),
+(28, 'KuCoin Token', 'KCS', '2022-01-20 15:18:12', '2022-01-20 15:18:12'),
+(29, 'Kusama', 'KSM', '2022-01-20 15:18:21', '2022-01-20 15:18:21'),
+(30, 'Litecoin', 'LTC', '2022-01-20 15:18:28', '2022-01-20 15:18:28'),
+(31, 'MOAC', 'MOAC', '2022-01-20 15:18:34', '2022-01-20 15:18:34'),
+(32, 'Near', 'NEAR', '2022-01-20 15:18:51', '2022-01-20 15:18:51'),
+(33, 'Nervos Network', 'CKB', '2022-01-20 15:18:57', '2022-01-20 15:18:57'),
+(34, 'OKExChain', 'OKExChain', '2022-01-20 15:19:02', '2022-01-20 15:19:02'),
+(35, 'Optimism', 'OETH', '2022-01-20 15:19:09', '2022-01-20 15:19:09'),
+(36, 'POA Network', 'POA', '2022-01-20 15:19:18', '2022-01-20 15:19:18'),
+(37, 'Polkadot', 'Polkadot', '2022-01-20 15:19:25', '2022-01-20 15:19:25'),
+(38, 'Polygon', 'MATIC', '2022-01-20 15:19:31', '2022-01-20 15:19:31'),
+(39, 'Ripple', 'XRP', '2022-01-20 15:19:36', '2022-01-20 15:19:36'),
+(40, 'Ronin', 'RON', '2022-01-20 15:19:42', '2022-01-20 15:19:42'),
+(41, 'Solana', 'SOL', '2022-01-20 15:19:50', '2022-01-20 15:19:50'),
+(42, 'SubGame', 'SGB', '2022-01-20 15:19:56', '2022-01-20 15:19:56'),
+(43, 'Tezoz', 'XTZ', '2022-01-20 15:20:03', '2022-01-20 15:20:03'),
+(44, 'Thunder Token', 'TT', '2022-01-20 15:20:10', '2022-01-20 15:20:10'),
+(45, 'TomoChain', 'TOMO', '2022-01-20 15:20:18', '2022-01-20 15:20:18'),
+(46, 'TRON', 'TRX', '2022-01-20 15:20:26', '2022-01-20 15:20:26'),
+(47, 'xDai', 'xDai', '2022-01-20 15:20:32', '2022-01-20 15:20:32'),
+(48, 'Ziliqa', 'ZIL', '2022-01-20 15:20:38', '2022-01-20 15:20:38');
 
 -- --------------------------------------------------------
 
@@ -324,7 +388,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `alamat`, `no_hp`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ardan Anjung Kusuma', 'Bojonegoro', '085212345678', 'ardan', 'ardan@gmail.com', NULL, '$2y$10$sErCMUjG21eoyBTWcKJC5u7YY41mWTJcw9Qhxlqwo9wLrP1I4Cbim', NULL, '2022-01-17 08:45:24', '2022-01-17 08:45:24');
+(1, 'Ardan Anjung', 'Bojonegoro', '085212345678', 'ardan', 'ardan@gmail.com', NULL, '$2y$10$sErCMUjG21eoyBTWcKJC5u7YY41mWTJcw9Qhxlqwo9wLrP1I4Cbim', NULL, '2022-01-17 08:45:24', '2022-01-17 08:45:24');
 
 -- --------------------------------------------------------
 
@@ -441,13 +505,17 @@ ALTER TABLE `users`
 -- Indexes for table `wallet_coin`
 --
 ALTER TABLE `wallet_coin`
-  ADD PRIMARY KEY (`id_wallet_coin`);
+  ADD PRIMARY KEY (`id_wallet_coin`),
+  ADD KEY `id_wallet` (`id_wallet`),
+  ADD KEY `id_jenis_coin` (`id_jenis_coin`);
 
 --
 -- Indexes for table `wallet_network`
 --
 ALTER TABLE `wallet_network`
-  ADD PRIMARY KEY (`id_wallet_network`);
+  ADD PRIMARY KEY (`id_wallet_network`),
+  ADD KEY `id_jenis_network` (`id_jenis_network`),
+  ADD KEY `id_wallet` (`id_wallet`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -457,7 +525,7 @@ ALTER TABLE `wallet_network`
 -- AUTO_INCREMENT for table `crypto_wallet`
 --
 ALTER TABLE `crypto_wallet`
-  MODIFY `id_wallet` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_wallet` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -469,13 +537,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jenis_coin`
 --
 ALTER TABLE `jenis_coin`
-  MODIFY `id_jenis_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id_jenis_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `jenis_network`
 --
 ALTER TABLE `jenis_network`
-  MODIFY `id_jenis_network` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jenis_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -535,6 +603,20 @@ ALTER TABLE `model_has_roles`
 ALTER TABLE `role_has_permissions`
   ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `wallet_coin`
+--
+ALTER TABLE `wallet_coin`
+  ADD CONSTRAINT `wallet_coin_ibfk_1` FOREIGN KEY (`id_wallet`) REFERENCES `crypto_wallet` (`id_wallet`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `wallet_coin_ibfk_2` FOREIGN KEY (`id_jenis_coin`) REFERENCES `jenis_coin` (`id_jenis_coin`);
+
+--
+-- Constraints for table `wallet_network`
+--
+ALTER TABLE `wallet_network`
+  ADD CONSTRAINT `wallet_network_ibfk_1` FOREIGN KEY (`id_jenis_network`) REFERENCES `jenis_network` (`id_jenis_network`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `wallet_network_ibfk_2` FOREIGN KEY (`id_wallet`) REFERENCES `crypto_wallet` (`id_wallet`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

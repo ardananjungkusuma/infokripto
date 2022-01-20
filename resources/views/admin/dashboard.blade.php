@@ -45,7 +45,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="state">
                                 <h6>Network Chain Terdaftar</h6>
-                                {{-- <h2><?= $jumlahnetwork->jumlahnetwork ?></h2> --}}
+                                <h2>{{ $count_cnetwork }}</h2>
                             </div>
                             <div class="icon">
                                 <i class="ik ik-box"></i>

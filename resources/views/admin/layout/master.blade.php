@@ -9,29 +9,30 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
-
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/icon-kit/dist/css/iconkit.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/ionicons/dist/css/ionicons.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/admin/plugins/ionicons/dist/css/ionicons.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}">
+
     <link rel="stylesheet"
         href="{{ asset('assets/admin/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap.css') }}">
-    <link rel="stylesheet"
+    {{-- <link rel="stylesheet" href="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap.css') }}"> --}}
+    {{-- <link rel="stylesheet"
         href="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/weather-icons/css/weather-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/c3/c3.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/owl.carousel/dist/assets/owl.carousel.min.css') }}">
+    --}}
+
+    {{-- <link rel="stylesheet" href="{{ asset('assets/admin/plugins/weather-icons/css/weather-icons.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/admin/plugins/c3/c3.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/admin/plugins/owl.carousel/dist/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet"
-        href="{{ asset('assets/admin/plugins/owl.carousel/dist/assets/owl.theme.default.min.css') }}">
+        href="{{ asset('assets/admin/plugins/owl.carousel/dist/assets/owl.theme.default.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/admin/dist/css/theme.min.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="{{ asset('assets/admin/src/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets/admin/src/js/vendor/modernizr-2.8.3.min.js') }}"></script> --}}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
@@ -46,9 +47,7 @@
                 <div class="d-flex justify-content-between">
                     <div class="top-menu d-flex align-items-center">
                         <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
-
-                        <button type="button" id="navbar-fullscreen" class="nav-link"><i
-                                class="ik ik-maximize"></i></button>
+                        <span id="navbar-fullscreen" class="nav-link"></span>
                     </div>
                     <div class="top-menu d-flex align-items-center">
                         <div class="dropdown">
@@ -141,19 +140,21 @@
     <script src="{{ asset('assets/admin/plugins/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('assets/admin/plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/admin/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/screenfull/dist/screenfull.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap.min.js') }}"></script>
+
+    {{-- <script src="{{ asset('assets/admin/plugins/screenfull/dist/screenfull.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap.min.js') }}"></script>
     <script src="{{ asset('assets/admin/plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js') }}">
-    </script>
-    <script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script>
-    <script
+
+    </script> --}}
+    {{-- <script src="{{ asset('assets/admin/plugins/moment/moment.js') }}"></script> --}}
+    {{-- <script
         src="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js') }}">
-    </script>
-    <script src="{{ asset('assets/admin/plugins/d3/dist/d3.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/c3/c3.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/tables.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/widgets.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/charts.js') }}"></script>
+    </script> --}}
+    {{-- <script src="{{ asset('assets/admin/plugins/d3/dist/d3.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assets/admin/plugins/c3/c3.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assets/admin/js/tables.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assets/admin/js/widgets.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assets/admin/js/charts.js') }}"></script> --}}
     <script src="{{ asset('assets/admin/dist/js/theme.min.js') }}"></script>
 </body>
 

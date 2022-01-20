@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-header row">
                 <div class="col col-lg-12">
-                    <h4>Edit Data Coin ({{  $coin->nama_coin }})</h4>
+                    <h4>Edit Data Chain Network ({{  $cnetwork->nama_network }})</h4>
                 </div>
             </div>
             <div class="card-body">
@@ -17,20 +17,21 @@
                     </button>
                 </div>
                 @endif
-                <form action="/coin/edit" method="POST">
+                <form action="/cnetwork/edit" method="POST">
                     @csrf
                     <div class="form-group">
-                        <input type="hidden" value="{{ $coin->id_jenis_coin  }}" name="id_jenis_coin" required>
-                        <label style="font-weight: bold;">Nama Coin</label>
-                        <input type="text" class="form-control" placeholder="Nama" value="{{ $coin->nama_coin  }}"
-                            name="nama_coin" required>
+                        <input type="hidden" value="{{ $cnetwork->id_jenis_network  }}" name="id_jenis_network"
+                            required>
+                        <label style="font-weight: bold;">Nama Chain Network</label>
+                        <input type="text" class="form-control" placeholder="Nama"
+                            value="{{ $cnetwork->nama_network  }}" name="nama_network" required>
                     </div>
                     <div class="form-group">
-                        <label style="font-weight: bold;">Singkatan Coin</label>
-                        <input type="text" class="form-control" placeholder="0" value="{{ $coin->singkatan_coin }}"
-                            name="singkatan_coin" required>
+                        <label style="font-weight: bold;">Singkatan Chain Network</label>
+                        <input type="text" class="form-control" placeholder="0"
+                            value="{{ $cnetwork->singkatan_network }}" name="singkatan_network" required>
                     </div>
-                    <a href="/coin" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Back</a>
+                    <a href="/cnetwork" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Back</a>
                     <button class="btn btn-primary" type="submit"><i class="fa fa-pen"></i> Edit Data</button>
                 </form>
             </div>
