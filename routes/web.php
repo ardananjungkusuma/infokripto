@@ -19,7 +19,9 @@ Route::get('/', function () {
 
 
 // Route::get('/auth/login', 'AuthController@index')->name('login');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+Route::get('/home/pilihDompet', 'HomeController@pilihDompet');
+Route::post('/home/cariDompet', 'HomeController@cariDompet');
 
 // Auth::routes();
 Route::get('/auth', 'AuthController@index');
@@ -43,16 +45,16 @@ Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::post('/cwallet/tambahNetworkWallet', 'CwalletController@tambahNetworkWallet');
     Route::get('/cwallet/hapusCoinWallet/{id}', 'CwalletController@hapusCoinWallet');
     Route::get('/cwallet/hapusNetworkWallet/{id}', 'CwalletController@hapusNetworkWallet');
+    Route::get('/coin/getCoinByWallet/{id}', 'CoinController@getCoinByWallet');
+    Route::get('/cnetwork/getNetworkByWallet/{id}', 'CnetworkController@getNetworkByWallet');
 
     Route::get('/coin', 'CoinController@index')->name('coin');
     Route::post('/coin/tambah', 'CoinController@tambah');
     Route::match(array('GET', 'POST'), '/coin/edit/{id?}', 'CoinController@edit');
     Route::get('/coin/hapus/{id}', 'CoinController@hapus');
-    Route::get('/coin/getCoinByWallet/{id}', 'CoinController@getCoinByWallet');
 
     Route::get('/cnetwork', 'CnetworkController@index')->name('cnetwork');
     Route::post('/cnetwork/tambah', 'CnetworkController@tambah');
     Route::match(array('GET', 'POST'), '/cnetwork/edit/{id?}', 'CnetworkController@edit');
     Route::get('/cnetwork/hapus/{id}', 'CnetworkController@hapus');
-    Route::get('/cnetwork/getNetworkByWallet/{id}', 'CnetworkController@getNetworkByWallet');
 });
