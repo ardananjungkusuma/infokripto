@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Coin;
+use App\Walletcoin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class CoinController extends Controller
@@ -59,5 +61,13 @@ class CoinController extends Controller
     {
         Coin::where('id_jenis_coin', $id)->delete();
         return redirect('/coin')->with('notif', 'Sukses Menghapus Coin!');
+    }
+
+    public function getCoinByWallet($id)
+    {
+        $result = DB::table('wallet_coin')
+            ->join('jenis_coin', 'wallet_coin.id_jenis_coin', '=', 'jenis_coin.id_jenis_coin')
+            ->where('wallet_coin.id_wallet', $id)->get();
+        echo json_encode($result);
     }
 }

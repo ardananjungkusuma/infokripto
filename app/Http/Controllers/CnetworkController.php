@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cnetwork;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class CnetworkController extends Controller
@@ -59,5 +60,13 @@ class CnetworkController extends Controller
     {
         Cnetwork::where('id_jenis_network', $id)->delete();
         return redirect('/cnetwork')->with('notif', 'Sukses Menghapus Chain Network!');
+    }
+
+    public function getNetworkByWallet($id)
+    {
+        $result = DB::table('wallet_network')
+            ->join('jenis_network', 'wallet_network.id_jenis_network', '=', 'jenis_network.id_jenis_network')
+            ->where('wallet_network.id_wallet', $id)->get();
+        echo json_encode($result);
     }
 }

@@ -47,7 +47,7 @@
                                         <td>{{ $cw->rating }}</td>
                                         <td>{{ number_format($cw->total_user_install, 0, ',', '.')  }}+</td>
                                         <td>
-                                            <a href="/cwallet/tambahCoinDanNetwork/{{ $cw->id_wallet }}"
+                                            <a href="/cwallet/manageCoinNetwork/{{ $cw->id_wallet }}"
                                                 class="btn btn-success"><i class="fa fa-clipboard"></i> Manage Coin &
                                                 Network</a>
                                             <a href="/cwallet/detail/{{ $cw->id_wallet }}" class="btn btn-info"><i

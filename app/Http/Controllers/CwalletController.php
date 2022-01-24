@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cnetwork;
+use App\Coin;
 use App\Cwallet;
 use App\Walletcoin;
 use App\Walletnetwork;
@@ -49,9 +51,11 @@ class CwalletController extends Controller
         $jumlahcoin = Walletcoin::where('id_wallet', $id)->count();
         $jumlahnetwork = Walletnetwork::where('id_wallet', $id)->count();
         $coindata = DB::table('wallet_coin')
-            ->join('jenis_coin', 'wallet_coin.id_jenis_coin', '=', 'jenis_coin.id_jenis_coin')->get();
+            ->join('jenis_coin', 'wallet_coin.id_jenis_coin', '=', 'jenis_coin.id_jenis_coin')
+            ->where('wallet_coin.id_wallet', $id)->get();
         $networkdata = DB::table('wallet_network')
-            ->join('jenis_network', 'wallet_network.id_jenis_network', '=', 'jenis_network.id_jenis_network')->get();
+            ->join('jenis_network', 'wallet_network.id_jenis_network', '=', 'jenis_network.id_jenis_network')
+            ->where('wallet_network.id_wallet', $id)->get();
         return view('admin.cwallet.detail', compact('dw', 'jumlahcoin', 'jumlahnetwork', 'coindata', 'networkdata'));
     }
 
@@ -98,5 +102,65 @@ class CwalletController extends Controller
     {
         Cwallet::find($id)->delete();
         return redirect('/cwallet')->with('notif', 'Sukses Menghapus Crypto Wallet!');
+    }
+
+    public function manageCoinNetwork($id)
+    {
+        $wallet = Cwallet::find($id);
+        $coin = Coin::all();
+        $cnetwork = Cnetwork::all();
+        return view('admin.cwallet.manage', compact('wallet', 'coin', 'cnetwork'));
+    }
+
+    public function tambahCoinWallet(Request $request)
+    {
+        $id_jenis_coin = $request->id_jenis_coin;
+        // $id_jenis_coin = "65";
+        $id_wallet = $request->id_wallet;
+        // $id_wallet = "1";
+
+        $wc = Walletcoin::where('id_jenis_coin', $id_jenis_coin)->where('id_wallet', $id_wallet)->first();
+
+        // Check validation
+        if ($wc !== null) {
+            echo "Failed";
+        } else {
+            $walco = new Walletcoin;
+            $walco->id_jenis_coin = $id_jenis_coin;
+            $walco->id_wallet = $id_wallet;
+            $walco->save();
+            echo "Success, cause empty yo!";
+        }
+    }
+
+    public function tambahNetworkWallet(Request $request)
+    {
+        $id_jenis_network = $request->id_jenis_network;
+        // $id_jenis_network = "16";
+        $id_wallet = $request->id_wallet;
+        // $id_wallet = "1";
+
+        $wn = Walletnetwork::where('id_jenis_network', $id_jenis_network)->where('id_wallet', $id_wallet)->first();
+
+        // Check validation
+        if ($wn !== null) {
+            echo "Failed";
+        } else {
+            $walnet = new Walletnetwork();
+            $walnet->id_jenis_network = $id_jenis_network;
+            $walnet->id_wallet = $id_wallet;
+            $walnet->save();
+            echo "Success, cause empty yo!";
+        }
+    }
+
+    public function hapusCoinWallet($id)
+    {
+        Walletcoin::find($id)->delete();
+    }
+
+    public function hapusNetworkWallet($id)
+    {
+        Walletnetwork::find($id)->delete();
     }
 }
