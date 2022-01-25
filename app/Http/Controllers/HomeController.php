@@ -144,11 +144,17 @@ class HomeController extends Controller
 
         if (count($finalWallet) < 1) {
             // Gaada hasil dari kriteria yang dicari
-            echo "RA ENEK HASILE";
-            $result = "Empty";
+            // echo "RA ENEK HASILE";
+            $result = ['Empty'];
+            $isinotif = 'Hasil tidak ditemukan untuk kriteria yang anda inginkan!';
         } else if (count($finalWallet) == 1 && !empty($finalWallet[0]) && $finalWallet[0] == 'All') {
             // User tidak memilih opsi apa apa maka dari itu SPK hitung semua data wallet yang ada.
-            $data = Cwallet::all();
+            if ($nft == 1) {
+                // Filtering Wallet berdasarkan NFT Showcase
+                $data = Cwallet::where('nft_showcase', $nft)->get();
+            } else if ($nft == 0) {
+                $data = Cwallet::all();
+            }
             $arrayFinalFilter = [];
             foreach ($data as $result) {
                 array_push($arrayFinalFilter, $result->id_wallet);
@@ -157,6 +163,8 @@ class HomeController extends Controller
             $unfiltered_res = $this->spkSMART($arrayFinalFilter);
             $hasil_wallet = [];
             $nilai_wallet = [];
+
+            // i < 3 karena hanya diambil ranking 3 teratas saja.
             for ($i = 0; $i < 3; $i++) {
                 for ($j = 0; $j < count($unfiltered_res[$i]); $j++) {
                     if ($j == 0) {
@@ -181,6 +189,7 @@ class HomeController extends Controller
                 }
             }
             $result = $arrayFinalHasilWallet;
+            $isinotif = 'Anda tidak memilih kriteria coin dan chain network maka dari itu kami sajikan perankingan semua wallet yang ada.';
             // print_r($arrayFinalHasilWallet);
             // dd($result);
         } else if (count($finalWallet) == 1) {
@@ -190,26 +199,155 @@ class HomeController extends Controller
                 // Tetep nunjukin alternatif wallet yang gaada NFT nya.
                 $arrayFinalFilter = array_intersect($finalWallet, $listNFTSupport);
                 $result = $arrayFinalFilter;
-            } else if ($nft == 0) {
-                $arrayFinalFilter = $finalWallet;
-                $result = $arrayFinalFilter;
-            }
-        } else if (count($finalWallet) > 1) {
-            // Masuk SPK
-            if ($nft == 1) {
-                $arrayFinalFilter = array_intersect($finalWallet, $listNFTSupport);
                 if (count($arrayFinalFilter) < 1) {
-                    // jika ga ketemu nft 
-
+                    $isinotif = 'Wallet dengan kriteria yang anda pilih tak ditemukan';
+                    $result = ['Empty'];
+                } else {
+                    $isinotif = 'Berikut hasil dari perangkingan dan pemfilteran wallet sesuai dengan kriteria yang anda inginkan.';
                 }
             } else if ($nft == 0) {
                 $arrayFinalFilter = $finalWallet;
-                $result = "Empty";
+                $result = $arrayFinalFilter;
+                $isinotif = 'Berikut hasil dari perangkingan dan pemfilteran wallet sesuai dengan kriteria yang anda inginkan.';
             }
-            $result = $this->spkSMART($arrayFinalFilter);
+        } else if (count($finalWallet) > 1) {
+            // Masuk SPK
+            $hasil_wallet = [];
+            $nilai_wallet = [];
+            if ($nft == 1) {
+                // fix susunan array agar indexnya urut pake array_values();
+                $finalWallet = array_values($finalWallet);
+                // dd($finalWallet);
+                $arrayFinalFilter = array_intersect($finalWallet, $listNFTSupport);
+                $arrayFinalFilter = array_values($arrayFinalFilter);
+                // dd($arrayFinalFilter);
+                // TODO Terakhir error division by zero jika milih coin BTC, ETH. Chain network BEP 20/BSC, NFT YA. Wallet Result 1,2,5,9.
+                if (count($arrayFinalFilter) < 1) {
+                    // jika ga ketemu nft 
+                    $isinotif = 'Wallet dengan kriteria yang anda pilih tak ditemukan';
+                    $result = ['Empty'];
+                } else {
+                    // dd($arrayFinalFilter);
+                    $unfiltered_res = $this->spkSMART($arrayFinalFilter);
+                    // Jika hasil lebih dari 3 maka diambil 3 teratas baru diget datanya.
+                    if (count($unfiltered_res) > 3) {
+                        // i < 3 karena hanya diambil ranking 3 teratas saja.
+                        for ($i = 0; $i < 3; $i++) {
+                            for ($j = 0; $j < count($unfiltered_res[$i]); $j++) {
+                                if ($j == 0) {
+                                    $hasil_wallet[$i] = $unfiltered_res[$i][$j];
+                                }
+                                if ($j == 1) {
+                                    $nilai_wallet[$i] = $unfiltered_res[$i][$j];
+                                }
+                            }
+                        }
+                        $arrayFinalHasilWallet = [];
+                        for ($i = 0; $i < count($hasil_wallet); $i++) {
+                            $id_now = $hasil_wallet[$i];
+                            $data = Cwallet::where('id_wallet', $id_now)->get();
+                            $num = 0;
+                            foreach ($data as $result) {
+                                $arrayFinalHasilWallet[$i][$num] = $result->id_wallet;
+                                $num++;
+                                $arrayFinalHasilWallet[$i][$num] = $result->nama_wallet;
+                                $num++;
+                                $arrayFinalHasilWallet[$i][$num] = $result->link_playstore;
+                            }
+                        }
+                        $result = $arrayFinalHasilWallet;
+                        // Jika hasil kurang dari 3 maka langsung diget datanya
+                    } else {
+                        for ($i = 0; $i < count($unfiltered_res); $i++) {
+                            for ($j = 0; $j < count($unfiltered_res[$i]); $j++) {
+                                if ($j == 0) {
+                                    $hasil_wallet[$i] = $unfiltered_res[$i][$j];
+                                }
+                                if ($j == 1) {
+                                    $nilai_wallet[$i] = $unfiltered_res[$i][$j];
+                                }
+                            }
+                        }
+                        $arrayFinalHasilWallet = [];
+                        for ($i = 0; $i < count($hasil_wallet); $i++) {
+                            $id_now = $hasil_wallet[$i];
+                            $data = Cwallet::where('id_wallet', $id_now)->get();
+                            $num = 0;
+                            foreach ($data as $result) {
+                                $arrayFinalHasilWallet[$i][$num] = $result->id_wallet;
+                                $num++;
+                                $arrayFinalHasilWallet[$i][$num] = $result->nama_wallet;
+                                $num++;
+                                $arrayFinalHasilWallet[$i][$num] = $result->link_playstore;
+                            }
+                        }
+                        $result = $arrayFinalHasilWallet;
+                    }
+                    // $result = $this->spkSMART($arrayFinalFilter);
+                    $isinotif = 'Berikut hasil dari perangkingan dan pemfilteran wallet sesuai dengan kriteria yang anda inginkan.';
+                }
+            } else if ($nft == 0) {
+                $arrayFinalFilter = $finalWallet;
+                $unfiltered_res = $this->spkSMART($arrayFinalFilter);
+                if (count($unfiltered_res) > 3) {
+                    // i < 3 karena hanya diambil ranking 3 teratas saja.
+                    for ($i = 0; $i < 3; $i++) {
+                        for ($j = 0; $j < count($unfiltered_res[$i]); $j++) {
+                            if ($j == 0) {
+                                $hasil_wallet[$i] = $unfiltered_res[$i][$j];
+                            }
+                            if ($j == 1) {
+                                $nilai_wallet[$i] = $unfiltered_res[$i][$j];
+                            }
+                        }
+                    }
+                    $arrayFinalHasilWallet = [];
+                    for ($i = 0; $i < count($hasil_wallet); $i++) {
+                        $id_now = $hasil_wallet[$i];
+                        $data = Cwallet::where('id_wallet', $id_now)->get();
+                        $num = 0;
+                        foreach ($data as $result) {
+                            $arrayFinalHasilWallet[$i][$num] = $result->id_wallet;
+                            $num++;
+                            $arrayFinalHasilWallet[$i][$num] = $result->nama_wallet;
+                            $num++;
+                            $arrayFinalHasilWallet[$i][$num] = $result->link_playstore;
+                        }
+                    }
+                    $result = $arrayFinalHasilWallet;
+                    // Jika hasil kurang dari 3 maka langsung diget datanya
+                } else {
+                    for ($i = 0; $i < count($unfiltered_res); $i++) {
+                        for ($j = 0; $j < count($unfiltered_res[$i]); $j++) {
+                            if ($j == 0) {
+                                $hasil_wallet[$i] = $unfiltered_res[$i][$j];
+                            }
+                            if ($j == 1) {
+                                $nilai_wallet[$i] = $unfiltered_res[$i][$j];
+                            }
+                        }
+                    }
+                    $arrayFinalHasilWallet = [];
+                    for ($i = 0; $i < count($hasil_wallet); $i++) {
+                        $id_now = $hasil_wallet[$i];
+                        $data = Cwallet::where('id_wallet', $id_now)->get();
+                        $num = 0;
+                        foreach ($data as $result) {
+                            $arrayFinalHasilWallet[$i][$num] = $result->id_wallet;
+                            $num++;
+                            $arrayFinalHasilWallet[$i][$num] = $result->nama_wallet;
+                            $num++;
+                            $arrayFinalHasilWallet[$i][$num] = $result->link_playstore;
+                        }
+                    }
+                    $result = $arrayFinalHasilWallet;
+                }
+                $isinotif = 'Berikut hasil dari perangkingan dan pemfilteran wallet sesuai dengan kriteria yang anda inginkan.';
+            }
         }
 
-        // TODO Show result to view.
+        dd($result);
+        // return view('home.hasildompet', compact('result'))->with('notif', $isinotif);;
     }
 
     public function spkSMART($data = array())
@@ -370,18 +508,18 @@ class HomeController extends Controller
 
                     if ($kriteria_now == 'C') {
                         $listWalletAfterUtility[$i][$j] = (($max_now - $listWalletNormalisasi[$i][$j]) / ($max_now - $min_now));
-                        // echo $min_now;
-                        // echo $listWalletAfterUtility[$i][$j];
-                        // echo " | ";
+                        echo $min_now;
+                        echo $listWalletAfterUtility[$i][$j];
+                        echo " | ";
                     } else if ($kriteria_now == 'B') {
                         $listWalletAfterUtility[$i][$j] = (($listWalletNormalisasi[$i][$j] - $min_now) / ($max_now - $min_now));
-                        // echo $max_now;
-                        // echo $listWalletAfterUtility[$i][$j];
-                        // echo " | ";
+                        echo $max_now;
+                        echo $listWalletAfterUtility[$i][$j];
+                        echo " | ";
                     }
                 }
             }
-            // echo "<br>";
+            echo "<br>";
         }
 
         // Perbaikan Bobot
