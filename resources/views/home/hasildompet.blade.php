@@ -20,11 +20,8 @@
 
     <section class="inner-page">
         <div class="container">
-            {{-- if ($this->session->flashdata("found")) {
-                print_r($hasil);
-            } --}}
             @if(session('notif'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 {{ session('notif') }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -35,6 +32,24 @@
             <div class="row">
                 <hr>
                 <div class="col-lg-12">
+                    <h5>Hasil dari pemilihannya adalah sebagai berikut</h5>
+                    <?php if($result[0] == 'Empty'){ ?>
+                    Maaf, wallet dengan kriteria yang anda pilih tak ditemukan
+                    <?php }else{ ?>
+                    <ol>
+                        <?php
+                        for($i=0;$i<count($result);$i++) { ?>
+                        <li>
+                            {{ $result[$i][1] }} (Link Download : <a style="color: blue"
+                                href="{{  $result[$i][2] }}">Klik Disini</a>)
+                        </li>
+                        <?php
+                            }
+                            ?>
+                    </ol>
+                    <?php
+                        }
+                    ?>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
