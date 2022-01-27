@@ -34,14 +34,15 @@
                 <div class="col-lg-12">
                     <h5>Hasil dari pemilihannya adalah sebagai berikut</h5>
                     <?php if($result[0] == 'Empty'){ ?>
-                    Maaf, wallet dengan kriteria yang anda pilih tak ditemukan
+                    Maaf, wallet dengan kriteria yang anda pilih tak ditemukan. <a href="" style="color: blue">Beri kami
+                        kritik & saran jika berkenan.</a>
                     <?php }else{ ?>
                     <ol>
                         <?php
                         for($i=0;$i<count($result);$i++) { ?>
                         <li>
-                            {{ $result[$i][1] }} (Link Download : <a style="color: blue"
-                                href="{{  $result[$i][2] }}">Klik Disini</a>)
+                            {{ $result[$i][1] }} (Link Download : <a style="color: blue" href="{{  $result[$i][2] }}"
+                                target="_blank">Klik Disini</a>)
                         </li>
                         <?php
                             }

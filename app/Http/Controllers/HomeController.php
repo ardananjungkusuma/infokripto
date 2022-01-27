@@ -267,6 +267,7 @@ class HomeController extends Controller
                 $arrayFinalFilter = array_values($finalWallet);
                 // dd($arrayFinalFilter);
                 // dd($arrayFinalFilter);
+                // FIXED error division by zero jika milih coin BTC, ETH. Chain network BEP 20/BSC, NFT YA. Wallet Result 1,2,5,9.
                 // TODO Terakhir error division by zero jika milih coin SOLANA. Chain network ga milih, NFT YA. Wallet Result 1,2,9,11,13.
                 if (count($arrayFinalFilter) < 1) {
                     // jika ga ketemu nft 
@@ -435,7 +436,18 @@ class HomeController extends Controller
 
     public function spkSMART($data = array())
     {
-        // bobot
+        $arrayColumnNFT = [];
+        for ($i = 0; $i < count($data); $i++) {
+            // echo $data[$i];
+            $checkingNFT = Cwallet::where('id_wallet', $data[$i])->get();
+            foreach ($checkingNFT as $cn) {
+                // dd($cn);
+                array_push($arrayColumnNFT, $cn->nft_showcase);
+            }
+        }
+        // dd($arrayColumnNFT);
+
+        // urutan bobot
         $b_ukuran_aplikasi = 4;
         $b_chain_support = 5;
         $b_coin_support = 5;
@@ -444,10 +456,23 @@ class HomeController extends Controller
         $b_platform_support = 4;
         $b_total_user_install = 3;
 
-        $arrayBobot = [4, 5, 5, 3, 3, 4, 3];
+        // Melakukan pengecekan kalo nilai NFT nya hanya 1 jenis maka tidak dihitung dalam SPK.
+        $checkingNFT = array_unique($arrayColumnNFT);
+        // dd(count($checkingNFT));
+        if (count($checkingNFT) == 1) {
+            // Kalo cuma 1 brarti dihilangin bagian NFT (Index ke 3 array) karena nilainya sama semua jadi tidak usah dihitung.
+            $arrayBobot = [4, 5, 5, 3, 4, 3];
 
-        // C untuk cost, B untuk benefit
-        $kriteriaBobot = ['C', 'B', 'B', 'B', 'B', 'B', 'B'];
+            // C untuk cost, B untuk benefit
+            $kriteriaBobot = ['C', 'B', 'B', 'B', 'B', 'B'];
+        } else {
+            // Kalo hasil 2 brarti NFT nya ada yang berbeda nilainya maka dari itu dihitung di SPK.
+            $arrayBobot = [4, 5, 5, 3, 3, 4, 3];
+
+            // C untuk cost, B untuk benefit
+            $kriteriaBobot = ['C', 'B', 'B', 'B', 'B', 'B', 'B'];
+        }
+
 
         $listWalletOri = [];
         $listWalletWithoutID = [];
@@ -479,8 +504,11 @@ class HomeController extends Controller
                 $num++;
                 $listWalletOri[$i][$num] = $coin_support;
                 $num++;
-                $listWalletOri[$i][$num] = $result->nft_showcase;
-                $num++;
+                // Kalo hasil 2 brarti ada 2 jenis nilai data pada NFT yaitu 0 dan 1 makanya dimasukin array, klo cuma 1 ya diskip
+                if (count($checkingNFT) == 2) {
+                    $listWalletOri[$i][$num] = $result->nft_showcase;
+                    $num++;
+                }
                 $listWalletOri[$i][$num] = $result->rating;
                 $num++;
                 $listWalletOri[$i][$num] = $result->platform_support;
@@ -497,8 +525,11 @@ class HomeController extends Controller
                 $num++;
                 $listWalletWithoutID[$i][$num] = $coin_support;
                 $num++;
-                $listWalletWithoutID[$i][$num] = $result->nft_showcase;
-                $num++;
+                // Kalo hasil 2 brarti ada 2 jenis nilai data pada NFT yaitu 0 dan 1 makanya dimasukin array, klo cuma 1 ya diskip
+                if (count($checkingNFT) == 2) {
+                    $listWalletWithoutID[$i][$num] = $result->nft_showcase;
+                    $num++;
+                }
                 $listWalletWithoutID[$i][$num] = $result->rating;
                 $num++;
                 $listWalletWithoutID[$i][$num] = $result->platform_support;
