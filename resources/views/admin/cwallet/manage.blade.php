@@ -21,7 +21,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label style="font-weight: bold;">Pilih Coin (Ingin menambah data baru? <a href="/coin"
-                                    style="color: blue;">Klik disini</a>)</label>
+                                    style="color: blue;" target="_blank">Klik disini</a>)</label>
                             <select class="form-control js-example-basic-single" id="id_jenis_coin" name="id_jenis_coin"
                                 required>
                                 <option value="" disabled selected>Pilih Coin</option>
@@ -46,7 +46,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label style="font-weight: bold;">Pilih Network (Ingin menambah data baru? <a
-                                    href="/cnetwork" style="color: blue;">Klik disini</a>)</label>
+                                    href="/cnetwork" style="color: blue;" target="_blank">Klik disini</a>)</label>
                             <select class="form-control js-example-basic-single" id="id_jenis_network"
                                 name="id_jenis_network" required>
                                 <option value="" disabled selected>Pilih Network</option>
