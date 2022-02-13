@@ -105,13 +105,15 @@
                             </div>
                             <div class="nav-lavel">Other Menu</div>
                             <div class="nav-item has-sub">
-                                <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
+                                <a href="#"><i class="fa fa-pen"></i><span>Artikel</span></a>
                                 <div class="submenu-content">
-                                    <a href="pages/ui/alerts.html" class="menu-item">Alerts</a>
-                                    <a href="pages/ui/badges.html" class="menu-item">Badges</a>
-                                    <a href="pages/ui/buttons.html" class="menu-item">Buttons</a>
-                                    <a href="pages/ui/navigation.html" class="menu-item">Navigation</a>
+                                    <a href="{{ asset('') }}artikel" class="menu-item">Daftar Artikel</a>
+                                    <a href="{{ asset('') }}artikel/tambah" class="menu-item">Tulis Artikel</a>
                                 </div>
+                            </div>
+                            <div class="nav-item">
+                                <a href="{{ asset('') }}users"><i class="ik ik-users"></i><span>Manajemen
+                                        User</span></a>
                             </div>
                         </nav>
                     </div>
@@ -157,6 +159,7 @@
     {{-- <script src="{{ asset('assets/admin/js/widgets.js') }}"></script> --}}
     {{-- <script src="{{ asset('assets/admin/js/charts.js') }}"></script> --}}
     <script src="{{ asset('assets/admin/dist/js/theme.min.js') }}"></script>
+    @yield('script')
 </body>
 
 </html>

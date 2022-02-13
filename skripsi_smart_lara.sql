@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2022 at 08:24 AM
+-- Generation Time: Feb 13, 2022 at 06:06 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `skripsi_smart_lara`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artikel`
+--
+
+CREATE TABLE `artikel` (
+  `id_artikel` bigint(20) NOT NULL,
+  `slug` varchar(250) NOT NULL,
+  `judul` varchar(50) NOT NULL,
+  `gambar_sampul` varchar(250) NOT NULL,
+  `isi` text NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `artikel`
+--
+
+INSERT INTO `artikel` (`id_artikel`, `slug`, `judul`, `gambar_sampul`, `isi`, `author`, `updated_at`, `created_at`) VALUES
+(1, 'testing-artikel-yah-220213112524', 'Testing artikel yah', '13022022232524_cing.jpg', '<h1>Testing artikel mamen</h1>\r\n\r\n<p>pastinya</p>\r\n\r\n<p><em>yuhu</em></p>\r\n\r\n<p><strong>bold ni</strong></p>\r\n\r\n<p><strong><s>coret lambemu</s></strong></p>\r\n\r\n<p><a href=\"https://google.com\">testing href</a></p>', 'Ardan Anjung', '2022-02-13 16:25:24', '2022-02-13 16:25:24'),
+(2, 'testing-gambar-yach-220213113609', 'TESTING GAMBAR YACH', 'noimg.jpg', '<h1><img alt=\"\" src=\"http://localhost:8000/images/synx_1644770022.jpg\" style=\"float:left; height:150px; width:158px\" />Synx Tech</h1>\r\n\r\n<p>Here we go again testing to upload sum images</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/neki_1644770127.jpg\" style=\"float:right; height:150px; width:150px\" />TESTING UPLOAD SUM IMAGES BUT ON RIGHT SIDE IS NEKI!!!!</p>\r\n\r\n<p><a href=\"https://engdropfen.com\">Click this link</a></p>', 'Ardan Anjung', '2022-02-13 16:36:09', '2022-02-13 16:36:09'),
+(3, 'apa-itu-cryptocurrency-220214120415', 'Apa itu Cryptocurrency?', '14022022000415_Cryptocurrency_logos.jpg', '<p>Cryptocurrency adalah suatu mata uang baru...🤣</p>', 'Ardan Anjung', '2022-02-13 17:04:15', '2022-02-13 17:04:15');
 
 -- --------------------------------------------------------
 
@@ -633,7 +659,8 @@ INSERT INTO `wallet_coin` (`id_wallet_coin`, `id_jenis_coin`, `id_wallet`, `crea
 (211, 45, 19, '2022-01-29 07:13:55', '2022-01-29 07:13:55'),
 (212, 20, 19, '2022-01-29 07:14:04', '2022-01-29 07:14:04'),
 (213, 43, 19, '2022-01-29 07:14:09', '2022-01-29 07:14:09'),
-(214, 37, 19, '2022-01-29 07:14:13', '2022-01-29 07:14:13');
+(214, 37, 19, '2022-01-29 07:14:13', '2022-01-29 07:14:13'),
+(215, 92, 19, '2022-01-29 07:33:35', '2022-01-29 07:33:35');
 
 -- --------------------------------------------------------
 
@@ -763,6 +790,12 @@ INSERT INTO `wallet_network` (`id_wallet_network`, `id_jenis_network`, `id_walle
 --
 
 --
+-- Indexes for table `artikel`
+--
+ALTER TABLE `artikel`
+  ADD PRIMARY KEY (`id_artikel`);
+
+--
 -- Indexes for table `crypto_wallet`
 --
 ALTER TABLE `crypto_wallet`
@@ -862,6 +895,12 @@ ALTER TABLE `wallet_network`
 --
 
 --
+-- AUTO_INCREMENT for table `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `crypto_wallet`
 --
 ALTER TABLE `crypto_wallet`
@@ -913,7 +952,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wallet_coin`
 --
 ALTER TABLE `wallet_coin`
-  MODIFY `id_wallet_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=215;
+  MODIFY `id_wallet_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
 -- AUTO_INCREMENT for table `wallet_network`

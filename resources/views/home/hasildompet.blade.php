@@ -10,7 +10,7 @@
                 <h2 style="font-weight: bold;">Sistem Pendukung Keputusan Pemilihan Crypto Wallet dengan metode SMART
                 </h2>
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>SPK Crypto Wallet</li>
                 </ol>
             </div>

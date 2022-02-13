@@ -30,6 +30,8 @@ Route::get('/auth/logout', 'AuthController@logout');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/artikel/content/{slug}', 'ArtikelController@content');
+
 Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::get('/admin', 'AdminController@index');
 
@@ -57,4 +59,8 @@ Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::post('/cnetwork/tambah', 'CnetworkController@tambah');
     Route::match(array('GET', 'POST'), '/cnetwork/edit/{id?}', 'CnetworkController@edit');
     Route::get('/cnetwork/hapus/{id}', 'CnetworkController@hapus');
+
+    Route::get('/artikel', 'ArtikelController@index')->name('artikel');
+    Route::match(array('GET', 'POST'), '/artikel/tambah', 'ArtikelController@tambah');
+    Route::post('/artikel/upload', 'ArtikelController@upload')->name('artikel.upload');
 });
