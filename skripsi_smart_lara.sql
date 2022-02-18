@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2022 at 06:06 PM
+-- Generation Time: Feb 18, 2022 at 11:12 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -43,9 +43,7 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id_artikel`, `slug`, `judul`, `gambar_sampul`, `isi`, `author`, `updated_at`, `created_at`) VALUES
-(1, 'testing-artikel-yah-220213112524', 'Testing artikel yah', '13022022232524_cing.jpg', '<h1>Testing artikel mamen</h1>\r\n\r\n<p>pastinya</p>\r\n\r\n<p><em>yuhu</em></p>\r\n\r\n<p><strong>bold ni</strong></p>\r\n\r\n<p><strong><s>coret lambemu</s></strong></p>\r\n\r\n<p><a href=\"https://google.com\">testing href</a></p>', 'Ardan Anjung', '2022-02-13 16:25:24', '2022-02-13 16:25:24'),
-(2, 'testing-gambar-yach-220213113609', 'TESTING GAMBAR YACH', 'noimg.jpg', '<h1><img alt=\"\" src=\"http://localhost:8000/images/synx_1644770022.jpg\" style=\"float:left; height:150px; width:158px\" />Synx Tech</h1>\r\n\r\n<p>Here we go again testing to upload sum images</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/neki_1644770127.jpg\" style=\"float:right; height:150px; width:150px\" />TESTING UPLOAD SUM IMAGES BUT ON RIGHT SIDE IS NEKI!!!!</p>\r\n\r\n<p><a href=\"https://engdropfen.com\">Click this link</a></p>', 'Ardan Anjung', '2022-02-13 16:36:09', '2022-02-13 16:36:09'),
-(3, 'apa-itu-cryptocurrency-220214120415', 'Apa itu Cryptocurrency?', '14022022000415_Cryptocurrency_logos.jpg', '<p>Cryptocurrency adalah suatu mata uang baru...🤣</p>', 'Ardan Anjung', '2022-02-13 17:04:15', '2022-02-13 17:04:15');
+(5, 'apa-itu-cryptocurrency-220218051104', 'Apa itu Cryptocurrency?', '18022022171104__douardLeonCort_sTutt\'Art@(10).jpg', '<p><em>Cryptocurrency adalah</em>&nbsp;mata uang digital atau virtual yang dijamin dengan kriptografi, yang membuatnya hampir tidak mungkin untuk dipalsukan atau digandakan.</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/Screenshot_1_1645179014.jpg\" style=\"height:626px; width:663px\" /></p>\r\n\r\n<p>Dan pastinya aman</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/sync_1645179043.jpg\" style=\"height:357px; width:500px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h1>END OF TEXT</h1>', 'Ardan Anjung', '2022-02-18 10:11:04', '2022-02-18 10:11:04');
 
 -- --------------------------------------------------------
 
@@ -898,7 +896,7 @@ ALTER TABLE `wallet_network`
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `crypto_wallet`

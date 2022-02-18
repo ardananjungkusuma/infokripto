@@ -16,10 +16,21 @@ class ArtikelController extends Controller
         return view('admin.artikel.manage', compact('artikel'));
     }
 
-    public function content($slug)
+    public function content($slug = null)
     {
-        $artikel = Artikel::where('slug', $slug)->get()->first();
-        return view('home.isiartikel', compact('artikel'));
+        if ($slug === null) {
+            $artikel = Artikel::all();
+            return view('home.daftarartikel', compact('artikel'));
+        } else {
+            $artikel = Artikel::where('slug', $slug)->get()->first();
+            // echo (empty($artikel));
+            if (empty($artikel)) {
+                abort(404);
+            } else {
+                return view('home.isiartikel', compact('artikel'));
+            }
+            // print_r($artikel);
+        }
     }
 
     public function tambah(Request $request)
@@ -83,5 +94,31 @@ class ArtikelController extends Controller
             @header('Content-type: text/html; charset=utf-8');
             echo $res;
         }
+    }
+
+    public function hapus($slug)
+    {
+        $artikel = Artikel::where('slug', $slug)->get()->first();
+        $src =  $artikel->isi;
+        $sampul = $artikel->gambar_sampul;
+        // echo $sampul;
+        if ($sampul != 'noimg.jpg') {
+            // echo "delete img";
+            unlink('img_sampul/' . $sampul);
+        }
+        preg_match_all('~src="([^"]+)~', $src, $matches);
+        $links = $matches[1];
+        if (count($links) > 0) {
+            // $imgArr = [];
+            for ($i = 0; $i < count($links); $i++) {
+                $image_path = parse_url($links[$i], PHP_URL_PATH);
+                $ip = substr($image_path, 1);
+                unlink($ip);
+                // array_push($imgArr, $ip);
+            }
+        }
+        $artikel->delete();
+        return redirect('/artikel')->with('notif', 'Sukses Hapus Data Artikel');
+        // print_r($imgArr);
     }
 }

@@ -28,6 +28,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Judul Artikel</th>
+                                        <th>Author</th>
                                         <th>Slug</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -39,11 +40,14 @@
                                     <tr>
                                         <td>{{ $no  }}</td>
                                         <td>{{ $a->judul }}</td>
-                                        <td>{{ $a->slug }}</td>
+                                        <td>{{ $a->author }}</td>
+                                        <td><a href="/content/{{ $a->slug }}" style="color: blue;" target="_blank">Link
+                                                To Post <i class="fa fa-external-link-alt"></i></a></td>
+                                        {{-- <td>{{ substr($a->isi,0,130) }}</td> --}}
                                         <td>
-                                            <a href="/artikel/edit/{{ $a->id_artikel }}" class="btn btn-warning"><i
+                                            <a href="/artikel/edit/{{ $a->slug }}" class="btn btn-warning"><i
                                                     class="fa fa-pen"></i> Edit</a>
-                                            <a href="/coin/hapus/{{ $a->id_artikel }}"
+                                            <a href="/artikel/hapus/{{ $a->slug }}"
                                                 onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $a->slug }}?');"
                                                 class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</a>
                                         </td>
