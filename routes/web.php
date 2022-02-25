@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
 
     Route::get('/artikel', 'ArtikelController@index')->name('artikel');
     Route::match(array('GET', 'POST'), '/artikel/tambah', 'ArtikelController@tambah');
+    Route::match(array('GET', 'POST'), '/artikel/edit/{slug?}', 'ArtikelController@edit');
     Route::post('/artikel/upload', 'ArtikelController@upload')->name('artikel.upload');
     Route::get('/artikel/hapus/{slug}', 'ArtikelController@hapus');
 });

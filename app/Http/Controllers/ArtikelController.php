@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\ArCategory;
 use App\Artikel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -52,6 +54,9 @@ class ArtikelController extends Controller
 
             $pathUpload = 'img_sampul';
 
+            $id = DB::select("SHOW TABLE STATUS LIKE 'artikel'");
+            $next_id = $id[0]->Auto_increment;
+
             $ar = new Artikel;
             $ar->judul = $request->judul;
             $ar->slug = Str::slug($request->judul) . '-' . date('ymdhis');
@@ -72,8 +77,26 @@ class ArtikelController extends Controller
             $ar->isi = $request->isi;
             $ar->save();
 
-
+            if ($request->hidden_kategori !== null) {
+                for ($count = 0; $count < count($request->hidden_kategori); $count++) {
+                    $cat = new ArCategory;
+                    $cat->id_artikel = $next_id;
+                    $cat->kategori = $request->hidden_kategori[$count];
+                    $cat->save();
+                }
+            }
             return redirect('/artikel')->with('notif', 'Artikel Baru Berhasil Ditambah');
+        }
+    }
+
+    public function edit(Request $request, $slug = null)
+    {
+        if (!$request->judul) {
+            $artikel = Artikel::where('slug', $slug)->get()->first();
+            $kategori = ArCategory::where('id_artikel', $artikel->id_artikel)->get();
+            // dd($kategori);
+            return view('admin.artikel.edit', compact('artikel', 'kategori'));
+        } else {
         }
     }
 
