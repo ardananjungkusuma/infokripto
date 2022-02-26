@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2022 at 11:12 AM
+-- Generation Time: Feb 26, 2022 at 06:22 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `skripsi_smart_lara`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `arcategory`
+--
+
+CREATE TABLE `arcategory` (
+  `id_arcategory` bigint(20) NOT NULL,
+  `id_artikel` bigint(20) NOT NULL,
+  `kategori` varchar(250) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `arcategory`
+--
+
+INSERT INTO `arcategory` (`id_arcategory`, `id_artikel`, `kategori`, `updated_at`, `created_at`) VALUES
+(1, 5, 'edukasi', '2022-02-24 05:09:59', '2022-02-24 05:09:59'),
+(2, 5, 'basic', '2022-02-24 05:10:33', '2022-02-24 05:10:33'),
+(3, 6, 'Airdrop', '2022-02-25 07:17:44', '2022-02-25 07:17:44'),
+(5, 6, 'Gratis', '2022-02-26 05:04:05', '2022-02-26 05:04:05');
 
 -- --------------------------------------------------------
 
@@ -43,7 +67,8 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id_artikel`, `slug`, `judul`, `gambar_sampul`, `isi`, `author`, `updated_at`, `created_at`) VALUES
-(5, 'apa-itu-cryptocurrency-220218051104', 'Apa itu Cryptocurrency?', '18022022171104__douardLeonCort_sTutt\'Art@(10).jpg', '<p><em>Cryptocurrency adalah</em>&nbsp;mata uang digital atau virtual yang dijamin dengan kriptografi, yang membuatnya hampir tidak mungkin untuk dipalsukan atau digandakan.</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/Screenshot_1_1645179014.jpg\" style=\"height:626px; width:663px\" /></p>\r\n\r\n<p>Dan pastinya aman</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/sync_1645179043.jpg\" style=\"height:357px; width:500px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h1>END OF TEXT</h1>', 'Ardan Anjung', '2022-02-18 10:11:04', '2022-02-18 10:11:04');
+(5, 'apa-itu-cryptocurrency-220218051104', 'Apa itu Cryptocurrency?', '18022022171104__douardLeonCort_sTutt\'Art@(10).jpg', '<p><em>Cryptocurrency adalah</em>&nbsp;mata uang digital atau virtual yang dijamin dengan kriptografi, yang membuatnya hampir tidak mungkin untuk dipalsukan atau digandakan.</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/Screenshot_1_1645179014.jpg\" style=\"height:626px; width:663px\" /></p>\r\n\r\n<p>Dan pastinya aman</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/sync_1645179043.jpg\" style=\"height:357px; width:500px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h1>END OF TEXT</h1>', 'Ardan Anjung', '2022-02-18 10:11:04', '2022-02-18 10:11:04'),
+(6, 'sorex-airdrop-220226120405', 'Sorex Airdrop', 'noimg.jpg', '<p><strong>🤑Sorex Airdrop</strong><br />\r\n🏷 Reward : 25 Sorex ( For All )<br />\r\nRegister : <a href=\"https://t.me/SOREX_Official_BOT?start=r00809679714\">https://t.me/SOREX_Official_BOT?start=r00809679714</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖ Complete Another Task&nbsp;<br />\r\n➖ Submit Details&nbsp;<br />\r\n➖ Done&nbsp;</p>', 'Ardan Anjung', '2022-02-26 05:22:04', '2022-02-25 07:17:44');
 
 -- --------------------------------------------------------
 
@@ -788,6 +813,13 @@ INSERT INTO `wallet_network` (`id_wallet_network`, `id_jenis_network`, `id_walle
 --
 
 --
+-- Indexes for table `arcategory`
+--
+ALTER TABLE `arcategory`
+  ADD PRIMARY KEY (`id_arcategory`),
+  ADD KEY `id_artikel` (`id_artikel`);
+
+--
 -- Indexes for table `artikel`
 --
 ALTER TABLE `artikel`
@@ -893,10 +925,16 @@ ALTER TABLE `wallet_network`
 --
 
 --
+-- AUTO_INCREMENT for table `arcategory`
+--
+ALTER TABLE `arcategory`
+  MODIFY `id_arcategory` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `crypto_wallet`
@@ -961,6 +999,12 @@ ALTER TABLE `wallet_network`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `arcategory`
+--
+ALTER TABLE `arcategory`
+  ADD CONSTRAINT `arcategory_ibfk_1` FOREIGN KEY (`id_artikel`) REFERENCES `artikel` (`id_artikel`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `model_has_permissions`

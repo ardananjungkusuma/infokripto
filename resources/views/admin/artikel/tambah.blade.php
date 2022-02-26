@@ -25,6 +25,7 @@
                         <input type="text" class="form-control" id="inputkategori" value="" placeholder="Kategori">
                         <a class="btn btn-success" onclick="addKategori()"><i class="fa fa-plus"></i> Tambah
                             Kategori</a>
+                        <br><br>
                         <ul id="daftar-kategori">
 
                         </ul>
@@ -54,7 +55,7 @@
     });
     var jumlahKategori = 0;
     function addKategori(){
-        if(jumlahKategori < 6){
+        if(jumlahKategori < 5){
             let inputnow = document.getElementById('inputkategori').value;
             if(inputnow == ""){
                 alert('Anda belum mengisi jenis kategori!');
@@ -67,8 +68,8 @@
                     </li>
                     `);
                 document.getElementById('inputkategori').value = '';
-                console.log("kategori added");
-                console.log(jumlahKategori);
+                // console.log("kategori added");
+                // console.log(jumlahKategori);
             }
         }else{
             alert("Jumlah kategori maksimal 5");
@@ -77,7 +78,7 @@
     function hapusKategori(idnya){
         jumlahKategori--;
         $(`.${idnya}`).remove();
-        console.log(jumlahKategori);
+        // console.log(jumlahKategori);
         // console.log(idKategori);
     }
 </script>

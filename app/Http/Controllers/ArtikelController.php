@@ -25,11 +25,13 @@ class ArtikelController extends Controller
             return view('home.daftarartikel', compact('artikel'));
         } else {
             $artikel = Artikel::where('slug', $slug)->get()->first();
+            $category = ArCategory::where('id_artikel', $artikel->id_artikel)->get();
+            // dd($category);
             // echo (empty($artikel));
             if (empty($artikel)) {
                 abort(404);
             } else {
-                return view('home.isiartikel', compact('artikel'));
+                return view('home.isiartikel', compact('artikel', 'category'));
             }
             // print_r($artikel);
         }
@@ -93,10 +95,67 @@ class ArtikelController extends Controller
     {
         if (!$request->judul) {
             $artikel = Artikel::where('slug', $slug)->get()->first();
-            $kategori = ArCategory::where('id_artikel', $artikel->id_artikel)->get();
             // dd($kategori);
-            return view('admin.artikel.edit', compact('artikel', 'kategori'));
+            return view('admin.artikel.edit', compact('artikel'));
         } else {
+            $validator = Validator::make($request->all(), [
+                'judul' => 'required',
+                'isi' => 'required',
+                'gambar_sampul' => 'mimes:jpg,png,jpeg|max:5100'
+            ]);
+
+            if ($validator->fails()) {
+                return redirect('/artikel/tambah')
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            $pathUpload = 'img_sampul';
+            $pathOld = 'img_sampul/';
+
+            $artikel = Artikel::where('id_artikel', $request->id_artikel)->get()->first()
+                ->update([
+                    'judul' => $request->judul,
+                    // 'slug' => Str::slug($request->judul) . '-' . date('ymdhis'),
+                    'isi' => $request->isi
+                ]);
+
+            if (isset($request->hapusgambarsampul)) {
+                if ($request->sampul_old != "noimg.jpg") {
+                    unlink($pathOld . $request->sampul_old);
+
+                    $artikel = Artikel::where('id_artikel', $request->id_artikel)->get()->first()
+                        ->update([
+                            'gambar_sampul' => "noimg.jpg"
+                        ]);
+                }
+            } else {
+                if ($request->hasFile('gambar_sampul')) {
+                    if ($request->sampul_old != "noimg.jpg") {
+                        unlink($pathOld . $request->sampul_old);
+                    }
+                    $image = str_replace(" ", "", $request->file('gambar_sampul')->getClientOriginalName());
+
+                    $nama_file = date('dmYHis') . "_" . $image;
+
+                    $request->file('gambar_sampul')->move($pathUpload, $nama_file);
+
+                    $artikel = Artikel::where('id_artikel', $request->id_artikel)->get()->first()
+                        ->update([
+                            'gambar_sampul' => $nama_file
+                        ]);
+                }
+            }
+
+            if ($request->hidden_kategori !== null) {
+                for ($count = 0; $count < count($request->hidden_kategori); $count++) {
+                    $cat = new ArCategory;
+                    $cat->id_artikel = $request->id_artikel;
+                    $cat->kategori = $request->hidden_kategori[$count];
+                    $cat->save();
+                }
+            }
+            return redirect('/artikel')->with('notif', 'Artikel Baru Berhasil Ditambah');
         }
     }
 

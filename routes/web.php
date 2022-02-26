@@ -66,4 +66,8 @@ Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::match(array('GET', 'POST'), '/artikel/edit/{slug?}', 'ArtikelController@edit');
     Route::post('/artikel/upload', 'ArtikelController@upload')->name('artikel.upload');
     Route::get('/artikel/hapus/{slug}', 'ArtikelController@hapus');
+
+    // json res
+    Route::get('/arcategory/artikel/{idartikel}', 'ArCategoryController@getArCategory');
+    Route::get('/arcategory/artikel/hapus/{idartikel}', 'ArCategoryController@deleteArCategory');
 });
