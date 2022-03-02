@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2022 at 06:22 AM
+-- Generation Time: Mar 02, 2022 at 05:33 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -43,7 +43,35 @@ INSERT INTO `arcategory` (`id_arcategory`, `id_artikel`, `kategori`, `updated_at
 (1, 5, 'edukasi', '2022-02-24 05:09:59', '2022-02-24 05:09:59'),
 (2, 5, 'basic', '2022-02-24 05:10:33', '2022-02-24 05:10:33'),
 (3, 6, 'Airdrop', '2022-02-25 07:17:44', '2022-02-25 07:17:44'),
-(5, 6, 'Gratis', '2022-02-26 05:04:05', '2022-02-26 05:04:05');
+(5, 6, 'Gratis', '2022-02-26 05:04:05', '2022-02-26 05:04:05'),
+(7, 7, 'mining', '2022-02-27 04:16:18', '2022-02-27 04:16:18'),
+(8, 7, 'edukasi', '2022-02-27 04:16:18', '2022-02-27 04:16:18'),
+(9, 8, 'testnet', '2022-02-28 04:55:26', '2022-02-28 04:55:26'),
+(10, 8, 'potential airdrop', '2022-02-28 04:55:26', '2022-02-28 04:55:26'),
+(11, 8, 'gratis', '2022-02-28 04:55:26', '2022-02-28 04:55:26'),
+(12, 9, 'testnet', '2022-03-02 03:19:01', '2022-03-02 03:19:01'),
+(13, 10, 'airdrop', '2022-03-02 03:27:09', '2022-03-02 03:27:09'),
+(14, 11, 'airdrop', '2022-03-02 03:35:17', '2022-03-02 03:35:17'),
+(15, 12, 'airdrop', '2022-03-02 04:01:11', '2022-03-02 04:01:11'),
+(16, 12, 'xrp', '2022-03-02 04:01:11', '2022-03-02 04:01:11'),
+(17, 13, 'edukasi', '2022-03-02 04:02:52', '2022-03-02 04:02:52'),
+(18, 13, 'tips', '2022-03-02 04:02:52', '2022-03-02 04:02:52'),
+(19, 14, 'airdrop', '2022-03-02 04:11:22', '2022-03-02 04:11:22'),
+(20, 15, 'airdrop', '2022-03-02 04:14:44', '2022-03-02 04:14:44'),
+(21, 17, 'airdrop', '2022-03-02 05:57:31', '2022-03-02 05:57:31'),
+(22, 18, 'testnet', '2022-03-02 06:49:07', '2022-03-02 06:49:07'),
+(28, 20, 'airdrop', '2022-03-02 14:03:54', '2022-03-02 14:03:54'),
+(29, 20, 'gratis', '2022-03-02 14:03:54', '2022-03-02 14:03:54'),
+(30, 21, 'airdrop', '2022-03-02 14:04:38', '2022-03-02 14:04:38'),
+(31, 21, 'gratis', '2022-03-02 14:04:38', '2022-03-02 14:04:38'),
+(32, 22, 'airdrop', '2022-03-02 14:05:12', '2022-03-02 14:05:12'),
+(33, 22, 'gratis', '2022-03-02 14:05:12', '2022-03-02 14:05:12'),
+(34, 23, 'testnet', '2022-03-02 15:54:14', '2022-03-02 15:54:14'),
+(35, 23, 'gratis', '2022-03-02 15:54:14', '2022-03-02 15:54:14'),
+(36, 24, 'airdrop', '2022-03-02 15:55:11', '2022-03-02 15:55:11'),
+(37, 24, 'gratis', '2022-03-02 15:55:11', '2022-03-02 15:55:11'),
+(38, 25, 'airdrop', '2022-03-02 15:55:34', '2022-03-02 15:55:34'),
+(39, 25, 'gratis', '2022-03-02 15:55:34', '2022-03-02 15:55:34');
 
 -- --------------------------------------------------------
 
@@ -67,8 +95,26 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id_artikel`, `slug`, `judul`, `gambar_sampul`, `isi`, `author`, `updated_at`, `created_at`) VALUES
-(5, 'apa-itu-cryptocurrency-220218051104', 'Apa itu Cryptocurrency?', '18022022171104__douardLeonCort_sTutt\'Art@(10).jpg', '<p><em>Cryptocurrency adalah</em>&nbsp;mata uang digital atau virtual yang dijamin dengan kriptografi, yang membuatnya hampir tidak mungkin untuk dipalsukan atau digandakan.</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/Screenshot_1_1645179014.jpg\" style=\"height:626px; width:663px\" /></p>\r\n\r\n<p>Dan pastinya aman</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost:8000/images/sync_1645179043.jpg\" style=\"height:357px; width:500px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h1>END OF TEXT</h1>', 'Ardan Anjung', '2022-02-18 10:11:04', '2022-02-18 10:11:04'),
-(6, 'sorex-airdrop-220226120405', 'Sorex Airdrop', 'noimg.jpg', '<p><strong>🤑Sorex Airdrop</strong><br />\r\n🏷 Reward : 25 Sorex ( For All )<br />\r\nRegister : <a href=\"https://t.me/SOREX_Official_BOT?start=r00809679714\">https://t.me/SOREX_Official_BOT?start=r00809679714</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖ Complete Another Task&nbsp;<br />\r\n➖ Submit Details&nbsp;<br />\r\n➖ Done&nbsp;</p>', 'Ardan Anjung', '2022-02-26 05:22:04', '2022-02-25 07:17:44');
+(5, 'apa-itu-cryptocurrency-220218051104', 'Apa itu Cryptocurrency?', '27022022110705_20211018160655.jpg', '<p><em>Cryptocurrency&nbsp;</em>adalah sebuah mata uang digital. Ia tidak tersedia dalam bentuk fisik layaknya koin atau uang tunai yang digunakan secara umum di seluruh dunia. Cryptocurrency sendiri&nbsp;disimpan dalam &lsquo;dompet digital&rsquo; yang tersedia pada&nbsp;<em>smartphone</em>&nbsp;atau perangkat komputer lainnya.&nbsp;Selain itu, pemilik&nbsp;<em>cryptocurrency&nbsp;</em>juga dapat menggunakan mata uang digital tersebut untuk keperluan transaksi jual-beli.</p>\r\n\r\n<p><strong>Fungsi Cryptocurrency:</strong></p>\r\n\r\n<ol>\r\n	<li>Membeli barang atau jasa</li>\r\n	<li>Investasi</li>\r\n	<li>Mining</li>\r\n</ol>\r\n\r\n<p><strong>Kelebihan Cryptocurrency:</strong></p>\r\n\r\n<p><strong>1. Universal</strong></p>\r\n\r\n<p>Seluruh dunia bisa menggunakan&nbsp;<em>cryptocurrency.&nbsp;</em>Sementara itu, tidak semua orang memenuhi syarat untuk mendaftar menjadi nasabah di sebuah bank.</p>\r\n\r\n<p>Oleh karena itu,&nbsp;<em>cryptocurrency&nbsp;</em>dianggap universal karena tidak ada syarat apa pun untuk menjadi penggunanya.</p>\r\n\r\n<p><strong>2. Cepat</strong></p>\r\n\r\n<p>Transaksi dengan&nbsp;<em>cryptocurrency&nbsp;</em>terbilang cepat jika dibandingkan dengan transaksi di bank. Transfer antarbank internasional, umumnya bisa memakan waktu hingga lebih dari satu hari.</p>\r\n\r\n<p>Sementara itu, perdagangan&nbsp;<em>bitcoin&nbsp;</em>hanya membutuhkan waktu sekitar beberapa menit hingga satu jam.</p>\r\n\r\n<p><strong>3. Transparansi</strong></p>\r\n\r\n<p>Setiap pengguna&nbsp;<em>cryptocurrency&nbsp;</em>bisa melihat semua transaksi yang pernah dilakukan pada <em>blockchain explorer</em>. Namun, tentunya kamu tidak akan mengetahui transaksi tersebut dilakukan oleh siapa karena hanya dalam bentuk angka tanpa identitas.</p>\r\n\r\n<p><strong>Kekurangan Cryptocurrency:</strong></p>\r\n\r\n<p><strong>1. Celah bagi kejahatan</strong></p>\r\n\r\n<p><em>Cryptocurrency </em>banyak dimanfaatkan oknum untuk kejahatan. Mereka bisa bertransaksi untuk barang atau hal-hal ilegal dengan mata uang digital ini tanpa bisa dilacak.</p>\r\n\r\n<p><strong>2.&nbsp;Sekali lupa&nbsp;<em>password,</em>&nbsp;semua uang bisa hilang</strong></p>\r\n\r\n<p>Karena&nbsp;<em>cryptocurrency&nbsp;</em>menggunakan sistem&nbsp;<em>password <strong>(Phrase, private key)</strong>&nbsp;</em>tanpa ada pihak yang mengaturnya, maka kamu beresiko kehilangan semua uang di akunmu tersebut jika lupa&nbsp;<em>password.</em></p>\r\n\r\n<p><strong>3. Masih banyak yang menganggapnya <em>illegal</em></strong></p>\r\n\r\n<p>Banyak negara masih menganggap&nbsp;<em>cryptocurrency&nbsp;</em>ilegal dan tidak berlaku untuk transaksi jual-beli di negaranya.</p>\r\n\r\n<hr />\r\n<p><em><strong>Source :</strong></em></p>\r\n\r\n<p><a href=\"https://glints.com/id/lowongan/cryptocurrency-adalah/#.Yhr2PuhBxPY\">1. Glints</a></p>', 'Ardan Anjung', '2022-02-27 04:07:05', '2022-02-18 10:11:04'),
+(6, 'sorex-airdrop-220226120405', 'Sorex Airdrop', 'noimg.jpg', '<p><strong>🤑Sorex Airdrop</strong><br />\r\n🏷 Reward : 25 Sorex ( For All )<br />\r\nRegister : <a href=\"https://t.me/SOREX_Official_BOT?start=r00809679714\">https://t.me/SOREX_Official_BOT?start=r00809679714</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖ Complete Another Task&nbsp;<br />\r\n➖ Submit Details&nbsp;<br />\r\n➖ Done&nbsp;</p>', 'Ardan Anjung', '2022-02-26 05:22:04', '2022-02-25 07:17:44'),
+(7, 'apa-itu-mining-bagaimana-cara-mining-220227111618', 'Apa itu Mining? Bagaimana cara Mining?', '27022022111618_Screenshot_1.jpg', '<p><strong>Pengertian dan mekanisme mining :</strong></p>\r\n\r\n<p>Ada beberapa cara untuk mendapatkan Bitcoin, termasuk proses mining atau menambang. Bitcoin membutuhkan kombinasi perangkat lunak dan teknologi jaringan yang terdiri dari ribuan mesin untuk menjalankan perangkat lunak Bitcoin. Tugas keduanya adalah menyampaikan informasi transaksi dan memverifikasi transaksi tersebut untuk memastikan Bitcoin yang sama tidak dapat dibelanjakan dua kali.&nbsp;Seluruh transaksi melalui proses verifikasi yang disebut &quot;mining&quot;. Berdasarkan buku Getting started with Bitcoins, mining juga berperan sebagai mekanisme untuk memproduksi dan mendistribusi Bitcoin. Proses mining adalah tindakan menambahkan transaksi ke blockchain sehingga semua orang dapat menyetujui rangkaian transaksi yang sama.&nbsp;Cara menambang menggunakan perangkat komputer. Sebuah komputer yang melakukan mining disebut crypto miner. Proses mining berhubungan dengan blockchain. Prosesnya dimulai dengan verifikasi transaksi dalam blockchain. Setelah diverifikasi, transaksi akan dimasukkan ke rantai blok untuk mendapatkan Bitcoin. Sebelum dinyatakan sebagai transaksi yang sah, seluruh transaksi yang dilakukan pada suatu waktu dikumpulkan ke dalam sebuah blok untuk perhitungan. Kalkulasi tersebut yang dinamakan proses menambang atau mining. Manfaat dari cara mining adalah orang yang berhasil menjadi penambang tidak perlu mengetahui cara menghitung dan ilmu matematika. Tetapi, pengguna cara mining harus mempunya perangkat lunak dan keras dengan spesifikasi tinggi untuk menambang Bitcoin.</p>\r\n\r\n<p><strong>Cara mining dengan PC:</strong></p>\r\n\r\n<ol>\r\n	<li>Pergi ke situs&nbsp;<a href=\"https://www.nicehash.com/\">https://www.nicehash.com/</a></li>\r\n	<li>Buat akun baru</li>\r\n	<li>Download software miner pada website tersebut</li>\r\n	<li>Install pada PC anda</li>\r\n	<li>Loginkan akun anda ke aplikasi yang baru anda install</li>\r\n	<li>Mulai mining!!</li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>', 'Ardan Anjung', '2022-02-27 04:16:18', '2022-02-27 04:16:18'),
+(8, 'new-testnet-polkaswap-potential-airdrop-220228115526', 'New TestNet : Polkaswap Potential Airdrop ', 'noimg.jpg', '<p><img alt=\"\" src=\"http://localhost:8000/images/photo_2022-02-26_19-22-17_1646024083.jpg\" style=\"height:247px; width:500px\" /></p>\r\n\r\n<p>☑️ New TestNet : Polkaswap&nbsp;<br />\r\n⚡️ Status : Potential Airdrop&nbsp;</p>\r\n\r\n<p>✅ Join now:- &nbsp;<a href=\"https://test.polkaswap.io/#/about\">https://test.polkaswap.io/#/about</a></p>\r\n\r\n<p>🌐 Network : Polkadot<br />\r\n💴 Wallet : Polkadot.JS (<a href=\"https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd\">https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd</a>)&nbsp;<br />\r\n💰 Link Faucet : <a href=\"https://testfaucet.polkaswap.io/\">https://testfaucet.polkaswap.io/</a></p>\r\n\r\n<p>Metamask ( Rinkeby )<br />\r\n➖ Faucet : <a href=\"https://faucets.chain.link/rinkeby\">https://faucets.chain.link/rinkeby</a><br />\r\n➖ Faucet 2 : <a href=\"https://faucet.rinkeby.io/\">https://faucet.rinkeby.io/</a></p>\r\n\r\n<p>🗞️ Tasks&nbsp;<br />\r\n&gt; Tambahkan liqiuidity minimal 2 pair token&nbsp;<br />\r\n&gt; Bridge minimal 2 token dari sora ke rinkeby&nbsp;<br />\r\n&gt; Register Token minimal 1x<br />\r\n&gt; Register NFT minimal 1x<br />\r\n&gt;&nbsp;Swap 500x Transaction</p>', 'Ardan Anjung', '2022-02-28 04:56:21', '2022-02-28 04:55:26'),
+(9, 'new-testnet-zircon-220302101901', '🏂 New Testnet Zircon', 'noimg.jpg', '<p>🏂 New Testnet Zircon<br />\r\nReward: N/A (but for early support maybe you will get some drops)</p>\r\n\r\n<p>👉 Try testnet:<br />\r\nhttps://beta.zircon.finance/</p>\r\n\r\n<p>Sett RPC Moonbeam (Test Network) for Metamask here:</p>\r\n\r\n<p>- Name: Moonbase<br />\r\n- New RPC Url: https://moonbeam-alpha.api.onfinality.io/public<br />\r\n- Chain ID: 1287<br />\r\n- Currency Symbol: DEV</p>\r\n\r\n<p>👉 For Guide &amp; Tutorial:<br />\r\nhttps://blog.zircon.finance/p/its-finally-here-zircon-open-beta?utm_source=url</p>', 'Ardan Anjung', '2022-03-02 03:19:01', '2022-03-02 03:19:01'),
+(10, 'greenapp-220302102709', 'GreenApp', 'noimg.jpg', '<p>GreenApp<br />\r\n🏷 Reward : 500 GAD ( Random 3000 Winner )<br />\r\n🪂 Register : <a href=\"https://t.me/greenappairdrop_bot?start=r0971562717\">https://t.me/greenappairdrop_bot?start=r0971562717</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖ Complete Another Task&nbsp;<br />\r\n➖ Submit <a href=\"https://chrome.google.com/webstore/detail/goby/jnkelfanjkeadonecabehalmbgpfodjm/related\">Goby Address HERE DOWNLOAD</a><br />\r\n➖ Done</p>', 'Ardan Anjung', '2022-03-02 03:27:09', '2022-03-02 03:27:09'),
+(11, 'new-airdrops-farcana-220302103517', 'New Airdrops : Farcana', 'noimg.jpg', '<p>New Airdrops : Farcana<br />\r\n🏷 Reward : $20 ( Random ... ???? )<br />\r\n🪂 Register : <a href=\"https://t.me/FarcanaAirdropBot?start=808174260\">https://t.me/FarcanaAirdropBot?start=808174260</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖ Submit BSC Address</p>', 'Ardan Anjung', '2022-03-02 03:35:17', '2022-03-02 03:35:17'),
+(12, 'airdrop-animabox-220302110111', 'AIRDROP : ANIMABOX ', 'noimg.jpg', '<p>AIRDROP : ANIMABOX&nbsp;<br />\r\nNETWORK : XRP&nbsp;<br />\r\nDETAILS :&nbsp;</p>\r\n\r\n<p>&bull; JOIN FORM<br />\r\n<a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeVbo3t661sUdh8rVxcFJPRR3dFDzGRDtHHWQZ18-sErxfs7w/viewform?vc=0&amp;c=0&amp;w=1&amp;flr=0\">https://docs.google.com/forms/d/e/1FAIpQLSeVbo3t661sUdh8rVxcFJPRR3dFDzGRDtHHWQZ18-sErxfs7w/viewform?vc=0&amp;c=0&amp;w=1&amp;flr=0</a><br />\r\n&bull; JOIN TWITTER<br />\r\n<a href=\"https://twitter.com/AnimaBoxNFT?t=89amDQCnT4BW-sTpz4XSkg&amp;s=09\">https://twitter.com/AnimaBoxNFT?t=89amDQCnT4BW-sTpz4XSkg&amp;s=09</a><br />\r\n&bull; JOIN DISCORD<br />\r\n<a href=\"https://discord.gg/jc3ww8X3\">https://discord.gg/jc3ww8X3</a><br />\r\n&bull; SET TRUSTLINE<br />\r\n<a href=\"https://xrpl.services/?issuer=rHxrNp8ruthrrrmhBdcQosNQNRQ1QTzi1o&amp;currency=Animabox&amp;limit=5000\">https://xrpl.services/?issuer=rHxrNp8ruthrrrmhBdcQosNQNRQ1QTzi1o&amp;currency=Animabox&amp;limit=5000</a><br />\r\n&bull; SUBMIT DETAIL<br />\r\n&bull; DONE</p>\r\n\r\n<p>WINNER : FIRST 2000 PARTICIPANT</p>', 'Ardan Anjung', '2022-03-02 04:01:11', '2022-03-02 04:01:11'),
+(13, 'airdrop-itu-gratis-modal-220302110252', 'Airdrop itu gratis & modal', 'noimg.jpg', '<p>Airdrop itu gratis &amp; modal</p>\r\n\r\n<p>Tipe airdrop gratis<br />\r\n- Airdrop bot<br />\r\n- Airdrop Gleam<br />\r\n- Airdrop Sweepwidget<br />\r\n- Airdrop FCFS<br />\r\n- Airdrop Form<br />\r\n- Airdrop Discord&nbsp;<br />\r\n- Airdrop Instan Claim ( Audio, sRLY, XDC , KLV, Dot Wallet Dll )<br />\r\n- Testnet<br />\r\n- Dll</p>\r\n\r\n<p>Walaupun free jika dev meminta eth , bsc , ataupun coin crypto supaya bisa WD jangan di kirim.<br />\r\nKecuali menang di winner list dan butuh claim di web, gapapa penting jangan dikirim ke wallet dev.</p>\r\n\r\n<p>Modalnya apa bang ?<br />\r\n- Kuota<br />\r\n- OTP nomor untuk buat ( Telegram, Discord, Email, Twitter, dan airdrop yang membutuhkan OTP )<br />\r\n- Tenaga, Waktu, Pikiran &amp; Niat<br />\r\n- Kecepatan&nbsp;</p>\r\n\r\n<p>Nah airdrop modal lainnya adalah<br />\r\n- Airdrop RETROACTIVE : kita ditugaskan untuk swap di new dex, atau uji coba semua fitur dan nanti jika dex tersebut mengeluarkan token, terkadang early pengguna dex tersebut mendapatkan token atau nft dll<br />\r\n- Airdrop LP Provider : kita ditugaskan untuk menambahkan Liquidity pool di suatu dex, contoh uniswap , atau jaringan atom ,osmo dll dikemudian hari kita akan mendapatkan imbalan, makin banyak LP yang kita tambahkan makin banyak token yang di dapatkan jika suatu saat ada airdrop<br />\r\n- Airdrop Farms : Setelah menambahkan LP kita dapat farming dengan mempertaruhkan 50:50 , dev biasanya menyediakan reward pool untuk para petani ini.<br />\r\n- Airdrop Stakers &nbsp;: kita ditugaskan untuk mengunci coin / token di validator yang ada di platform / dex tersebut, &nbsp;untuk &nbsp;supaya eligible di suatu airdrop, biasanya new coin di jaringan cosmos, osmo, juno dll memperkenalkan projeknya melalui airdrop stakers validator.<br />\r\nminimal stake 5 atom, osmo, juno dll atau jika anda punya dana lebih, bisa menambahkan diatas 20&nbsp;<br />\r\n- Airdrop Exchange untuk new users : biasanya kita disuruh mendaftar dan melakukan KYC, serta membeli token dengan jumlah tertentu untuk mendapatkan airdrop, contoh ( Sandbox, CRO , dll ) ada&nbsp;<br />\r\n- Airdrop Trade, Learn &amp; Earn &nbsp;: kita ditugaskan untuk melakukan trading di suatu Exchange dgn minimal tertentu, dan menjawab pertanyaan untuk mendapatkan reward, ada juga event trading di Exchange yang tidak mengharuskan mengisi kuis, tapi hanya disuruh trading sampai mencapai volume tertentu.</p>\r\n\r\n<p>Dan masih banyak lagi, jadi airdrop ga mululu soal bot, gleam, form saja.</p>\r\n\r\n<p>Source : Airdropfind</p>', 'Ardan Anjung', '2022-03-02 04:02:52', '2022-03-02 04:02:52'),
+(14, 'totem-airdrop-220302111122', '🔵Totem Airdrop🔵', 'noimg.jpg', '<p>🔵Totem Airdrop🔵<br />\r\n📍Reward : N/A&nbsp;<br />\r\nFor All Participants&nbsp;</p>\r\n\r\n<p>➡️Link : Here (<a href=\"https://totem.live/?ref=deknanda\">https://totem.live/?ref=deknanda</a>)&nbsp;<br />\r\n➡️Enter User ID<br />\r\n➡️ Sign Up<br />\r\n➡️ BackUp Account<br />\r\n➡️ Restore<br />\r\n➡️ Klik Pojok Kiri Atas Logo Totem &gt;&gt; Cek Di Bagian Rewards<br />\r\n➡️ Compleate The Task<br />\r\n✅Done</p>', 'Ardan Anjung', '2022-03-02 04:11:22', '2022-03-02 04:11:22'),
+(15, 'airdrop-metawear-220302111444', 'AIRDROP : METAWEAR', 'noimg.jpg', '<p>AIRDROP : METAWEAR<br />\r\nNETWORK : BSC<br />\r\nDETAILS :&nbsp;</p>\r\n\r\n<p>&bull; JOIN FORM (<a href=\"https://wn.nr/fpWfCG\">https://wn.nr/fpWfCG</a>)<br />\r\n&bull; JOIN TWITTER<br />\r\n&bull; SUBMIT DETAIL<br />\r\n&bull; DONE</p>\r\n\r\n<p>WINNER : 2000 PARTICIPANT</p>', 'Ardan Anjung', '2022-03-02 04:14:44', '2022-03-02 04:14:44'),
+(16, 'okay-vpn-reward-10000-idr-5000-perreff-220302114512', 'Okay VPN Reward 10,000 IDR & 5,000 Perreff', 'noimg.jpg', '<p>🚀Garapn instan for<br />\r\n💰Reward 10,000 IDR &amp; 5,000 Perreff</p>\r\n\r\n<p><a href=\"https://play.google.com/store/apps/details?id=digital.okayvpn\">https://play.google.com/store/apps/details?id=digital.okayvpn</a><br />\r\n- Download app<br />\r\n- Login via email<br />\r\n- Enter kode reff OKS4SD<br />\r\n- Cari minimal 1 reff<br />\r\n- Wd to dana or ovo and another<br />\r\nDone</p>', 'Ardan Anjung', '2022-03-02 04:45:12', '2022-03-02 04:45:12'),
+(17, 'nearpay-airdrop-220302125731', '🏂 NearPay Airdrop', 'noimg.jpg', '<p>🏂 NearPay Airdrop Fcfs<br />\r\n🎁 Reward Task 1 Limited NFT For First 1000 Participant&nbsp;</p>\r\n\r\n<p>👉 Register : https://nearpay.co/card</p>\r\n\r\n<p>- Complete All Task<br />\r\n- Submit Near Address<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-02 05:57:31', '2022-03-02 05:57:31'),
+(18, 'testnet-acent-tech-220302014907', 'TestNet : Acent Tech', 'noimg.jpg', '<p>☑️ New TestNet : Acent Tech<br />\r\n🌐 Network : Acent<br />\r\n💵 Wallet : Metamask Extension<br />\r\n⚡️ Status : Potential Airdrop&nbsp;</p>\r\n\r\n<p>✅ Link Testnet : <a href=\"https://testfaucet.acent.tech/\">https://testfaucet.acent.tech/</a></p>\r\n\r\n<p>💰 Faucet : <a href=\"https://testfaucet.acent.tech/\">https://testfaucet.acent.tech/</a></p>\r\n\r\n<p>🗞️ Task&nbsp;<br />\r\n&gt; Siapkan 2 wallet address yang berbeda&nbsp;<br />\r\n&gt; Kirim ace dari wallet 1 ke wallet 2<br />\r\n&gt; Lakukan 5x transaksi&nbsp;<br />\r\n&gt; Cek you transaction history https://testscan.acent.tech/&nbsp;<br />\r\n&gt; Jika valid atau sukses maka dunn</p>\r\n\r\n<p>RPC 👇<br />\r\nNetwork Name: ACENT PROD TESTNET<br />\r\nNew RPC URL: http://3.37.4.143:8545<br />\r\nChain ID: 8899<br />\r\nCurrency Symbol (Optional): ACE<br />\r\nBlock Explorer URL (Optional): https://testscan.acent.tech/</p>\r\n\r\n<p>💢 Source : https://medium.com/acent-tech/alpha-testing-of-the-acent-testnet-your-portal-to-a-powerful-blockchain-algorithm-network-aea614540ce</p>', 'Ardan Anjung', '2022-03-02 06:49:07', '2022-03-02 06:49:07'),
+(20, 'galaxy-blitz-airdrop-220302090354', '🚀Galaxy Blitz airdrop', 'noimg.jpg', '<p>🚀Galaxy Blitz airdrop<br />\r\n💰Reward $100,000 in $MIT for 10K win</p>\r\n\r\n<p><a href=\"https://gleam.io/AwNZx/galaxy-blitzs-100000-mit-token-airdrop-contest\">https://gleam.io/AwNZx/galaxy-blitzs-100000-mit-token-airdrop-contest</a><br />\r\n- Complete task<br />\r\n- Enter data<br />\r\n- Enter BSC address<br />\r\nDone</p>', 'Ardan Anjung', '2022-03-02 14:03:54', '2022-03-02 14:03:54'),
+(21, 'airdrop-metaseedfinance-220302090438', 'AIRDROP : MetaseedFinance', 'noimg.jpg', '<p>AIRDROP : MetaseedFinance<br />\r\nNETWORK : BSC<br />\r\nDETAILS : Get 100 $MSF / after complite task</p>\r\n\r\n<p>&bull; JOIN AIRDROP<br />\r\n<a href=\"https://t.me/MetaseedFinanceBot?start=r0971562717\">https://t.me/MetaseedFinanceBot?start=r0971562717</a><br />\r\n&bull; JOIN TWITTER<br />\r\n&bull; SUBMIT DETAIL<br />\r\n&bull; DONE</p>\r\n\r\n<p>WINNER : 5000 LUCKY PARTICIPANT</p>', 'Ardan Anjung', '2022-03-02 14:04:38', '2022-03-02 14:04:38'),
+(22, 'ape-rocket-airdrop-220302090512', '🏂 Ape Rocket Airdrop ', 'noimg.jpg', '<p>🏂 Ape Rocket Airdrop&nbsp;<br />\r\n🎁 Free 20,000,000 $APEROCKET For 2,500 Random Participants</p>\r\n\r\n<p>👉 Start Bot :&nbsp;<br />\r\n<a href=\"https://t.me/ApeRocketAirdropbot?start=r0971562717\">https://t.me/ApeRocketAirdropbot?start=r0971562717</a></p>\r\n\r\n<p>- Complete All Task<br />\r\n- Submit Detail<br />\r\n- Submit BSC Address&nbsp;<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-02 14:05:12', '2022-03-02 14:05:12'),
+(23, 'unreal-fi-testnet-220302105414', '🔴 Unreal Fi Testnet 🔴', 'noimg.jpg', '<p>🔴 Unreal Fi Testnet 🔴<br />\r\nExiting Reward ser</p>\r\n\r\n<p>☑️ Get Test token : <a href=\"https://faucet.kovan.network/\">https://faucet.kovan.network/</a> &amp; &nbsp;here<br />\r\n☑️ Explore All Feature: <a href=\"https://unreal-app.vercel.app/\">https://unreal-app.vercel.app/</a><br />\r\n✅ Good Luck</p>\r\n\r\n<p>Official Link<br />\r\n- https://t.me/unrealfinance<br />\r\n- https://twitter.com/UnrealFinance<br />\r\nDAI FAUCET:&nbsp;<a href=\"https://staging.aave.com/#/faucet/0xff795577d9ac8bd7d90ee22b6c1703490b6512fd-0xff795577d9ac8bd7d90ee22b6c1703490b6512fd0x88757f2f99175387ab4c6a4b3067c77a695b0349\">https://staging.aave.com/#/faucet/0xff795577d9ac8bd7d90ee22b6c1703490b6512fd-0xff795577d9ac8bd7d90ee22b6c1703490b6512fd0x88757f2f99175387ab4c6a4b3067c77a695b0349</a></p>', 'Ardan Anjung', '2022-03-02 15:54:14', '2022-03-02 15:54:14'),
+(24, 'koubek-airdrop-220302105511', 'Koubek Airdrop', 'noimg.jpg', '<p>AIRDROP : KOUBEK<br />\r\nNETWORK : BSC<br />\r\nDETAILS :&nbsp;</p>\r\n\r\n<p>&bull; JOIN AIRDROP<br />\r\n<a href=\"https://t.me/KoubekAirdropBot?start=r0971562717\">https://t.me/KoubekAirdropBot?start=r0971562717</a><br />\r\n&bull; JOIN TWITTER<br />\r\n&bull; SUBMIT DETAIL<br />\r\n&bull; DONE</p>\r\n\r\n<p>WINNER : 2000+ PARTICIPANT</p>', 'Ardan Anjung', '2022-03-02 15:55:11', '2022-03-02 15:55:11'),
+(25, 'orbler-airdrop-220302105534', '🔴Orbler Airdrop🔴 ', 'noimg.jpg', '<p>🔴Orbler Airdrop🔴&nbsp;</p>\r\n\r\n<p>🧧Free 11$ in BAO ( For 11.111 Random)&nbsp;</p>\r\n\r\n<p>📢Join now <a href=\"https://giv.gg/r/ZSbJ6s-Zqy58i\">https://giv.gg/r/ZSbJ6s-Zqy58i</a><br />\r\n✅Selesaikan Task<br />\r\n✅Enter BSC Addrez<br />\r\n✅Done</p>', 'Ardan Anjung', '2022-03-02 15:55:34', '2022-03-02 15:55:34');
 
 -- --------------------------------------------------------
 
@@ -112,7 +158,9 @@ INSERT INTO `crypto_wallet` (`id_wallet`, `nama_wallet`, `ukuran_aplikasi`, `nft
 (16, 'Terra Station', 74.00, 0, 4.60, 4, 100000, '2022-01-27', 'https://play.google.com/store/apps/details?id=money.terra.station', '2022-01-27 14:24:58', '2022-01-27 14:24:58'),
 (17, 'LOBSTR', 34.00, 0, 4.80, 2, 100000, '2022-01-29', 'https://play.google.com/store/apps/details?id=com.lobstr.client', '2022-01-29 06:22:17', '2022-01-29 06:22:17'),
 (18, 'Polkawallet', 67.00, 0, 3.70, 2, 50000, '2022-01-29', 'https://play.google.com/store/apps/details?id=io.polkawallet.www.polka_wallet', '2022-01-29 06:32:41', '2022-01-29 06:32:41'),
-(19, 'Huobi Wallet', 91.00, 1, 4.00, 2, 500000, '2022-01-29', 'https://play.google.com/store/apps/details?id=com.huobionchainwallet.gp', '2022-01-29 07:01:17', '2022-01-29 07:01:17');
+(19, 'Huobi Wallet', 91.00, 1, 4.00, 2, 500000, '2022-01-29', 'https://play.google.com/store/apps/details?id=com.huobionchainwallet.gp', '2022-01-29 07:01:17', '2022-01-29 07:01:17'),
+(20, 'Cosmostation', 51.00, 0, 4.50, 3, 50000, '2022-03-02', 'https://play.google.com/store/apps/details?id=wannabit.io.cosmostaion', '2022-03-02 16:04:27', '2022-03-02 16:04:27'),
+(21, 'Keplr Wallet', 33.00, 0, 4.10, 3, 50000, '2022-03-02', 'https://play.google.com/store/apps/details?id=com.chainapsis.keplr', '2022-03-02 16:29:51', '2022-03-02 16:29:51');
 
 -- --------------------------------------------------------
 
@@ -236,7 +284,37 @@ INSERT INTO `jenis_coin` (`id_jenis_coin`, `nama_coin`, `singkatan_coin`, `creat
 (89, 'ChainX', 'PCX', '2022-01-29 06:46:56', '2022-01-29 06:46:56'),
 (90, 'Edgeware', 'EDG', '2022-01-29 06:47:25', '2022-01-29 06:47:25'),
 (91, 'Cardano', 'ADA', '2022-01-29 07:12:32', '2022-01-29 07:12:32'),
-(92, 'Bitcoin SV', 'BSV', '2022-01-29 07:13:27', '2022-01-29 07:13:27');
+(92, 'Bitcoin SV', 'BSV', '2022-01-29 07:13:27', '2022-01-29 07:13:27'),
+(93, 'Iris Coin', 'IRIS', '2022-03-02 16:16:20', '2022-03-02 16:16:20'),
+(94, 'Akash', 'AKASH', '2022-03-02 16:16:32', '2022-03-02 16:16:32'),
+(95, 'Axelar', 'AXELAR', '2022-03-02 16:16:38', '2022-03-02 16:16:38'),
+(96, 'Bitcanna', 'BITCANNA', '2022-03-02 16:16:55', '2022-03-02 16:16:55'),
+(97, 'Bitsong', 'BITSONG', '2022-03-02 16:17:05', '2022-03-02 16:17:05'),
+(98, 'Certik', 'CERTIK', '2022-03-02 16:17:11', '2022-03-02 16:17:11'),
+(99, 'Chihuahua', 'CHIHUAHUA', '2022-03-02 16:17:21', '2022-03-02 16:17:21'),
+(100, 'Comdex', 'COMDEX', '2022-03-02 16:17:27', '2022-03-02 16:17:27'),
+(101, 'Crypto.org', 'CRYPTO.ORG', '2022-03-02 16:17:35', '2022-03-02 16:17:35'),
+(102, 'Desmos', 'DESMOS', '2022-03-02 16:17:43', '2022-03-02 16:17:43'),
+(103, 'Emoney', 'EMONEY', '2022-03-02 16:17:50', '2022-03-02 16:17:50'),
+(104, 'Fetch AI', 'FETCH.AI', '2022-03-02 16:17:59', '2022-03-02 16:17:59'),
+(105, 'G-Bridge', 'G-BRIDGE', '2022-03-02 16:18:07', '2022-03-02 16:18:07'),
+(106, 'Injective', 'INJECTIVE', '2022-03-02 16:18:21', '2022-03-02 16:18:21'),
+(107, 'Juno', 'JUNO', '2022-03-02 16:18:29', '2022-03-02 16:18:29'),
+(108, 'KI Coin', 'KI', '2022-03-02 16:18:47', '2022-03-02 16:18:47'),
+(109, 'Konstellation', 'KONSTELLATION', '2022-03-02 16:18:56', '2022-03-02 16:18:56'),
+(110, 'Lum Coin', 'LUM', '2022-03-02 16:19:23', '2022-03-02 16:19:23'),
+(111, 'Medibloc', 'MEDIBLOC', '2022-03-02 16:19:33', '2022-03-02 16:19:33'),
+(112, 'OEC', 'OEC', '2022-03-02 16:19:39', '2022-03-02 16:19:39'),
+(113, 'Osmosis', 'OSMOSIS', '2022-03-02 16:19:49', '2022-03-02 16:19:49'),
+(114, 'Regen', 'REGEN', '2022-03-02 16:20:03', '2022-03-02 16:20:03'),
+(115, 'Rizon', 'RIZON', '2022-03-02 16:20:09', '2022-03-02 16:20:09'),
+(116, 'Secret', 'SECRET', '2022-03-02 16:20:16', '2022-03-02 16:20:16'),
+(117, 'Sentinel', 'SENTINEL', '2022-03-02 16:20:22', '2022-03-02 16:20:22'),
+(118, 'SIF', 'SIF', '2022-03-02 16:20:26', '2022-03-02 16:20:26'),
+(119, 'Stargaze', 'STARGAZE', '2022-03-02 16:20:32', '2022-03-02 16:20:32'),
+(120, 'Starname', 'STARNAME', '2022-03-02 16:20:38', '2022-03-02 16:20:38'),
+(121, 'Umee', 'UMEE', '2022-03-02 16:20:42', '2022-03-02 16:20:42'),
+(122, 'Sommelier', 'SOMM', '2022-03-02 16:31:13', '2022-03-02 16:31:13');
 
 -- --------------------------------------------------------
 
@@ -311,7 +389,40 @@ INSERT INTO `jenis_network` (`id_jenis_network`, `nama_network`, `singkatan_netw
 (54, 'Karura', 'KAR', '2022-01-29 06:45:01', '2022-01-29 06:45:01'),
 (55, 'Bifrost', 'BNC', '2022-01-29 06:46:19', '2022-01-29 06:46:19'),
 (56, 'ChainX', 'PCX', '2022-01-29 06:46:52', '2022-01-29 06:46:52'),
-(57, 'Edgeware', 'EDG', '2022-01-29 06:47:21', '2022-01-29 06:47:21');
+(57, 'Edgeware', 'EDG', '2022-01-29 06:47:21', '2022-01-29 06:47:21'),
+(58, 'Kava', 'KAVA', '2022-03-02 16:06:19', '2022-03-02 16:06:19'),
+(59, 'Band Protocol', 'Band Chain', '2022-03-02 16:07:27', '2022-03-02 16:07:27'),
+(60, 'IRIS', 'IRIS', '2022-03-02 16:08:22', '2022-03-02 16:08:22'),
+(61, 'Akash', 'AKASH', '2022-03-02 16:08:36', '2022-03-02 16:08:36'),
+(62, 'Axelar', 'AXELAR', '2022-03-02 16:08:43', '2022-03-02 16:08:43'),
+(63, 'Bitcanna', 'BITCANNA', '2022-03-02 16:09:45', '2022-03-02 16:09:45'),
+(64, 'Bitsong', 'BITSONG', '2022-03-02 16:09:52', '2022-03-02 16:09:52'),
+(65, 'Certik', 'CERTIK', '2022-03-02 16:10:38', '2022-03-02 16:10:38'),
+(66, 'Chihuahua', 'CHIHUAHUA', '2022-03-02 16:10:50', '2022-03-02 16:10:50'),
+(67, 'Comdex', 'COMDEX', '2022-03-02 16:10:58', '2022-03-02 16:10:58'),
+(68, 'Crypto.org', 'CRYPTO.ORG', '2022-03-02 16:12:21', '2022-03-02 16:12:21'),
+(69, 'Desmos', 'DESMOS', '2022-03-02 16:12:31', '2022-03-02 16:12:31'),
+(70, 'Emoney', 'EMONEY', '2022-03-02 16:12:36', '2022-03-02 16:12:36'),
+(71, 'Fetch.ai', 'FETCH.AI', '2022-03-02 16:12:44', '2022-03-02 16:12:44'),
+(72, 'G-Bridge', 'G-BRIDGE', '2022-03-02 16:12:53', '2022-03-02 16:12:53'),
+(73, 'Injective', 'INJECTIVE', '2022-03-02 16:13:05', '2022-03-02 16:13:05'),
+(74, 'Juno', 'JUNO', '2022-03-02 16:13:10', '2022-03-02 16:13:10'),
+(75, 'Ki Chain', 'KI', '2022-03-02 16:14:03', '2022-03-02 16:14:03'),
+(76, 'Konstellation', 'KONSTELLATION', '2022-03-02 16:14:18', '2022-03-02 16:14:18'),
+(77, 'Lum', 'LUM', '2022-03-02 16:14:24', '2022-03-02 16:14:24'),
+(78, 'Medibloc', 'MEDIBLOC', '2022-03-02 16:14:32', '2022-03-02 16:14:32'),
+(79, 'Oec', 'OEC', '2022-03-02 16:14:41', '2022-03-02 16:14:41'),
+(80, 'Osmosis', 'OSMOSIS', '2022-03-02 16:14:51', '2022-03-02 16:14:51'),
+(81, 'Persistance', 'PERSISTANCE', '2022-03-02 16:15:04', '2022-03-02 16:15:04'),
+(82, 'Regen', 'REGEN', '2022-03-02 16:15:14', '2022-03-02 16:15:14'),
+(83, 'Rizon', 'RIZON', '2022-03-02 16:15:20', '2022-03-02 16:15:20'),
+(84, 'Secret', 'SECRET', '2022-03-02 16:15:27', '2022-03-02 16:15:27'),
+(85, 'Sentinel', 'SENTINEL', '2022-03-02 16:15:34', '2022-03-02 16:15:34'),
+(86, 'SIF', 'SIF', '2022-03-02 16:15:39', '2022-03-02 16:15:39'),
+(87, 'Stargaze', 'STARGAZE', '2022-03-02 16:15:45', '2022-03-02 16:15:45'),
+(88, 'Starname', 'STARNAME', '2022-03-02 16:15:51', '2022-03-02 16:15:51'),
+(89, 'Umee', 'UMEE', '2022-03-02 16:15:57', '2022-03-02 16:15:57'),
+(90, 'Sommelier', 'Sommelier', '2022-03-02 16:32:07', '2022-03-02 16:32:07');
 
 -- --------------------------------------------------------
 
@@ -683,7 +794,50 @@ INSERT INTO `wallet_coin` (`id_wallet_coin`, `id_jenis_coin`, `id_wallet`, `crea
 (212, 20, 19, '2022-01-29 07:14:04', '2022-01-29 07:14:04'),
 (213, 43, 19, '2022-01-29 07:14:09', '2022-01-29 07:14:09'),
 (214, 37, 19, '2022-01-29 07:14:13', '2022-01-29 07:14:13'),
-(215, 92, 19, '2022-01-29 07:33:35', '2022-01-29 07:33:35');
+(215, 92, 19, '2022-01-29 07:33:35', '2022-01-29 07:33:35'),
+(216, 15, 20, '2022-03-02 16:20:58', '2022-03-02 16:20:58'),
+(217, 93, 20, '2022-03-02 16:21:02', '2022-03-02 16:21:02'),
+(218, 94, 20, '2022-03-02 16:21:06', '2022-03-02 16:21:06'),
+(219, 95, 20, '2022-03-02 16:21:09', '2022-03-02 16:21:09'),
+(220, 7, 20, '2022-03-02 16:21:12', '2022-03-02 16:21:12'),
+(221, 8, 20, '2022-03-02 16:21:48', '2022-03-02 16:21:48'),
+(222, 96, 20, '2022-03-02 16:21:56', '2022-03-02 16:21:56'),
+(223, 97, 20, '2022-03-02 16:22:01', '2022-03-02 16:22:01'),
+(224, 98, 20, '2022-03-02 16:22:04', '2022-03-02 16:22:04'),
+(225, 99, 20, '2022-03-02 16:22:09', '2022-03-02 16:22:09'),
+(226, 100, 20, '2022-03-02 16:22:14', '2022-03-02 16:22:14'),
+(227, 101, 20, '2022-03-02 16:22:17', '2022-03-02 16:22:17'),
+(228, 102, 20, '2022-03-02 16:22:21', '2022-03-02 16:22:21'),
+(229, 103, 20, '2022-03-02 16:22:26', '2022-03-02 16:22:26'),
+(230, 104, 20, '2022-03-02 16:22:28', '2022-03-02 16:22:28'),
+(231, 105, 20, '2022-03-02 16:22:31', '2022-03-02 16:22:31'),
+(232, 106, 20, '2022-03-02 16:22:35', '2022-03-02 16:22:35'),
+(233, 107, 20, '2022-03-02 16:22:38', '2022-03-02 16:22:38'),
+(234, 41, 20, '2022-03-02 16:22:41', '2022-03-02 16:22:41'),
+(235, 108, 20, '2022-03-02 16:22:44', '2022-03-02 16:22:44'),
+(236, 109, 20, '2022-03-02 16:22:49', '2022-03-02 16:22:49'),
+(237, 110, 20, '2022-03-02 16:22:57', '2022-03-02 16:22:57'),
+(238, 111, 20, '2022-03-02 16:23:01', '2022-03-02 16:23:01'),
+(239, 112, 20, '2022-03-02 16:23:03', '2022-03-02 16:23:03'),
+(240, 113, 20, '2022-03-02 16:23:10', '2022-03-02 16:23:10'),
+(241, 57, 20, '2022-03-02 16:23:16', '2022-03-02 16:23:16'),
+(242, 114, 20, '2022-03-02 16:23:23', '2022-03-02 16:23:23'),
+(243, 115, 20, '2022-03-02 16:23:27', '2022-03-02 16:23:27'),
+(244, 116, 20, '2022-03-02 16:23:29', '2022-03-02 16:23:29'),
+(245, 117, 20, '2022-03-02 16:23:32', '2022-03-02 16:23:32'),
+(246, 118, 20, '2022-03-02 16:23:39', '2022-03-02 16:23:39'),
+(247, 119, 20, '2022-03-02 16:23:43', '2022-03-02 16:23:43'),
+(248, 120, 20, '2022-03-02 16:23:47', '2022-03-02 16:23:47'),
+(249, 121, 20, '2022-03-02 16:23:51', '2022-03-02 16:23:51'),
+(250, 15, 21, '2022-03-02 16:30:03', '2022-03-02 16:30:03'),
+(251, 113, 21, '2022-03-02 16:30:10', '2022-03-02 16:30:10'),
+(252, 114, 21, '2022-03-02 16:30:13', '2022-03-02 16:30:13'),
+(253, 107, 21, '2022-03-02 16:30:16', '2022-03-02 16:30:16'),
+(254, 119, 21, '2022-03-02 16:30:18', '2022-03-02 16:30:18'),
+(255, 57, 21, '2022-03-02 16:30:22', '2022-03-02 16:30:22'),
+(256, 95, 21, '2022-03-02 16:30:25', '2022-03-02 16:30:25'),
+(257, 122, 21, '2022-03-02 16:32:14', '2022-03-02 16:32:14'),
+(258, 121, 21, '2022-03-02 16:32:20', '2022-03-02 16:32:20');
 
 -- --------------------------------------------------------
 
@@ -806,7 +960,50 @@ INSERT INTO `wallet_network` (`id_wallet_network`, `id_jenis_network`, `id_walle
 (106, 41, 19, '2022-01-29 07:15:38', '2022-01-29 07:15:38'),
 (107, 3, 19, '2022-01-29 07:15:44', '2022-01-29 07:15:44'),
 (108, 46, 19, '2022-01-29 07:15:50', '2022-01-29 07:15:50'),
-(109, 34, 19, '2022-01-29 07:15:58', '2022-01-29 07:15:58');
+(109, 34, 19, '2022-01-29 07:15:58', '2022-01-29 07:15:58'),
+(110, 12, 20, '2022-03-02 16:24:03', '2022-03-02 16:24:03'),
+(111, 60, 20, '2022-03-02 16:24:06', '2022-03-02 16:24:06'),
+(112, 61, 20, '2022-03-02 16:24:08', '2022-03-02 16:24:08'),
+(113, 62, 20, '2022-03-02 16:24:10', '2022-03-02 16:24:10'),
+(114, 59, 20, '2022-03-02 16:24:12', '2022-03-02 16:24:12'),
+(115, 4, 20, '2022-03-02 16:24:16', '2022-03-02 16:24:16'),
+(116, 63, 20, '2022-03-02 16:24:20', '2022-03-02 16:24:20'),
+(117, 64, 20, '2022-03-02 16:24:22', '2022-03-02 16:24:22'),
+(118, 65, 20, '2022-03-02 16:24:25', '2022-03-02 16:24:25'),
+(119, 66, 20, '2022-03-02 16:24:28', '2022-03-02 16:24:28'),
+(120, 67, 20, '2022-03-02 16:24:30', '2022-03-02 16:24:30'),
+(121, 68, 20, '2022-03-02 16:24:33', '2022-03-02 16:24:33'),
+(122, 69, 20, '2022-03-02 16:24:39', '2022-03-02 16:24:39'),
+(123, 70, 20, '2022-03-02 16:24:42', '2022-03-02 16:24:42'),
+(124, 71, 20, '2022-03-02 16:24:44', '2022-03-02 16:24:44'),
+(125, 72, 20, '2022-03-02 16:24:48', '2022-03-02 16:24:48'),
+(126, 73, 20, '2022-03-02 16:24:51', '2022-03-02 16:24:51'),
+(127, 74, 20, '2022-03-02 16:24:54', '2022-03-02 16:24:54'),
+(128, 58, 20, '2022-03-02 16:24:56', '2022-03-02 16:24:56'),
+(129, 75, 20, '2022-03-02 16:25:00', '2022-03-02 16:25:00'),
+(130, 76, 20, '2022-03-02 16:25:03', '2022-03-02 16:25:03'),
+(131, 77, 20, '2022-03-02 16:25:16', '2022-03-02 16:25:16'),
+(132, 78, 20, '2022-03-02 16:25:20', '2022-03-02 16:25:20'),
+(133, 79, 20, '2022-03-02 16:25:23', '2022-03-02 16:25:23'),
+(134, 80, 20, '2022-03-02 16:25:27', '2022-03-02 16:25:27'),
+(135, 81, 20, '2022-03-02 16:25:30', '2022-03-02 16:25:30'),
+(136, 82, 20, '2022-03-02 16:25:33', '2022-03-02 16:25:33'),
+(137, 83, 20, '2022-03-02 16:25:36', '2022-03-02 16:25:36'),
+(138, 84, 20, '2022-03-02 16:25:40', '2022-03-02 16:25:40'),
+(139, 85, 20, '2022-03-02 16:25:45', '2022-03-02 16:25:45'),
+(140, 86, 20, '2022-03-02 16:25:48', '2022-03-02 16:25:48'),
+(141, 87, 20, '2022-03-02 16:25:51', '2022-03-02 16:25:51'),
+(142, 88, 20, '2022-03-02 16:25:54', '2022-03-02 16:25:54'),
+(143, 89, 20, '2022-03-02 16:25:58', '2022-03-02 16:25:58'),
+(144, 12, 21, '2022-03-02 16:32:27', '2022-03-02 16:32:27'),
+(145, 80, 21, '2022-03-02 16:32:30', '2022-03-02 16:32:30'),
+(146, 82, 21, '2022-03-02 16:32:32', '2022-03-02 16:32:32'),
+(147, 74, 21, '2022-03-02 16:32:34', '2022-03-02 16:32:34'),
+(148, 87, 21, '2022-03-02 16:32:36', '2022-03-02 16:32:36'),
+(149, 81, 21, '2022-03-02 16:32:39', '2022-03-02 16:32:39'),
+(150, 62, 21, '2022-03-02 16:32:40', '2022-03-02 16:32:40'),
+(151, 90, 21, '2022-03-02 16:32:42', '2022-03-02 16:32:42'),
+(152, 89, 21, '2022-03-02 16:32:45', '2022-03-02 16:32:45');
 
 --
 -- Indexes for dumped tables
@@ -928,19 +1125,19 @@ ALTER TABLE `wallet_network`
 -- AUTO_INCREMENT for table `arcategory`
 --
 ALTER TABLE `arcategory`
-  MODIFY `id_arcategory` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_arcategory` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `crypto_wallet`
 --
 ALTER TABLE `crypto_wallet`
-  MODIFY `id_wallet` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_wallet` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -952,13 +1149,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jenis_coin`
 --
 ALTER TABLE `jenis_coin`
-  MODIFY `id_jenis_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id_jenis_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT for table `jenis_network`
 --
 ALTER TABLE `jenis_network`
-  MODIFY `id_jenis_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_jenis_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -988,13 +1185,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wallet_coin`
 --
 ALTER TABLE `wallet_coin`
-  MODIFY `id_wallet_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `id_wallet_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
 
 --
 -- AUTO_INCREMENT for table `wallet_network`
 --
 ALTER TABLE `wallet_network`
-  MODIFY `id_wallet_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id_wallet_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- Constraints for dumped tables
