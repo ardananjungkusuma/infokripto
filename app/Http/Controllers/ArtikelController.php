@@ -203,4 +203,15 @@ class ArtikelController extends Controller
         return redirect('/artikel')->with('notif', 'Sukses Hapus Data Artikel');
         // print_r($imgArr);
     }
+
+    public function gambarmanage()
+    {
+        return view('admin.artikel.gambarmanage');
+    }
+
+    public function getAll()
+    {
+        $artikel = Artikel::all();
+        echo json_encode($artikel);
+    }
 }

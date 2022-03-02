@@ -89,27 +89,31 @@
                         <nav id="main-menu-navigation" class="navigation-main">
                             <div class="nav-lavel">Main Menu</div>
                             <div class="nav-item active">
-                                <a href="{{ asset('') }}admin"><i class="fa fa-chart-bar"></i><span>Dashboard</span></a>
+                                <a href="/admin"><i class="fa fa-chart-bar"></i><span>Dashboard</span></a>
                             </div>
                             <div class="nav-item">
-                                <a href="{{ asset('') }}cwallet"><i class="fa fa-wallet"></i><span>Manajemen Crypto
+                                <a href="/cwallet"><i class="fa fa-wallet"></i><span>Manajemen Crypto
                                         Wallet</span></a>
                             </div>
                             <div class="nav-item">
-                                <a href="{{ asset('') }}coin"><i class="fa fa-coins"></i><span>Manajemen
+                                <a href="/coin"><i class="fa fa-coins"></i><span>Manajemen
                                         Coin</span></a>
                             </div>
                             <div class="nav-item">
-                                <a href="{{ asset('') }}cnetwork"><i class="ik ik-box"></i><span>Manajemen
+                                <a href="/cnetwork"><i class="ik ik-box"></i><span>Manajemen
                                         Chain</span></a>
                             </div>
                             <div class="nav-lavel">Other Menu</div>
                             <div class="nav-item has-sub">
                                 <a href="#"><i class="fa fa-pen"></i><span>Artikel</span></a>
                                 <div class="submenu-content">
-                                    <a href="{{ asset('') }}artikel" class="menu-item">Daftar Artikel</a>
-                                    <a href="{{ asset('') }}artikel/tambah" class="menu-item">Tulis Artikel</a>
+                                    <a href="/artikel" class="menu-item">Daftar Artikel</a>
+                                    <a href="/artikel/tambah" class="menu-item">Tulis Artikel</a>
                                 </div>
+                            </div>
+                            <div class="nav-item">
+                                <a href="/artikel/manage/gambar"><i class="ik ik-image"></i><span>Manajemen
+                                        Gambar</span></a>
                             </div>
                             <div class="nav-item">
                                 <a href="{{ asset('') }}users"><i class="ik ik-users"></i><span>Manajemen
