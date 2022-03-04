@@ -25,7 +25,8 @@
                 <div class="col-lg-12">
                     <center>
                         <h2>{{ $artikel->judul }}</h2>
-                        Posted : {{ $artikel->created_at->diffForHumans() }} | Author : {{ $artikel->author }}
+                        Posted : {{ date('H:i', strtotime($artikel->updated_at))  }} |
+                        {{ date("d-m-Y", strtotime($artikel->updated_at->toDateString())) }}
                         <br><br>
                         @if($artikel->gambar_sampul != "noimg.jpg")
                         <img src="{{ asset('img_sampul/' . $artikel->gambar_sampul) }}" class="rounded mx-auto d-block"
@@ -39,6 +40,8 @@
                     </span>
                     <br><br>
                     <span>
+                        <label style="font-weight: bold">Author : </label>
+                        {{ $artikel->author }} <br>
                         <label style="font-weight: bold">Kategori : </label>
                         @foreach($category as $c)
                         {{ $c->kategori . ',' }}

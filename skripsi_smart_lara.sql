@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2022 at 05:33 PM
+-- Generation Time: Mar 04, 2022 at 03:32 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -71,7 +71,23 @@ INSERT INTO `arcategory` (`id_arcategory`, `id_artikel`, `kategori`, `updated_at
 (36, 24, 'airdrop', '2022-03-02 15:55:11', '2022-03-02 15:55:11'),
 (37, 24, 'gratis', '2022-03-02 15:55:11', '2022-03-02 15:55:11'),
 (38, 25, 'airdrop', '2022-03-02 15:55:34', '2022-03-02 15:55:34'),
-(39, 25, 'gratis', '2022-03-02 15:55:34', '2022-03-02 15:55:34');
+(39, 25, 'gratis', '2022-03-02 15:55:34', '2022-03-02 15:55:34'),
+(40, 26, 'airdrop', '2022-03-04 14:12:56', '2022-03-04 14:12:56'),
+(41, 26, 'gratis', '2022-03-04 14:12:56', '2022-03-04 14:12:56'),
+(42, 27, 'airdrop', '2022-03-04 14:13:18', '2022-03-04 14:13:18'),
+(43, 27, 'gratis', '2022-03-04 14:13:18', '2022-03-04 14:13:18'),
+(44, 28, 'airdrop', '2022-03-04 14:13:35', '2022-03-04 14:13:35'),
+(45, 28, 'gratis', '2022-03-04 14:13:35', '2022-03-04 14:13:35'),
+(46, 29, 'airdrop', '2022-03-04 14:13:56', '2022-03-04 14:13:56'),
+(47, 29, 'gratis', '2022-03-04 14:13:56', '2022-03-04 14:13:56'),
+(48, 30, 'airdrop', '2022-03-04 14:14:13', '2022-03-04 14:14:13'),
+(49, 30, 'gratis', '2022-03-04 14:14:13', '2022-03-04 14:14:13'),
+(50, 31, 'airdrop', '2022-03-04 14:14:29', '2022-03-04 14:14:29'),
+(51, 31, 'gratis', '2022-03-04 14:14:29', '2022-03-04 14:14:29'),
+(52, 33, 'airdrop', '2022-03-04 14:15:13', '2022-03-04 14:15:13'),
+(53, 33, 'gratis', '2022-03-04 14:15:13', '2022-03-04 14:15:13'),
+(54, 34, 'airdrop', '2022-03-04 14:22:48', '2022-03-04 14:22:48'),
+(55, 34, 'gratis', '2022-03-04 14:22:48', '2022-03-04 14:22:48');
 
 -- --------------------------------------------------------
 
@@ -114,7 +130,16 @@ INSERT INTO `artikel` (`id_artikel`, `slug`, `judul`, `gambar_sampul`, `isi`, `a
 (22, 'ape-rocket-airdrop-220302090512', '🏂 Ape Rocket Airdrop ', 'noimg.jpg', '<p>🏂 Ape Rocket Airdrop&nbsp;<br />\r\n🎁 Free 20,000,000 $APEROCKET For 2,500 Random Participants</p>\r\n\r\n<p>👉 Start Bot :&nbsp;<br />\r\n<a href=\"https://t.me/ApeRocketAirdropbot?start=r0971562717\">https://t.me/ApeRocketAirdropbot?start=r0971562717</a></p>\r\n\r\n<p>- Complete All Task<br />\r\n- Submit Detail<br />\r\n- Submit BSC Address&nbsp;<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-02 14:05:12', '2022-03-02 14:05:12'),
 (23, 'unreal-fi-testnet-220302105414', '🔴 Unreal Fi Testnet 🔴', 'noimg.jpg', '<p>🔴 Unreal Fi Testnet 🔴<br />\r\nExiting Reward ser</p>\r\n\r\n<p>☑️ Get Test token : <a href=\"https://faucet.kovan.network/\">https://faucet.kovan.network/</a> &amp; &nbsp;here<br />\r\n☑️ Explore All Feature: <a href=\"https://unreal-app.vercel.app/\">https://unreal-app.vercel.app/</a><br />\r\n✅ Good Luck</p>\r\n\r\n<p>Official Link<br />\r\n- https://t.me/unrealfinance<br />\r\n- https://twitter.com/UnrealFinance<br />\r\nDAI FAUCET:&nbsp;<a href=\"https://staging.aave.com/#/faucet/0xff795577d9ac8bd7d90ee22b6c1703490b6512fd-0xff795577d9ac8bd7d90ee22b6c1703490b6512fd0x88757f2f99175387ab4c6a4b3067c77a695b0349\">https://staging.aave.com/#/faucet/0xff795577d9ac8bd7d90ee22b6c1703490b6512fd-0xff795577d9ac8bd7d90ee22b6c1703490b6512fd0x88757f2f99175387ab4c6a4b3067c77a695b0349</a></p>', 'Ardan Anjung', '2022-03-02 15:54:14', '2022-03-02 15:54:14'),
 (24, 'koubek-airdrop-220302105511', 'Koubek Airdrop', 'noimg.jpg', '<p>AIRDROP : KOUBEK<br />\r\nNETWORK : BSC<br />\r\nDETAILS :&nbsp;</p>\r\n\r\n<p>&bull; JOIN AIRDROP<br />\r\n<a href=\"https://t.me/KoubekAirdropBot?start=r0971562717\">https://t.me/KoubekAirdropBot?start=r0971562717</a><br />\r\n&bull; JOIN TWITTER<br />\r\n&bull; SUBMIT DETAIL<br />\r\n&bull; DONE</p>\r\n\r\n<p>WINNER : 2000+ PARTICIPANT</p>', 'Ardan Anjung', '2022-03-02 15:55:11', '2022-03-02 15:55:11'),
-(25, 'orbler-airdrop-220302105534', '🔴Orbler Airdrop🔴 ', 'noimg.jpg', '<p>🔴Orbler Airdrop🔴&nbsp;</p>\r\n\r\n<p>🧧Free 11$ in BAO ( For 11.111 Random)&nbsp;</p>\r\n\r\n<p>📢Join now <a href=\"https://giv.gg/r/ZSbJ6s-Zqy58i\">https://giv.gg/r/ZSbJ6s-Zqy58i</a><br />\r\n✅Selesaikan Task<br />\r\n✅Enter BSC Addrez<br />\r\n✅Done</p>', 'Ardan Anjung', '2022-03-02 15:55:34', '2022-03-02 15:55:34');
+(25, 'orbler-airdrop-220302105534', '🔴Orbler Airdrop🔴 ', 'noimg.jpg', '<p>🔴Orbler Airdrop🔴&nbsp;</p>\r\n\r\n<p>🧧Free 11$ in BAO ( For 11.111 Random)&nbsp;</p>\r\n\r\n<p>📢Join now <a href=\"https://giv.gg/r/ZSbJ6s-Zqy58i\">https://giv.gg/r/ZSbJ6s-Zqy58i</a><br />\r\n✅Selesaikan Task<br />\r\n✅Enter BSC Addrez<br />\r\n✅Done</p>', 'Ardan Anjung', '2022-03-02 15:55:34', '2022-03-02 15:55:34'),
+(26, 'airdrops-karmaverse-zombie-220304091256', 'Airdrops : Karmaverse Zombie', 'noimg.jpg', '<p>New Airdrops : Karmaverse Zombie<br />\r\n🏷 Reward : Item Games ( For All )<br />\r\n➡️ Connect TokenPocket : <a href=\"https://app.karmaverse.io/quest?ref=cfwKxdmJeC\">https://app.karmaverse.io/quest?ref=cfwKxdmJeC</a><br />\r\n➖ Use New Wallet ( Polygon Network )<br />\r\n➖ Signup<br />\r\n➖ Verify Email<br />\r\n➖ Claim</p>', 'Ardan Anjung', '2022-03-04 14:12:56', '2022-03-04 14:12:56'),
+(27, 'dmetaverse-coindmc-220304091318', 'DMetaverse Coin(DMC)', 'noimg.jpg', '<p>AIRDROP : DMetaverse Coin(DMC)<br />\r\nNETWORK : BSC<br />\r\nDETAILS :&nbsp;</p>\r\n\r\n<p>&bull; JOIN FORM<br />\r\n<a href=\"http://bit.ly/3tnbXDL\">http://bit.ly/3tnbXDL</a><br />\r\n&bull; JOIN TWITTER<br />\r\n&bull; SUBMIT DETAIL<br />\r\n&bull; DONE</p>\r\n\r\n<p>WINNER : ALL PARTICIPANT</p>', 'Ardan Anjung', '2022-03-04 14:13:18', '2022-03-04 14:13:18'),
+(28, 'weex-airdrop-220304091335', '🏂 Weex Airdrop', 'noimg.jpg', '<p>🏂 Weex Airdrop<br />\r\n🎁 Total Reward 10,000 TRX</p>\r\n\r\n<p>👉 Fill The Form : <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSePCFj1kQlS5j_Kk6x_UlfzV1kRrISaV7m_6MWPEbRGX0NSxA/viewform\">https://docs.google.com/forms/d/e/1FAIpQLSePCFj1kQlS5j_Kk6x_UlfzV1kRrISaV7m_6MWPEbRGX0NSxA/viewform</a></p>\r\n\r\n<p>- Complete All Task<br />\r\n- Submit Detail<br />\r\n- Submit TRX Address<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-04 14:13:35', '2022-03-04 14:13:35'),
+(29, 'airdrops-spacetime-220304091356', 'Airdrops : SpaceTime', 'noimg.jpg', '<p>New Airdrops : SpaceTime<br />\r\n🏷 Reward : $4 ( Random Winner )<br />\r\n➡️ Register :<br />\r\n<a href=\"https://t.me/SpaceTimeGuardianAirdropBot?start=r0971562717\">https://t.me/SpaceTimeGuardianAirdropBot?start=r0971562717</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖ Submit Address BSC</p>', 'Ardan Anjung', '2022-03-04 14:13:56', '2022-03-04 14:13:56'),
+(30, 'karmaverse-airdrop-220304091413', '🚀KARMAVERSE Airdrop', 'noimg.jpg', '<p>🚀KARMAVERSE Airdrop<br />\r\n💰Total $10,000 KNOT for 1,000 winners</p>\r\n\r\n<p>Early airdrop, strong project, LFG</p>\r\n\r\n<p><a href=\"https://wn.nr/xFTHsy\">https://wn.nr/xFTHsy</a><br />\r\n- Complete task<br />\r\n- Enter data<br />\r\n- Enter MATIC address<br />\r\nDone</p>', 'Ardan Anjung', '2022-03-04 14:14:13', '2022-03-04 14:14:13'),
+(31, 'new-airdrops-avs-220304091429', 'New Airdrops : AVS', 'noimg.jpg', '<p>New Airdrops : AVS<br />\r\n🏷 Reward : $20 ( Random 2000 Winner )<br />\r\n🪂 Register :&nbsp;<br />\r\n<a href=\"https://t.me/AvaStationAirdropbot?start=r0971562717\">https://t.me/AvaStationAirdropbot?start=r0971562717</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖ Submit BSC Address</p>', 'Ardan Anjung', '2022-03-04 14:14:29', '2022-03-04 14:14:29'),
+(32, 'pandora-airdrop-220304091448', '🚀Pandora Airdrop', 'noimg.jpg', '<p>🚀Pandora Airdrop<br />\r\n💰Free 3 PSR for 5.4k winners</p>\r\n\r\n<p>Early airdrop, hajar</p>\r\n\r\n<p><a href=\"https://t.me/PandoraAirdropBot?start=808174260\">https://t.me/PandoraAirdropBot?start=808174260</a><br />\r\n- Complete task<br />\r\n- Enter data<br />\r\n- Enter BSC address<br />\r\nDone</p>', 'Ardan Anjung', '2022-03-04 14:14:48', '2022-03-04 14:14:48'),
+(33, 'airdrop-coslend-mission-2-go-newbies-220304091513', 'Airdrop Coslend - Mission 2: Go Newbies!', 'noimg.jpg', '<p>Coslend - Mission 2: Go Newbies!</p>\r\n\r\n<p>🤖 Register : <a href=\"https://gleam.io/ncpKf/mission-2-go-newbies\">https://gleam.io/ncpKf/mission-2-go-newbies</a></p>\r\n\r\n<p>- Complate All task<br />\r\n- Enter wallet BSC / ETH / Evmos address<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-04 14:15:13', '2022-03-04 14:15:13'),
+(34, 'face-airdrop-220304092248', '🏂 $Face Airdrop', 'noimg.jpg', '<p>🏂 $Face Is More Than Book The World&#39;s Largest Airdrop Campaign Ever Face Giveaway.<br />\r\n🎁 Free 520.588 Token For Register</p>\r\n\r\n<p>👉 Donwload Aplikasi : <a href=\"https://play.google.com/store/apps/details?id=com.utu.facedao\">https://play.google.com/store/apps/details?id=com.utu.facedao</a></p>\r\n\r\n<p>- Login With FB/Twitter<br />\r\n- Authorized Face</p>\r\n\r\n<p>👉 Register : <a href=\"https://gleam.io/VHL6d/face-is-more-than-bookthe-worlds-largest-airdrop-campaign-everface-giveaway\">https://gleam.io/VHL6d/face-is-more-than-bookthe-worlds-largest-airdrop-campaign-everface-giveaway</a></p>\r\n\r\n<p>- Complete All Task<br />\r\n- Submit ETH Address From FaceDAO App<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-04 14:26:19', '2022-03-04 14:22:48');
 
 -- --------------------------------------------------------
 
@@ -1125,13 +1150,13 @@ ALTER TABLE `wallet_network`
 -- AUTO_INCREMENT for table `arcategory`
 --
 ALTER TABLE `arcategory`
-  MODIFY `id_arcategory` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_arcategory` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `crypto_wallet`

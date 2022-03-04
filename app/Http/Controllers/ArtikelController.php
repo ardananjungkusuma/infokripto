@@ -14,7 +14,7 @@ class ArtikelController extends Controller
 {
     public function index()
     {
-        $artikel = Artikel::all();
+        $artikel = Artikel::orderBy('updated_at', 'DESC')->get();
         return view('admin.artikel.manage', compact('artikel'));
     }
 

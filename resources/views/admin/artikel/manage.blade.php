@@ -29,6 +29,7 @@
                                         <th>No</th>
                                         <th>Judul Artikel</th>
                                         <th>Author</th>
+                                        <th>Last Update</th>
                                         <th>Slug</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -41,6 +42,9 @@
                                         <td>{{ $no  }}</td>
                                         <td>{{ $a->judul }}</td>
                                         <td>{{ $a->author }}</td>
+                                        <td>{{ date('H:i', strtotime($a->updated_at)) }} |
+                                            {{ date("d-m-Y", strtotime($a->updated_at->toDateString())) }}
+                                        </td>
                                         <td><a href="/content/{{ $a->slug }}" style="color: blue;" target="_blank">Link
                                                 To Post <i class="fa fa-external-link-alt"></i></a></td>
                                         {{-- <td>{{ substr($a->isi,0,130) }}</td> --}}
