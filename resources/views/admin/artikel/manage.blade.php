@@ -30,7 +30,7 @@
                                         <th>Judul Artikel</th>
                                         <th>Author</th>
                                         <th>Last Update</th>
-                                        <th>Slug</th>
+                                        <th>Link to Post</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>

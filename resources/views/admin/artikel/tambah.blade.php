@@ -61,6 +61,10 @@
 </div>
 @section('script')
 <script src="//cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+{{-- <script src="{{ asset('ckeditor/ckeditor.js') }}"></script> --}}
+<script src="{{ asset('js/autolink/plugin.js') }}"></script>
+<script src="{{ asset('js/autocomplete/plugin.js') }}"></script>
+<script src="{{ asset('js/textmatch/plugin.js') }}"></script>
 <script>
     $.ajaxSetup({
         headers: {
@@ -68,6 +72,7 @@
         }
     });
     CKEDITOR.replace('isi',{
+        extraPlugins: 'autolink',
         filebrowserUploadUrl: "{{ route('artikel.upload', ['_token' => csrf_token()]) }}",
         filebrowserUploadMethod: 'form'
     });
