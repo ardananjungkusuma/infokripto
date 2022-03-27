@@ -619,14 +619,17 @@ class HomeController extends Controller
                     $kriteria_now = $kriteriaBobot[$j - 1];
                     $min_now = $minResult[$j - 1];
                     $max_now = $maxResult[$j - 1];
+                    // dd($listWalletNormalisasi);
 
                     if ($kriteria_now == 'C') {
-                        $listWalletAfterUtility[$i][$j] = (($max_now - $listWalletNormalisasi[$i][$j]) / ($max_now - $min_now));
+                        // $listWalletAfterUtility[$i][$j] = (($max_now - $listWalletNormalisasi[$i][$j]) / ($max_now - $min_now));
+                        $listWalletAfterUtility[$i][$j] = ($this->pembagian($max_now - $listWalletNormalisasi[$i][$j], $max_now - $min_now));
                         // echo $min_now;
                         // echo $listWalletAfterUtility[$i][$j];
                         // echo " | ";
                     } else if ($kriteria_now == 'B') {
-                        $listWalletAfterUtility[$i][$j] = (($listWalletNormalisasi[$i][$j] - $min_now) / ($max_now - $min_now));
+                        // $listWalletAfterUtility[$i][$j] = (($listWalletNormalisasi[$i][$j] - $min_now) / ($max_now - $min_now));
+                        $listWalletAfterUtility[$i][$j] = ($this->pembagian($listWalletNormalisasi[$i][$j] - $min_now, $max_now - $min_now));
                         // echo $max_now;
                         // echo $listWalletAfterUtility[$i][$j];
                         // echo " | ";
@@ -676,5 +679,11 @@ class HomeController extends Controller
         // print_r($ranknya);
         return $totalScore;
         // dd($totalScore);
+    }
+
+    // prevent error division by zero
+    public function pembagian($numerator, $denominator)
+    {
+        return $denominator == 0 ? 0 : ($numerator / $denominator);
     }
 }

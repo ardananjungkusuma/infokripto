@@ -39,7 +39,7 @@
                             pemilihan akan dipilih secara universal</b>.</p>
                     <div class="row">
                         <div class="col-lg-10">
-                            <div class="form-group">
+                            <div class="form-group mb-2">
                                 <label style="font-weight: bold;">Pilih Coin</label>
                                 <select class="form-control js-example-basic-single" id="id_jenis_coin"
                                     name="id_jenis_coin">
@@ -50,9 +50,9 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <button class="btn-sm btn-success mt-2 mb-2" onclick="tambahCoin()"><i
-                                    class="fa fa-coins"></i> Tambah Coin</button>
-                            <div class="form-group">
+                            {{-- <button class="btn-sm btn-success mt-2 mb-2" onclick="tambahCoin()"><i
+                                    class="fa fa-coins"></i> Tambah Coin</button> --}}
+                            <div class="form-group mb-2">
                                 <label style="font-weight: bold;">Pilih Network Chain</label>
                                 <select class="form-control js-example-basic-single" id="id_jenis_network"
                                     name="id_jenis_network">
@@ -63,8 +63,8 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <button class="btn-sm btn-success mt-2 mb-2" onclick="tambahNetwork()"><i
-                                    class="fa fa-link"></i> Tambah Network Chain</button>
+                            {{-- <button class="btn-sm btn-success mt-2 mb-2" onclick="tambahNetwork()"><i
+                                    class="fa fa-link"></i> Tambah Network Chain</button> --}}
                             <form action="/home/cariDompet" method="POST">
                                 @csrf
                                 <div class="form-group">
@@ -139,6 +139,14 @@
         document.getElementById("title-network-dipilih").style.display = "none";
     });
 
+    $('#id_jenis_network').on('change', function (e) {
+        tambahNetwork();
+    });
+    
+    $('#id_jenis_coin').on('change', function (e) {
+        tambahCoin();
+    });
+
     // https://stackoverflow.com/questions/3954438/how-to-remove-item-from-array-by-value
     function removeArray(arr) {
         var what, a = arguments,
@@ -186,7 +194,7 @@
                 `);
 
                 // Ngosongi value select
-                document.getElementById('id_jenis_coin').selectedIndex = -1;
+                document.getElementById('id_jenis_coin').selectedIndex = 0;
             }
         } else {
             swal("Error!", "Anda belum memilih coin!", "error");
@@ -236,7 +244,7 @@
                 `);
 
                 // Ngosongi value select
-                document.getElementById('id_jenis_network').selectedIndex = -1;
+                document.getElementById('id_jenis_network').selectedIndex = 0;
             }
         } else {
             swal("Error!", "Anda belum memilih chain network!", "error");
