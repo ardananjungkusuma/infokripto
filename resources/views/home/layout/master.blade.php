@@ -6,8 +6,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Info Kripto</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta
+        content="Info Kripto adalah website yang menyajikan ilmu lengkap mengenai kripto, mulai dari pemilihan wallet crypto, airdrop, testnet dan lain lain."
+        name="description">
 
     <!-- Google Fonts -->
     <link
