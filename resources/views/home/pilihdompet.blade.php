@@ -70,12 +70,12 @@
                                 <div class="form-group">
                                     <label style="font-weight: bold;">Apakah anda ingin Wallet yang support
                                         Showcase/Preview NFT?</label>
-                                    <select name="nft" class="form-control" required>
+                                    <select name="nft" class="form-control">
                                         <option value="" disabled selected>Pilih Opsi NFT</option>
                                         <option value="1">Wajib Ada</option>
                                         <option value="0">Tidak Wajib Ada</option>
                                     </select>
-                                    <small style="color: red;">* Wajib diisi</small>
+                                    <small>* Jika kosong dianggap tidak wajib.</small>
                                 </div>
                                 <span id="hidden-form-coins">
 

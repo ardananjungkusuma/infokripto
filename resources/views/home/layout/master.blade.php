@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
 </head>
 
-<body>
+<body style="display:flex; flex-direction:column; min-height:100vh;">
 
     <!-- ======= Header ======= -->
     <header id="header">
@@ -68,16 +68,22 @@
 
         </div>
     </header><!-- End Header -->
-    @yield('content')
+    <div class="wrapper" style="flex:1;">
+        @yield('content')
+    </div>
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container footer-bottom clearfix">
             <div class="copyright">
                 &copy; Copyright <strong><span>Info Kripto</span></strong>. All Rights Reserved
             </div>
-            <!-- <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div> -->
+            {{-- <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div> --}}
+            <div class="credits">
+                <a href="" style="color:white">📧 Kirim Kritik dan Saran </a> | <a href="" style="color:white">❤
+                    Donasi</a>
+            </div>
         </div>
     </footer><!-- End Footer -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -93,7 +99,6 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/home/js/main.js') }}"></script>
-
 </body>
 
 </html>

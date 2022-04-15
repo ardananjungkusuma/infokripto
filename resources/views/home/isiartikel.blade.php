@@ -11,7 +11,7 @@
                 </h2>
                 <ol>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">Artikel</a></li>
+                    <li><a href="/content">Artikel</a></li>
                     <li>{{ $artikel->judul }}</li>
                 </ol>
             </div>
@@ -43,8 +43,14 @@
                         <label style="font-weight: bold">Author : </label>
                         {{ $artikel->author }} <br>
                         <label style="font-weight: bold">Kategori : </label>
+                        <?php $no = 1; ?>
                         @foreach($category as $c)
-                        {{ $c->kategori . ',' }}
+                        @if(count($category) != $no)
+                        {{ $c->kategori . ", " }}
+                        @else
+                        {{ $c->kategori }}
+                        @endif
+                        <?php $no++ ?>
                         @endforeach
                     </span>
                 </div>

@@ -20,21 +20,21 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label style="font-weight: bold;">Pilih Coin (Ingin menambah data baru? <a href="/coin"
-                                    style="color: blue;" target="_blank">Klik disini</a>)</label>
+                            <h6 style="font-weight: bold;">Pilih Coin (Ingin menambah data baru? <a href="/coin"
+                                    style="color: blue;" target="_blank">Klik disini</a>)</h6>
                             <select class="form-control js-example-basic-single" id="id_jenis_coin" name="id_jenis_coin"
                                 required>
-                                <option value="" disabled selected>Pilih Coin</option>
+                                <option value="" disabled selected>Silahkan Pilih Coin</option>
                                 @foreach ($coin as $c) {
                                 <option value="{{ $c->id_jenis_coin }}">
                                     {{ $c->nama_coin . " (" . $c->singkatan_coin . ")" }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <button class="btn btn-success" onclick="tambahCoin()" type="submit"><i class="fa fa-coins"></i>
+                        {{-- <button class="btn btn-success" onclick="tambahCoin()" type="submit"><i class="fa fa-coins"></i>
                             Tambah Coin</button>
                         <br>
-                        <br>
+                        <br> --}}
                         <div id="list-coin">
                             <h4>Daftar Coin Support</h4>
                             <hr>
@@ -45,21 +45,21 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label style="font-weight: bold;">Pilih Network (Ingin menambah data baru? <a
-                                    href="/cnetwork" style="color: blue;" target="_blank">Klik disini</a>)</label>
+                            <h6 style="font-weight: bold;">Pilih Network (Ingin menambah data baru? <a href="/cnetwork"
+                                    style="color: blue;" target="_blank">Klik disini</a>)</h6>
                             <select class="form-control js-example-basic-single" id="id_jenis_network"
                                 name="id_jenis_network" required>
-                                <option value="" disabled selected>Pilih Network</option>
+                                <option value="" disabled selected>Silakan Pilih Chain Network</option>
                                 @foreach ($cnetwork as $cn) {
                                 <option value="{{ $cn->id_jenis_network  }}">
                                     {{ $cn->nama_network . " (" . $cn->singkatan_network . ")"  }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <button class="btn btn-info" onclick="tambahNetwork()" type="submit"><i
+                        {{-- <button class="btn btn-info" onclick="tambahNetwork()" type="submit"><i
                                 class="fa fa-network-wired"></i> Tambah Network</button>
                         <br>
-                        <br>
+                        <br> --}}
                         <div id="list-network">
                             <h4>Daftar Network Support</h4>
                             <hr>
@@ -85,6 +85,13 @@
         $('.js-example-basic-single').select2();
         get_coin();
         get_network();
+
+        $('#id_jenis_coin').on('change', function (e) {
+            tambahCoin();
+        });
+        $('#id_jenis_network').on('change', function (e) {
+            tambahNetwork();
+        });
     });
 
     function get_coin() {
@@ -137,6 +144,7 @@
                         alert("Data yang anda masukan telah ada dalam database.");
                     }
                     get_coin();
+                    document.getElementById('id_jenis_network').selectedIndex = 0;
                 }
             });
         } else {
@@ -163,6 +171,7 @@
                         alert("Data yang anda masukan telah ada dalam database.");
                     }
                     get_network();
+                    document.getElementById('id_jenis_network').selectedIndex = 0;
                 }
             });
         } else {

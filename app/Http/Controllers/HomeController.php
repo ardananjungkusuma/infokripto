@@ -26,15 +26,15 @@ class HomeController extends Controller
 
     public function cariDompet(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'nft' => 'required'
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'nft' => 'required'
+        // ]);
 
-        if ($validator->fails()) {
-            return redirect('/cnetwork/edit/' . $request->id_jenis_network)
-                ->withErrors($validator)
-                ->withInput();
-        }
+        // if ($validator->fails()) {
+        //     return redirect('/cnetwork/edit/' . $request->id_jenis_network)
+        //         ->withErrors($validator)
+        //         ->withInput();
+        // }
 
         if ($request->hidden_coin_id !== null) {
             $selectedCoin = array();
@@ -130,7 +130,11 @@ class HomeController extends Controller
 
         // dd($finalWallet);
 
-        $nft = $request->nft;
+        if (!empty($request->nft)) {
+            $nft = $request->nft;
+        } else {
+            $nft = 0;
+        }
 
         if ($nft == 1) {
             // Get all Wallet berdasarkan NFT Showcase

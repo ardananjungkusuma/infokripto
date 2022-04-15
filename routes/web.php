@@ -30,7 +30,7 @@ Route::get('/auth/logout', 'AuthController@logout');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/content', 'ArtikelController@content');
+Route::match(array('GET', 'POST'), '/content', 'ArtikelController@content');
 Route::get('/content/{slug}', 'ArtikelController@content');
 
 Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {

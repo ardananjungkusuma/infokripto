@@ -18,11 +18,16 @@ class ArtikelController extends Controller
         return view('admin.artikel.manage', compact('artikel'));
     }
 
-    public function content($slug = null)
+    public function content(Request $request, $slug = null)
     {
         if ($slug === null) {
-            $artikel = Artikel::all();
-            return view('home.daftarartikel', compact('artikel'));
+            if (!$request->search_article) {
+                $artikel = Artikel::orderBy('updated_at', 'DESC')->paginate(20);
+                return view('home.daftarartikel', compact('artikel'));
+            } else {
+                $artikel = Artikel::where('judul', 'LIKE', '%' . $request->search_article . '%')->paginate(20);
+                return view('home.daftarartikel', compact('artikel'));
+            }
         } else {
             $artikel = Artikel::where('slug', $slug)->get()->first();
             $category = ArCategory::where('id_artikel', $artikel->id_artikel)->get();

@@ -34,6 +34,24 @@
                     <div class="form-group">
                         <label style="font-weight:bold">Kategori(Max 5 kategori)</label>
                         <input type="text" class="form-control" id="inputkategori" value="" placeholder="Kategori">
+                        Recommend Category :
+                        <span>
+                            <span onclick="saranKategori('airdrop')" style="cursor: pointer;background-color: yellow">
+                                airdrop
+                            </span>,
+                            <span onclick="saranKategori('edukasi')" style="cursor: pointer;background-color: yellow">
+                                edukasi
+                            </span>,
+                            <span onclick="saranKategori('gratis')" style="cursor: pointer;background-color: yellow">
+                                gratis
+                            </span>,
+                            <span onclick="saranKategori('modal')" style="cursor: pointer;background-color: yellow">
+                                modal
+                            </span>,
+                            <span onclick="saranKategori('testnet')" style="cursor: pointer;background-color: yellow">
+                                testnet
+                            </span>
+                        </span><br>
                         <a class="btn btn-success" onclick="addKategori()"><i class="fa fa-plus"></i> Tambah
                             Kategori</a>
                         <br><br>
@@ -56,7 +74,7 @@
 <script src="//cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 {{-- <script src="{{ asset('ckeditor/ckeditor.js') }}"></script> --}}
 <script src="{{ asset('js/autolink/plugin.js') }}"></script>
-<script src="{{ asset('js/autocomplete/plugin.js') }}"></script>
+{{-- <script src="{{ asset('js/autocomplete/plugin.js') }}"></script> --}}
 <script src="{{ asset('js/textmatch/plugin.js') }}"></script>
 <script>
     var id_artikel = '<?= $id_artikel ?>>'
@@ -74,6 +92,7 @@
         getKategori();
     });
     var jumlahKategori = 0;
+    var arrayKategori = [];
     function getKategori(){
         $.ajax({
             type: 'GET',
@@ -82,6 +101,7 @@
             success: (hasil) => {
                 hasil.forEach(function(item) {
                     jumlahKategori++;
+                    arrayKategori.push(item.kategori);
                     $('#daftar-kategori').append(`
                     <li class="kriteria${jumlahKategori}">
                         ${item.kategori} - <span style="color: red;cursor: pointer" onclick="hapusKategoriYgUdhAda('kriteria${jumlahKategori}|${item.id_arcategory}')"><i class="fa fa-trash"></i> Hapus</span>
@@ -93,30 +113,30 @@
     }
     function addKategori(){
         if(jumlahKategori < 5){
-            let inputnow = document.getElementById('inputkategori').value;
-            if(inputnow == ""){
-                alert('Anda belum mengisi jenis kategori!');
-            }else{
-                jumlahKategori++;
-                $('#daftar-kategori').append(`
-                    <li class="kriteria${jumlahKategori}">
-                        ${inputnow} - <span style="color: red;cursor: pointer" onclick="hapusKategori('kriteria${jumlahKategori}')"><i class="fa fa-trash"></i> Hapus</span>
-                        <input type="hidden" name="hidden_kategori[]" value="${inputnow}">
-                    </li>
-                    `);
+            let inputraw = document.getElementById('inputkategori').value;
+            let inputnow = inputraw.toLowerCase();
+            if(arrayKategori.includes(inputnow) == false){
+                if(inputnow == ""){
+                    alert('Anda belum mengisi jenis kategori!');
+                }else{
+                    jumlahKategori++;
+                    $('#daftar-kategori').append(`
+                        <li class="kriteria${jumlahKategori}">
+                            ${inputnow} - <span style="color: red;cursor: pointer" onclick="hapusKategori('kriteria${jumlahKategori}')"><i class="fa fa-trash"></i> Hapus</span>
+                            <input type="hidden" name="hidden_kategori[]" value="${inputnow}">
+                        </li>
+                        `);
+                    document.getElementById('inputkategori').value = '';
+                    // console.log("kategori added");
+                    // console.log(jumlahKategori);
+                }
+            } else {
+                alert("Tidak boleh ada kategori yang sama");
                 document.getElementById('inputkategori').value = '';
-                // console.log("kategori added");
-                // console.log(jumlahKategori);
             }
         }else{
             alert("Jumlah kategori maksimal 5");
         }
-    }
-    function hapusKategori(idnya){
-        jumlahKategori--;
-        $(`.${idnya}`).remove();
-        // console.log(jumlahKategori);
-        // console.log(idKategori);
     }
     function hapusKategoriYgUdhAda(idnya){
         jumlahKategori--;
@@ -129,6 +149,53 @@
         $.get(`/arcategory/artikel/hapus/${splitdata[1]}`, function(data) {
             console.log("deleted");
         });
+    }
+    function removeItemOnce(arr, value) {
+        var index = arr.indexOf(value);
+        if (index > -1) {
+            arr.splice(index, 1);
+        }
+        return arr;
+    }
+    function saranKategori(saran){
+        if(jumlahKategori < 5){
+            let inputraw = saran;
+            let inputnow = saran.toLowerCase();
+            if(arrayKategori.includes(inputnow) == false){
+                arrayKategori.push(inputnow);
+                if(inputnow == ""){
+                    alert('Anda belum mengisi jenis kategori!');
+                }else{
+                    jumlahKategori++;
+                    $('#daftar-kategori').append(`
+                        <li class="kriteria${jumlahKategori}">
+                            ${inputnow} - <span style="color: red;cursor: pointer" onclick="hapusKategori('kriteria${jumlahKategori}','${inputnow}')"><i class="fa fa-trash"></i> Hapus</span>
+                            <input type="hidden" name="hidden_kategori[]" value="${inputnow}">
+                        </li>
+                        `);
+                    document.getElementById('inputkategori').value = '';
+                    // console.log("kategori added");
+                    // console.log(jumlahKategori);
+                }
+                // console.log(jumlahKategori);
+                // console.log(arrayKategori);
+            } else {
+                alert("Tidak boleh ada kategori yang sama");
+                document.getElementById('inputkategori').value = '';
+            }
+        }else{
+            alert("Jumlah kategori maksimal 5");
+        }
+    }
+    function hapusKategori(idnya, isikategori){
+
+        $(`.${idnya}`).remove();
+        // arrayKategori.filter(item => item !== isikategori);
+        removeItemOnce(arrayKategori, isikategori);
+        // console.log(arrayKategori);
+        jumlahKategori--;
+        // console.log(jumlahKategori);
+        // console.log(idKategori);
     }
 </script>
 @endsection
