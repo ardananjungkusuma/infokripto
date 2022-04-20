@@ -81,7 +81,7 @@
                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div> --}}
             <div class="credits">
-                <a href="" style="color:white">📧 Kirim Kritik dan Saran </a> | <a href="" style="color:white">❤
+                <a href="/krisar" style="color:white">📧 Kirim Kritik dan Saran </a> | <a href="" style="color:white">❤
                     Donasi</a>
             </div>
         </div>

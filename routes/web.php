@@ -13,15 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 // Route::get('/auth/login', 'AuthController@index')->name('login');
+Route::get('/loaderio-3892d7f84f1e0501400db29ce8b3821b', 'HomeController@loader');
+Route::get('/', 'HomeController@index');
 Route::get('/', 'HomeController@index');
 Route::get('/home/pilihDompet', 'HomeController@pilihDompet');
 Route::post('/home/cariDompet', 'HomeController@cariDompet');
+Route::get('/krisar', 'KrisarController@index');
+Route::post('/krisar/kirim', 'KrisarController@kirim');
 
 // Auth::routes();
 Route::get('/auth', 'AuthController@index');
@@ -73,4 +77,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     // json res
     Route::get('/arcategory/artikel/{idartikel}', 'ArCategoryController@getArCategory');
     Route::get('/arcategory/artikel/hapus/{idartikel}', 'ArCategoryController@deleteArCategory');
+
+    Route::get('/krisar/manage', 'KrisarController@manage');
+    Route::get('/krisar/resolve/{id}', 'KrisarController@resolve');
 });

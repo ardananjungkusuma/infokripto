@@ -17,6 +17,11 @@ class HomeController extends Controller
         return view('home.index');
     }
 
+    public function loader()
+    {
+        echo "loaderio-3892d7f84f1e0501400db29ce8b3821b";
+    }
+
     public function pilihDompet()
     {
         $coin = Coin::all();

@@ -112,6 +112,10 @@
                                 </div>
                             </div>
                             <div class="nav-item">
+                                <a href="/krisar/manage"><i class="fa fa-mail-bulk"></i><span>Manajemen
+                                        Kritik & Saran</span></a>
+                            </div>
+                            <div class="nav-item">
                                 <a href="/artikel/manage/gambar"><i class="ik ik-image"></i><span>Manajemen
                                         Gambar</span></a>
                             </div>

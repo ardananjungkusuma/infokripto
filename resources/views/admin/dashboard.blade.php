@@ -62,11 +62,11 @@
                     <div class="widget-body">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="state">
-                                <h6>Pemilihan</h6>
+                                <h6>Kritik & Saran</h6>
                                 <h2>..</h2>
                             </div>
                             <div class="icon">
-                                <i class="fa fa-think-peaks"></i>
+                                <i class="fa fa-inbox"></i>
                             </div>
                         </div>
                         <small class="text-small mt-10 d-block">Total Comments</small>
