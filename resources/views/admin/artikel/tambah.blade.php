@@ -60,7 +60,7 @@
     </div>
 </div>
 @section('script')
-<script src="//cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+{{-- <script src="//cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script> --}}
 <script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
 {{-- <script src="{{ asset('js/autolink/plugin.js') }}"></script>
 <script src="{{ asset('js/autocomplete/plugin.js') }}"></script>
