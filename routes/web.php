@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Route::get('/auth/login', 'AuthController@index')->name('login');
-Route::get('/loaderio-3892d7f84f1e0501400db29ce8b3821b', 'HomeController@loader');
+// Route::get('/loaderio-3892d7f84f1e0501400db29ce8b3821b', 'HomeController@loader');
 Route::get('/', 'HomeController@index');
 Route::get('/', 'HomeController@index');
 Route::get('/home/pilihDompet', 'HomeController@pilihDompet');
