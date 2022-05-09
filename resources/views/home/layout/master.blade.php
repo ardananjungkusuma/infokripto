@@ -57,9 +57,9 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="/">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Ilmu Dasar</a></li>
+                    <li><a class="nav-link scrollto" href="/content/category/edukasi">Ilmu & Edukasi</a></li>
                     <li><a class="nav-link scrollto" href="/content">Artikel Kripto</a></li>
-                    <li><a class="nav-link scrollto" href="#portfolio">Airdrop</a></li>
+                    <li><a class="nav-link scrollto" href="/content/category/airdrop">Airdrop</a></li>
                     <li><a class="getstarted scrollto" href="/home/pilihDompet">Pilih Dompet Kripto</a>
                     </li>
                 </ul>

@@ -219,4 +219,12 @@ class ArtikelController extends Controller
         $artikel = Artikel::all();
         echo json_encode($artikel);
     }
+
+    public function categoryfilter($name)
+    {
+        $title = strtoupper($name);
+        $artikel = Artikel::categoryFilter($name);
+        // dd($artikel);
+        return view('home.artikelkategori', compact('artikel', 'title'));
+    }
 }

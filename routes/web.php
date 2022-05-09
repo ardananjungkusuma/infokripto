@@ -36,6 +36,7 @@ Route::get('/auth/logout', 'AuthController@logout');
 
 Route::match(array('GET', 'POST'), '/content', 'ArtikelController@content');
 Route::get('/content/{slug}', 'ArtikelController@content');
+Route::get('/content/category/{name}', 'ArtikelController@categoryfilter');
 
 Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::get('/admin', 'AdminController@index');

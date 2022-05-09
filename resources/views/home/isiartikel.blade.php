@@ -46,9 +46,9 @@
                         <?php $no = 1; ?>
                         @foreach($category as $c)
                         @if(count($category) != $no)
-                        {{ $c->kategori . ", " }}
+                        <a href="/content/category/{{ $c->kategori }}">{{ $c->kategori }}</a>,
                         @else
-                        {{ $c->kategori }}
+                        <a href="/content/category/{{ $c->kategori }}">{{ $c->kategori }}</a>
                         @endif
                         <?php $no++ ?>
                         @endforeach
