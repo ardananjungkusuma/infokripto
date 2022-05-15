@@ -82,6 +82,8 @@ class CwalletController extends Controller
                     ->withInput();
             }
 
+            dd($request->last_update_data);
+
             $coin = Cwallet::find($request->id_wallet)
                 ->update([
                     'nama_wallet' => $request->nama_wallet,
