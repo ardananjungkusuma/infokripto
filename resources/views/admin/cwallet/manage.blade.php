@@ -139,7 +139,7 @@
         if (coin != null) {
             $.ajax({
                 type:'POST',
-                url:"{{ url('/cwallet/tambahNetworkWallet') }}",
+                url:"{{ url('/cwallet/tambahCoinWallet') }}",
                 data:{id_jenis_coin: coin,id_wallet: id_wallet,  "_token": "{{ csrf_token() }}"},
                 success:function(data){
                     if (data == "Failed") {
@@ -163,6 +163,8 @@
 
     function tambahNetwork() {
         let network = $('#id_jenis_network').val();
+        // console.log("ASDDSADSA");
+        // console.log(network);
         if (network != null) {
             $.ajax({
                 type:'POST',
