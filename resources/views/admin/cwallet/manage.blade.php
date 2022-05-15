@@ -139,7 +139,7 @@
         if (coin != null) {
             $.ajax({
                 type:'POST',
-                url:"/cwallet/tambahCoinWallet/",
+                url:"{{ url('/cwallet/tambahNetworkWallet') }}",
                 data:{id_jenis_coin: coin,id_wallet: id_wallet,  "_token": "{{ csrf_token() }}"},
                 success:function(data){
                     if (data == "Failed") {
