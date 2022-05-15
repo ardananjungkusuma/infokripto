@@ -14,6 +14,7 @@
                 <div style="font-size: 15px;">
                     <label style="font-weight: bold;">Nama Aplikasi : </label>
                     <?php
+                    $csrf_lur = csrf_field();
                     $id_wallet = $wallet->id_wallet; ?>
                     <a href="/cwallet/detail/{{ $id_wallet }}">{{ $wallet->nama_wallet }}</a>
                 </div>
@@ -80,6 +81,7 @@
         }
     });
     var id_wallet = '<?= $id_wallet ?>';
+    var csrf = '<?= $csrf_lur ?>'
 
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
@@ -138,7 +140,7 @@
             $.ajax({
                 type:'POST',
                 url:"/cwallet/tambahCoinWallet/",
-                data:{id_jenis_coin: coin,id_wallet: id_wallet},
+                data:{id_jenis_coin: coin,id_wallet: id_wallet,  "_token": "{{ csrf_token() }}"},
                 success:function(data){
                     if (data == "Failed") {
                         alert("Data yang anda masukan telah ada dalam database.");
@@ -165,7 +167,7 @@
             $.ajax({
                 type:'POST',
                 url:"/cwallet/tambahNetworkWallet/",
-                data:{id_jenis_network: network,id_wallet: id_wallet},
+                data:{id_jenis_network: network,id_wallet: id_wallet, "_token": "{{ csrf_token() }}"},
                 success:function(data){
                     if (data == "Failed") {
                         alert("Data yang anda masukan telah ada dalam database.");
