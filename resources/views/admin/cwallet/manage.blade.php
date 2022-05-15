@@ -166,7 +166,7 @@
         if (network != null) {
             $.ajax({
                 type:'POST',
-                url:{{ url('/cwallet/tambahNetworkWallet') }},
+                url:"{{ url('/cwallet/tambahNetworkWallet') }}",
                 data:{id_jenis_network: network,id_wallet: id_wallet, "_token": "{{ csrf_token() }}"},
                 success:function(data){
                     if (data == "Failed") {
