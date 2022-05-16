@@ -115,14 +115,16 @@
                                 <a href="/krisar/manage"><i class="fa fa-mail-bulk"></i><span>Manajemen
                                         Kritik & Saran</span></a>
                             </div>
-                            <div class="nav-item">
+                            {{-- <div class="nav-item">
                                 <a href="/artikel/manage/gambar"><i class="ik ik-image"></i><span>Manajemen
                                         Gambar</span></a>
-                            </div>
+                            </div> --}}
+                            @role('superadmin')
                             <div class="nav-item">
-                                <a href="{{ asset('') }}users"><i class="ik ik-users"></i><span>Manajemen
+                                <a href="/user/manage"><i class="ik ik-users"></i><span>Manajemen
                                         User</span></a>
                             </div>
+                            @endrole
                         </nav>
                     </div>
                 </div>

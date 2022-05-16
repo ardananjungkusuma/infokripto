@@ -38,6 +38,10 @@ Route::match(array('GET', 'POST'), '/content', 'ArtikelController@content');
 Route::get('/content/{slug}', 'ArtikelController@content');
 Route::get('/content/category/{name}', 'ArtikelController@categoryfilter');
 
+Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
+    Route::match(array('GET', 'POST'), '/user/manage', 'UserController@manage');
+});
+
 Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::get('/admin', 'AdminController@index');
 

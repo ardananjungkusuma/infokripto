@@ -54,11 +54,13 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <h4 style="font-weight: bold;">Artikel Terkait</h4>
+                        <h4 style="font-weight: bold;">Artikel Terbaru Kami</h4>
                         <ul>
-                            <li>Apa itu Coin?</li>
-                            <li>Apa itu Network Chain?</li>
-                            <li>Apa itu NFT?</li>
+                            @foreach($artikel as $a)
+                            <li>
+                                <a href="/content/{{ $a['slug'] }}">{{ $a['judul'] }}</a>
+                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

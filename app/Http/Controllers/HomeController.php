@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Artikel;
 use App\Cnetwork;
 use App\Coin;
 use App\Cwallet;
@@ -26,7 +27,8 @@ class HomeController extends Controller
     {
         $coin = Coin::all();
         $cnetwork = Cnetwork::all();
-        return view('home.pilihdompet', compact('coin', 'cnetwork'));
+        $artikel = Artikel::orderBy('created_at', 'DESC')->limit(5)->get();
+        return view('home.pilihdompet', compact('coin', 'cnetwork', 'artikel'));
     }
 
     public function cariDompet(Request $request)
@@ -438,9 +440,10 @@ class HomeController extends Controller
                 $isinotif = 'Berikut hasil dari perangkingan dan pemfilteran wallet sesuai dengan kriteria yang anda inginkan.';
             }
         }
+        $artikel = Artikel::orderBy('created_at', 'DESC')->limit(5)->get();
 
         // dd($result);
-        return view('home.hasildompet', compact('result'))->with('notif', $isinotif);;
+        return view('home.hasildompet', compact('result', 'artikel'))->with('notif', $isinotif);;
     }
 
     public function spkSMART($data = array())

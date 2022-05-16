@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2022 at 06:14 PM
+-- Generation Time: May 16, 2022 at 10:18 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `skripsi_smart_lara`
+-- Database: `infokripto`
 --
 
 -- --------------------------------------------------------
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `arcategory` (
   `id_arcategory` bigint(20) NOT NULL,
   `id_artikel` bigint(20) NOT NULL,
-  `kategori` varchar(250) NOT NULL,
+  `kategori` varchar(100) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -195,7 +195,108 @@ INSERT INTO `arcategory` (`id_arcategory`, `id_artikel`, `kategori`, `updated_at
 (163, 93, 'airdrop', '2022-03-07 17:12:01', '2022-03-07 17:12:01'),
 (164, 93, 'gratis', '2022-03-07 17:12:01', '2022-03-07 17:12:01'),
 (165, 94, 'airdrop', '2022-03-07 17:12:20', '2022-03-07 17:12:20'),
-(166, 94, 'gratis', '2022-03-07 17:12:20', '2022-03-07 17:12:20');
+(166, 94, 'gratis', '2022-03-07 17:12:20', '2022-03-07 17:12:20'),
+(167, 95, 'airdrop', '2022-03-28 23:10:35', '2022-03-28 23:10:35'),
+(168, 95, 'gratis', '2022-03-28 23:10:35', '2022-03-28 23:10:35'),
+(169, 96, 'airdrop', '2022-03-28 23:11:58', '2022-03-28 23:11:58'),
+(170, 96, 'gratis', '2022-03-28 23:11:58', '2022-03-28 23:11:58'),
+(171, 97, 'testnet', '2022-03-29 20:06:04', '2022-03-29 20:06:04'),
+(172, 98, 'testnet', '2022-03-29 20:06:44', '2022-03-29 20:06:44'),
+(173, 99, 'airdrop', '2022-03-29 20:11:05', '2022-03-29 20:11:05'),
+(174, 99, 'gratis', '2022-03-29 20:11:05', '2022-03-29 20:11:05'),
+(175, 100, 'testnet', '2022-03-30 08:28:35', '2022-03-30 08:28:35'),
+(176, 100, 'gratis', '2022-03-30 08:28:35', '2022-03-30 08:28:35'),
+(179, 102, 'testnet', '2022-03-30 09:43:54', '2022-03-30 09:43:54'),
+(180, 102, 'gratis', '2022-03-30 09:43:54', '2022-03-30 09:43:54'),
+(181, 103, 'testnet', '2022-03-30 09:44:24', '2022-03-30 09:44:24'),
+(182, 103, 'gratis', '2022-03-30 09:44:24', '2022-03-30 09:44:24'),
+(183, 104, 'testnet', '2022-03-30 09:52:26', '2022-03-30 09:52:26'),
+(184, 104, 'gratis', '2022-03-30 09:52:26', '2022-03-30 09:52:26'),
+(185, 105, 'testnet', '2022-03-31 23:08:15', '2022-03-31 23:08:15'),
+(186, 105, 'gratis', '2022-03-31 23:08:15', '2022-03-31 23:08:15'),
+(187, 106, 'testnet', '2022-03-31 23:09:08', '2022-03-31 23:09:08'),
+(188, 107, 'testnet', '2022-04-02 14:58:37', '2022-04-02 14:58:37'),
+(189, 108, 'airdrop', '2022-04-03 20:00:17', '2022-04-03 20:00:17'),
+(190, 108, 'gratis', '2022-04-03 20:00:17', '2022-04-03 20:00:17'),
+(191, 109, 'gratis', '2022-04-03 20:00:55', '2022-04-03 20:00:55'),
+(192, 109, 'airdrop', '2022-04-03 20:00:55', '2022-04-03 20:00:55'),
+(193, 110, 'testnet', '2022-04-03 20:02:20', '2022-04-03 20:02:20'),
+(194, 110, 'gratis', '2022-04-03 20:02:20', '2022-04-03 20:02:20'),
+(195, 111, 'airdrop', '2022-04-04 21:45:08', '2022-04-04 21:45:08'),
+(196, 111, 'gratis', '2022-04-04 21:45:08', '2022-04-04 21:45:08'),
+(197, 112, 'testnet', '2022-04-04 21:46:23', '2022-04-04 21:46:23'),
+(198, 112, 'gratis', '2022-04-04 21:46:23', '2022-04-04 21:46:23'),
+(199, 113, 'airdrop', '2022-04-07 19:24:22', '2022-04-07 19:24:22'),
+(200, 113, 'gratis', '2022-04-07 19:24:22', '2022-04-07 19:24:22'),
+(201, 114, 'gratis', '2022-04-09 04:21:56', '2022-04-09 04:21:56'),
+(202, 114, 'airdrop', '2022-04-09 04:21:56', '2022-04-09 04:21:56'),
+(203, 115, 'testnet', '2022-04-09 10:07:00', '2022-04-09 10:07:00'),
+(204, 115, 'gratis', '2022-04-09 10:07:00', '2022-04-09 10:07:00'),
+(205, 116, 'airdrop', '2022-04-09 11:14:53', '2022-04-09 11:14:53'),
+(206, 116, 'gratis', '2022-04-09 11:14:53', '2022-04-09 11:14:53'),
+(207, 117, 'airdrop', '2022-04-09 12:21:14', '2022-04-09 12:21:14'),
+(208, 117, 'gratis', '2022-04-09 12:21:14', '2022-04-09 12:21:14'),
+(209, 118, 'gratis', '2022-04-10 14:10:03', '2022-04-10 14:10:03'),
+(210, 118, 'airdrop', '2022-04-10 14:10:03', '2022-04-10 14:10:03'),
+(211, 119, 'gratis', '2022-04-11 13:17:00', '2022-04-11 13:17:00'),
+(212, 119, 'airdrop', '2022-04-11 13:17:00', '2022-04-11 13:17:00'),
+(213, 120, 'testnet', '2022-04-14 21:45:07', '2022-04-14 21:45:07'),
+(214, 120, 'gratis', '2022-04-14 21:45:07', '2022-04-14 21:45:07'),
+(215, 121, 'airdrop', '2022-04-15 08:00:59', '2022-04-15 08:00:59'),
+(216, 121, 'gratis', '2022-04-15 08:00:59', '2022-04-15 08:00:59'),
+(217, 122, 'airdrop', '2022-04-18 08:34:09', '2022-04-18 08:34:09'),
+(218, 122, 'gratis', '2022-04-18 08:34:09', '2022-04-18 08:34:09'),
+(219, 123, 'airdrop', '2022-04-18 08:34:32', '2022-04-18 08:34:32'),
+(220, 123, 'gratis', '2022-04-18 08:34:32', '2022-04-18 08:34:32'),
+(221, 124, 'airdrop', '2022-04-18 08:35:02', '2022-04-18 08:35:02'),
+(222, 124, 'gratis', '2022-04-18 08:35:02', '2022-04-18 08:35:02'),
+(223, 125, 'airdrop', '2022-04-20 14:23:43', '2022-04-20 14:23:43'),
+(224, 125, 'gratis', '2022-04-20 14:23:43', '2022-04-20 14:23:43'),
+(225, 126, 'airdrop', '2022-04-21 22:32:10', '2022-04-21 22:32:10'),
+(226, 126, 'gratis', '2022-04-21 22:32:10', '2022-04-21 22:32:10'),
+(227, 127, 'airdrop', '2022-04-23 16:44:39', '2022-04-23 16:44:39'),
+(228, 127, 'gratis', '2022-04-23 16:44:39', '2022-04-23 16:44:39'),
+(229, 128, 'airdrop', '2022-04-23 20:07:25', '2022-04-23 20:07:25'),
+(230, 128, 'gratis', '2022-04-23 20:07:25', '2022-04-23 20:07:25'),
+(231, 129, 'gratis', '2022-04-27 15:03:58', '2022-04-27 15:03:58'),
+(233, 130, 'gratis', '2022-04-27 15:06:03', '2022-04-27 15:06:03'),
+(234, 130, 'testnet', '2022-04-27 15:06:03', '2022-04-27 15:06:03'),
+(235, 129, 'testnet', '2022-04-27 15:06:13', '2022-04-27 15:06:13'),
+(236, 131, 'airdrop', '2022-05-03 17:30:03', '2022-05-03 17:30:03'),
+(237, 131, 'gratis', '2022-05-03 17:30:03', '2022-05-03 17:30:03'),
+(238, 132, 'airdrop', '2022-05-03 21:21:36', '2022-05-03 21:21:36'),
+(239, 132, 'gratis', '2022-05-03 21:21:36', '2022-05-03 21:21:36'),
+(240, 133, 'airdrop', '2022-05-04 09:37:39', '2022-05-04 09:37:39'),
+(241, 133, 'gratis', '2022-05-04 09:37:39', '2022-05-04 09:37:39'),
+(242, 134, 'airdrop', '2022-05-05 19:05:51', '2022-05-05 19:05:51'),
+(243, 134, 'gratis', '2022-05-05 19:05:51', '2022-05-05 19:05:51'),
+(244, 135, 'testnet', '2022-05-08 20:33:47', '2022-05-08 20:33:47'),
+(245, 136, 'airdrop', '2022-05-10 11:14:59', '2022-05-10 11:14:59'),
+(246, 136, 'gratis', '2022-05-10 11:14:59', '2022-05-10 11:14:59'),
+(247, 137, 'airdrop', '2022-05-10 11:15:16', '2022-05-10 11:15:16'),
+(248, 137, 'gratis', '2022-05-10 11:15:16', '2022-05-10 11:15:16'),
+(249, 138, 'airdrop', '2022-05-10 11:15:48', '2022-05-10 11:15:48'),
+(250, 138, 'gratis', '2022-05-10 11:15:48', '2022-05-10 11:15:48'),
+(251, 139, 'edukasi', '2022-05-11 11:34:31', '2022-05-11 11:34:31'),
+(252, 140, 'testnet', '2022-05-13 23:04:05', '2022-05-13 23:04:05'),
+(253, 141, 'airdrop', '2022-05-13 23:04:27', '2022-05-13 23:04:27'),
+(254, 141, 'gratis', '2022-05-13 23:04:27', '2022-05-13 23:04:27'),
+(255, 142, 'airdrop', '2022-05-13 23:06:12', '2022-05-13 23:06:12'),
+(256, 142, 'gratis', '2022-05-13 23:06:12', '2022-05-13 23:06:12'),
+(257, 143, 'airdrop', '2022-05-13 23:06:49', '2022-05-13 23:06:49'),
+(258, 143, 'gratis', '2022-05-13 23:06:49', '2022-05-13 23:06:49'),
+(259, 144, 'airdrop', '2022-05-13 23:07:30', '2022-05-13 23:07:30'),
+(260, 144, 'gratis', '2022-05-13 23:07:30', '2022-05-13 23:07:30'),
+(261, 145, 'gratis', '2022-05-14 10:19:14', '2022-05-14 10:19:14'),
+(262, 145, 'airdrop', '2022-05-14 10:19:14', '2022-05-14 10:19:14'),
+(263, 146, 'edukasi', '2022-05-15 23:45:51', '2022-05-15 23:45:51'),
+(264, 146, 'airdrop', '2022-05-15 23:45:51', '2022-05-15 23:45:51'),
+(265, 147, 'gratis', '2022-05-15 23:52:29', '2022-05-15 23:52:29'),
+(266, 147, 'airdrop', '2022-05-15 23:52:29', '2022-05-15 23:52:29'),
+(267, 148, 'airdrop', '2022-05-15 23:53:12', '2022-05-15 23:53:12'),
+(268, 148, 'gratis', '2022-05-15 23:53:12', '2022-05-15 23:53:12'),
+(269, 149, 'airdrop', '2022-05-15 23:53:36', '2022-05-15 23:53:36'),
+(270, 149, 'gratis', '2022-05-15 23:53:36', '2022-05-15 23:53:36');
 
 -- --------------------------------------------------------
 
@@ -206,10 +307,10 @@ INSERT INTO `arcategory` (`id_arcategory`, `id_artikel`, `kategori`, `updated_at
 CREATE TABLE `artikel` (
   `id_artikel` bigint(20) NOT NULL,
   `slug` varchar(250) NOT NULL,
-  `judul` varchar(50) NOT NULL,
+  `judul` varchar(250) NOT NULL,
   `gambar_sampul` varchar(250) NOT NULL,
   `isi` text NOT NULL,
-  `author` varchar(255) NOT NULL,
+  `author` varchar(80) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -306,7 +407,61 @@ INSERT INTO `artikel` (`id_artikel`, `slug`, `judul`, `gambar_sampul`, `isi`, `a
 (91, 'metabloqs-airdrop-220308121107', '📨 Metabloqs Airdrop', 'noimg.jpg', '<p>📨 Metabloqs Airdrop<br />\r\n💎 Reward Metabloqs Rare Assets + NFT Land + XDC Token for 5K FCFS</p>\r\n\r\n<p><a href=\"https://metabloqs.com/\">https://metabloqs.com/</a></p>\r\n\r\n<p>- Click &#39;Join NOW&#39;<br />\r\n- Register with email<br />\r\n- Verify email (spam folder)<br />\r\n- Submit data<br />\r\n- Enter address XDC<br />\r\n🔥 Done</p>\r\n\r\n<p>Create XDC Wallet</p>\r\n\r\n<p><a href=\"https://wallet.xinfin.network/#/\">https://wallet.xinfin.network/#/</a></p>', 'Ardan Anjung', '2022-03-07 17:11:07', '2022-03-07 17:11:07'),
 (92, 'tzworld-early-access-key-giveaway-220308121146', 'tzWorld Early Access Key Giveaway', 'noimg.jpg', '<p>tzWorld Early Access Key Giveaway</p>\r\n\r\n<p>🪂 Fill Form : &nbsp;<a href=\"https://docs.google.com/forms/d/e/1FAIpQLSe6pFsP5uQs3sgJM1Z2fFpNo0pJuDmLwoh05aW7NNTHGE9inQ/viewform\">https://docs.google.com/forms/d/e/1FAIpQLSe6pFsP5uQs3sgJM1Z2fFpNo0pJuDmLwoh05aW7NNTHGE9inQ/viewform</a><br />\r\n➖ Complete Task<br />\r\n➖ Submit Tezos Address from kukai wallet.</p>', 'Ardan Anjung', '2022-03-07 17:11:46', '2022-03-07 17:11:46'),
 (93, 'rolling-ball-airdrop-220308121201', '📨Rolling Ball Airdrop', 'noimg.jpg', '<p>📨Rolling Ball Airdrop<br />\r\n💎 Reward : 10,000,000 $GAME For 1000 Winners</p>\r\n\r\n<p>Join Airdrop : <a href=\"https://share-w.in/787eso-52308\">https://share-w.in/787eso-52308</a><br />\r\n- Complete All Task<br />\r\n- Submit BSC Address<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-07 17:12:01', '2022-03-07 17:12:01'),
-(94, 'yola-airdrop-220308121220', '🏂 Yola Airdrop', 'noimg.jpg', '<p>🏂 Yola Airdrop<br />\r\n🎁 Reward $10 Token Fcfs 20k User</p>\r\n\r\n<p>👉 Start Bot : Airdrop Legit</p>\r\n\r\n<p><a href=\"https://t.me/YolaFinanceAirdrop_bot?start=r0971562717\">https://t.me/YolaFinanceAirdrop_bot?start=r0971562717</a></p>\r\n\r\n<p>- Complete All Task<br />\r\n- Submit Detail<br />\r\n- Submit BSC Address<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-07 17:12:20', '2022-03-07 17:12:20');
+(94, 'yola-airdrop-220308121220', '🏂 Yola Airdrop', 'noimg.jpg', '<p>🏂 Yola Airdrop<br />\r\n🎁 Reward $10 Token Fcfs 20k User</p>\r\n\r\n<p>👉 Start Bot : Airdrop Legit</p>\r\n\r\n<p><a href=\"https://t.me/YolaFinanceAirdrop_bot?start=r0971562717\">https://t.me/YolaFinanceAirdrop_bot?start=r0971562717</a></p>\r\n\r\n<p>- Complete All Task<br />\r\n- Submit Detail<br />\r\n- Submit BSC Address<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-07 17:12:20', '2022-03-07 17:12:20'),
+(95, 'taki-alpha-airdrop-220328111035', 'Taki Alpha Airdrop', 'noimg.jpg', '<p>🔎 New Airdrop: Taki Alpha (SOLANA)</p>\r\n\r\n<p>🎁 Reward : 50 $TAKI</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>🔮Register Here :</p>\r\n\r\n<p>&nbsp;<a href=\"https://taki.app/alpha/waitlist/\">https://taki.app/alpha/waitlist/</a></p>\r\n\r\n<p>🔹 Fill with your email address</p>\r\n\r\n<p>🔹 Verify Email</p>\r\n\r\n<p>🔹 Done</p>', 'Ardan Anjung', '2022-03-28 23:10:35', '2022-03-28 23:10:35'),
+(96, 'space-passport-airdrop-220328111158', 'Space Passport Airdrop', 'noimg.jpg', '<p>🏂 New SpacePassport Airdrop</p>\r\n\r\n<p>🎁 Reward 1,500 $SPP Winner First Come First Serve 10,000 User</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>👉 Fill The Form : https://forms.gle/WWtFcSBMtpwYJmXr7</p>\r\n\r\n<p>- Complete All Task&nbsp;</p>\r\n\r\n<p>- Submit Detail</p>\r\n\r\n<p>- Submit ALGO Address&nbsp;&nbsp;</p>\r\n\r\n<p>- Done</p>', 'Ardan Anjung', '2022-03-28 23:11:58', '2022-03-28 23:11:58'),
+(97, 'beamer-bridge-testnet-is-live-220329080604', '🏂 Beamer Bridge Testnet Is Live ', 'noimg.jpg', '<p>🏂 Beamer Bridge Testnet Is Live&nbsp;</p>\r\n\r\n<p>Beamer Is Now Live On Testnet. You Can Do Test Token ( TST ) Transfer From Boba Rinkeby To Metis Stardust - And Vice Versa</p>\r\n\r\n<p>👉 Detail :&nbsp;<a href=\"https://medium.com/@BeamerBridge/announcing-beamer-bridge-69ce1b59b5ca\">https://medium.com/@BeamerBridge/announcing-beamer-bridge-69ce1b59b5ca</a></p>\r\n\r\n<p>&nbsp;</p>', 'Ardan Anjung', '2022-03-29 20:06:04', '2022-03-29 20:06:04'),
+(98, 'utu-live-on-polygon-goerli-network-220329080644', 'UTU 🛫 Live On Polygon / Goerli Network', 'noimg.jpg', '<p>New Incentivized Testnet : UTU<br />\r\n🛫 Live On Polygon / Goerli Network<br />\r\n➖️ Claim Faucet :<br />\r\n<a href=\"https://faucet.paradigm.xyz\">https://faucet.paradigm.xyz</a></p>\r\n\r\n<p><a href=\"https://faucet.polygon.technology/\">https://faucet.polygon.technology/</a></p>\r\n\r\n<p>➖️ Testnet &nbsp;: <a href=\"https://test-defi-portal.utu.io/\">https://test-defi-portal.utu.io/</a> &amp; <a href=\"http://test-app.utu.io\">http://test-app.utu.io</a><br />\r\n➖️ Swap at least 5x &amp; add LP 2x on utu portal.<br />\r\n➖️ Connect all sosmed on <a href=\"http://test-app.utu.io\">http://test-app.utu.io</a><br />\r\n➖️ Go to utu portal and send feedback via button give feedback.&nbsp;<br />\r\n&nbsp;<br />\r\n📑 Details : <a href=\"https://medium.com/@utu-trust/the-utu-protocol-testnet-is-now-live-6a50750592d\">https://medium.com/@utu-trust/the-utu-protocol-testnet-is-now-live-6a50750592d</a></p>', 'Ardan Anjung', '2022-03-29 20:06:44', '2022-03-29 20:06:44'),
+(99, 'new-airdrops-rly-220329081105', 'New Airdrops : RLY', 'noimg.jpg', '<p>New Airdrops : RLY<br />\r\nReward : 70 Tokens ( For All New Users )<br />\r\nRegister : <a href=\"https://seedr.app/rewards?referralCode=p9g7p88E\">https://seedr.app/rewards?referralCode=p9g7p88E</a><br />\r\n➖ Open With Mode Dekstop Chrome<br />\r\n➖ Click &#39; Signup &#39; With Email<br />\r\n➖ Click Profile<br />\r\n➖ Connect Google&nbsp;<br />\r\n➖ Create Account <a href=\"http://Rally.io\">http://Rally.io</a><br />\r\n➖ Connect Rally Account<br />\r\n➖ Done.</p>\r\n\r\n<p>&nbsp;</p>', 'Ardan Anjung', '2022-03-29 20:11:05', '2022-03-29 20:11:05'),
+(100, 'teeter-finance-testnet-220330082835', 'Teeter Finance Testnet', 'noimg.jpg', '<p>Testnet Incentived Teeter Finance</p>\r\n\r\n<p>Event Periode 28 Maret - 6 April 2022</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Claim Faucet Kovan :</p>\r\n\r\n<p><a href=\"https://medium.com/@teeter.finance/how-to-get-test-tokens-30ba84c0196c\">https://medium.com/@teeter.finance/how-to-get-test-tokens-30ba84c0196c</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>👉 Register Testnet :</p>\r\n\r\n<p><a href=\"https://testnet.teeter.finance/\">https://testnet.teeter.finance/</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>👉 Fill The Form :</p>\r\n\r\n<p><a href=\"https://forms.gle/uHvMi1GXAyM5zJ8V8\">https://forms.gle/uHvMi1GXAyM5zJ8V8</a></p>\r\n\r\n<p>👉 Referral Address :&nbsp;</p>\r\n\r\n<p>0x60F33a638281d53F57f77497C01Af2Accf14D3F5</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>- Twitter : <a href=\"https://twitter.com/teeter_finance\">https://twitter.com/teeter_finance</a></p>\r\n\r\n<p>- Telegram : <a href=\"https://t.me/teeter_finance\">https://t.me/teeter_finance</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>👉 Detail : <a href=\"https://medium.com/@teeter.finance/phase-ii-of-teeter-dapp-testing-share-3-000-usdt-f9bb65b71beb\">https://medium.com/@teeter.finance/phase-ii-of-teeter-dapp-testing-share-3-000-usdt-f9bb65b71beb</a></p>', 'Ardan Anjung', '2022-03-30 08:28:35', '2022-03-30 08:28:35'),
+(102, 'prisma-finance-testnet-is-live-220330094354', '🏂 PRISMA Finance Testnet Is Live', 'noimg.jpg', '<p>🏂 PRISMA Finance Testnet Is Live</p>\r\n\r\n<p>👉 Register Testnet : <a href=\"https://app.prisma.farm/\">https://app.prisma.farm/</a></p>\r\n\r\n<p>- Switch to Mumbai Testnet : <a href=\"https://t.co/8mkgV7ox74\">https://t.co/8mkgV7ox74</a><br />\r\n- Faucet : <a href=\"https://t.co/G0yvsyRVp9\">https://t.co/G0yvsyRVp9</a><br />\r\n- Claim Test Prisma Token<br />\r\n- Stake And Earn<br />\r\n- Done</p>\r\n\r\n<p>👉 Detail :<a href=\"https://twitter.com/prisma_finance/status/1508859479743504391?t=KkIrZ7XC1LVzUZ5rKsRhLw&amp;s=19\">https://twitter.com/prisma_finance/status/1508859479743504391?t=KkIrZ7XC1LVzUZ5rKsRhLw&amp;s=19</a></p>', 'Ardan Anjung', '2022-03-30 09:43:54', '2022-03-30 09:43:54'),
+(103, 'tokamak-network-testnet-on-rinkeby-220330094424', '🏂 Tokamak Network Testnet on Rinkeby', 'noimg.jpg', '<p>🏂 Tokamak Network Testnet on Rinkeby</p>\r\n\r\n<p>👉 Register Testnet :<a href=\"https://testnet3.gateway.tokamak.network/\">https://testnet3.gateway.tokamak.network/</a></p>\r\n\r\n<p>Faucet Rikenby : <a href=\"https://rinkebyfaucet.com\">https://rinkebyfaucet.com</a></p>\r\n\r\n<p>👉 How Complete :<br />\r\n- Get Faucet<br />\r\n- Switch Network To Rinkeby<br />\r\n- Go To Gateway<br />\r\n- Connect Wallet<br />\r\n- Swap 3 - 5x<br />\r\n- Done</p>', 'Ardan Anjung', '2022-03-30 09:44:24', '2022-03-30 09:44:24'),
+(104, 'swappi-testnet-220330095226', 'Swappi Testnet', 'noimg.jpg', '<p>📣 Swappi Testnet and Bug Bounty&nbsp;<br />\r\n💵 Reward Pool : $100,000 PPI</p>\r\n\r\n<p><a href=\"https://testnet.swappi.io/#/swap/\">https://testnet.swappi.io/#/swap</a></p>\r\n\r\n<p>Network : Conflux ( auto set rpc )<br />\r\nWallet : Metamask<br />\r\nFaucet : <a href=\"https://efaucet.confluxnetwork.org/\">https://efaucet.confluxnetwork.org/</a>( faucet bau bau easy down amankan sir )</p>\r\n\r\n<p>Task :&nbsp;</p>\r\n\r\n<p>1. Swap 10x&nbsp;<br />\r\n2. Add Liquid 2 Pair Token&nbsp;<br />\r\n3. Farming&nbsp;<br />\r\n4. Staking&nbsp;<br />\r\n5. Follow our Twitter account: <a href=\"https://twitter.com/SwappiDEX\">https://twitter.com/SwappiDEX</a></p>\r\n\r\n<p>6. Join our Telegram group:&nbsp;<a href=\"https://t.me/Swappi_DEX\">https://t.me/Swappi_DEX</a></p>\r\n\r\n<p>7. Submit the Google form with your feedback: <a href=\"https://forms.gle/FJ1mjgGTT3PHsm5J7\">https://forms.gle/FJ1mjgGTT3PHsm5J7</a></p>\r\n\r\n<p>Early masszeh</p>', 'Ardan Anjung', '2022-03-30 09:52:26', '2022-03-30 09:52:26'),
+(105, 'new-incentive-testnet-theia-220331110815', '🏂 New Incentive Testnet THEIA', 'noimg.jpg', '<p>- Wallet : Metamask ekstensi<br />\r\n- Network : RPC Avax Fuji ( Add Auto rpc.info )</p>\r\n\r\n<p>👉 Register Testnet :<br />\r\n<a href=\"http://testnet.theia.finance\">http://testnet.theia.finance</a><br />\r\n- Connect Wallet<br />\r\n- Request Avax &amp; USDC Faucet</p>\r\n\r\n<p>👉 Task :<br />\r\n- Investment Flow<br />\r\n- Selling Flow<br />\r\n- Token Conversion Flow<br />\r\n- View Your Investments<br />\r\n- Technicals<br />\r\n- Troubleshooting</p>\r\n\r\n<p>👉 Details :<a href=\"https://medium.com/@theia.finance/theia-testnet-user-instruction-manual-357e2c388813\">https://medium.com/@theia.finance/theia-testnet-user-instruction-manual-357e2c388813</a></p>\r\n\r\n<p>👉 Bug report &amp; suggestion :<a href=\"https://github.com/Theia-Protocol/bounty-program/blob/main/README.md\">https://github.com/Theia-Protocol/bounty-program/blob/main/README.md</a></p>', 'Ardan Anjung', '2022-03-31 23:08:15', '2022-03-31 23:08:15'),
+(106, 'telos-name-service-testnet-guide-220331110908', 'Telos Name Service Testnet Guide', 'noimg.jpg', '<p>🏂 Telos Name Service Testnet Guide</p>\r\n\r\n<p>Faucet : <a href=\"https://app.telos.net/testnet/developers\">https://app.telos.net/testnet/developers</a><br />\r\n- Submit EVM ( 0x ) Address At the Bottom<br />\r\n- Click Send Testnet Evm Tlos</p>\r\n\r\n<p>👉 Register Testnet : <a href=\"https://tlos.domains/register\">https://tlos.domains/register</a></p>\r\n\r\n<p>- Connect Wallet<br />\r\n- Search Domain Name<br />\r\n- Buy<br />\r\n- Done</p>\r\n\r\n<p>👉 Telos EVM Rpc Network :</p>\r\n\r\n<p>- Chain Name : Telos EVM Testnet<br />\r\n- New RPC URL : <a href=\"https://testnet.telos.net/evm\">https://testnet.telos.net/evm</a><br />\r\n- Chain ID : 41<br />\r\n- Symbol : TLOS<br />\r\n- Block Explorer URL : <a href=\"https://teloscan.net\">https://teloscan.net</a></p>', 'Ardan Anjung', '2022-03-31 23:09:08', '2022-03-31 23:09:08'),
+(107, 'tutor-testnet-comdex-220402025837', '🏂 Tutor testnet COMDEX!', 'noimg.jpg', '<p>🏂 Tutor testnet COMDEX!</p>\r\n\r\n<p>👉 Register Testnet : <a href=\"https://dev-cassets.comdex.one/swap#buy\">https://dev-cassets.comdex.one/swap#buy</a></p>\r\n\r\n<p>Faucet : <a href=\"https://faucet.comdex.one\">https://faucet.comdex.one</a></p>\r\n\r\n<p>👉 Task :&nbsp;<br />\r\n- Lakukan swap pada eGold, cSilver, cOil &amp; DLL ( Bebas Apa Aja )<br />\r\n- Next Ke Borrow , Pilih Asset Yang Mau Di borrow<br />\r\n- Habis Itu Ke Edit , Di Tab Deposit Silahkan Lakukan Deposit<br />\r\n- Terakhir Ada Close , Silahkan Close Transaksi</p>\r\n\r\n<p>👉 Farm :<br />\r\n- Add Liquidity<br />\r\n- Cabut Liquidity Yang Di buat</p>', 'Ardan Anjung', '2022-04-02 14:58:37', '2022-04-02 14:58:37'),
+(108, 'uba-airdrop-new-round-220403080017', 'Uba Airdrop New Round', 'noimg.jpg', '<p>New Airdrops : UBA New Round</p>\r\n\r\n<p>🏷 Reward : 80 UBA ( For All )</p>\r\n\r\n<p>🪂 Register : <a href=\"https://t.me/ubaairdrop_bot\">https://t.me/ubaairdrop_bot</a></p>\r\n\r\n<p>➖ Join Telegram&nbsp;</p>\r\n\r\n<p>➖ Follow Twitter &amp; Retweet&nbsp;</p>\r\n\r\n<p>➖️ Follow Medium&nbsp;</p>\r\n\r\n<p>➖️ Fill Form</p>\r\n\r\n<p>➖ Submit Details &amp; UBA Email or OEC Address</p>', 'Ardan Anjung', '2022-04-03 20:00:17', '2022-04-03 20:00:17'),
+(109, 'accrue-waitlist-220403080055', 'Accrue Waitlist', 'noimg.jpg', '<p>New Waitlist : Accrue</p>\r\n\r\n<p>👉 Submit New Sollet / Phantom Address : <a href=\"https://puwk7kekgxg.typeform.com/to/IjU5W9Wp?typeform-source=t.co\">https://puwk7kekgxg.typeform.com/to/IjU5W9Wp?typeform-source=t.co</a></p>\r\n\r\n<p>➖️ Follow Twitter &amp; Retweet</p>\r\n\r\n<p><a href=\"https://twitter.com/accrue_finance/status/1509666723037069312?t=oLzHqjSwZgJo-GxMMVrdxw&amp;s=19\">https://twitter.com/accrue_finance/status/1509666723037069312?t=oLzHqjSwZgJo-GxMMVrdxw&amp;s=19</a></p>\r\n\r\n<p>&nbsp;</p>', 'Ardan Anjung', '2022-04-03 20:00:55', '2022-04-03 20:00:55'),
+(110, 'local-terra-testnet-220403080220', 'Local Terra Testnet', 'noimg.jpg', '<p>🏂 Local Terra Testnet<br />\r\n🎁 Reward Potential&nbsp;</p>\r\n\r\n<p>👉 Register Testnet : <a href=\"https://testnet.localterra.money/\">https://testnet.localterra.money/</a></p>\r\n\r\n<p>- Network : Terra ( LUNA )<br />\r\n- Wallet : Terra Station<br />\r\n- Faucet : <a href=\"https://faucet.terra.money/\">https://faucet.terra.money/</a></p>\r\n\r\n<p>👉 Task :&nbsp;<br />\r\n- Buy and Sell&nbsp;<br />\r\n- Create Offer<br />\r\n- Send feedback To :</p>\r\n\r\n<p>https://discord.gg/ZygQcYBHJm</p>', 'Ardan Anjung', '2022-04-03 20:02:20', '2022-04-03 20:02:20'),
+(111, 'ego-airdrop-220404094508', 'Ego Airdrop', 'noimg.jpg', '<p>Paste address yang atas aja</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>https://docs.google.com/forms/d/e/1FAIpQLSf5IXki96DB9JYNcUhWKOj8HXfKCLqO57DRLGQzAAeXh_8abw/viewform</p>', 'Ardan Anjung', '2022-04-04 21:45:08', '2022-04-04 21:45:08'),
+(112, 'olta-testnet-220404094623', 'Olta Testnet', 'noimg.jpg', '<p>🏂 Olta Testnet</p>\r\n\r\n<p>🎁 Reward Confirmed Airdrop</p>\r\n\r\n<p>Join Dicord :</p>\r\n\r\n<p>https://discord.gg/NXMR5ESXbx</p>\r\n\r\n<p>👉 Detail : <a href=\"https://twitter.com/OltaArt/status/1510900549813739521\">https://twitter.com/OltaArt/status/1510900549813739521</a></p>\r\n\r\n<p>- Follow , Like &amp; Retweet</p>\r\n\r\n<p>- Comment ID Discord &amp; Tag 3 Friend</p>\r\n\r\n<p>- Done</p>', 'Ardan Anjung', '2022-04-04 21:46:23', '2022-04-04 21:46:23'),
+(113, 'coinmarketcap-earn-solar-sxp-220407072422', 'CoinMarketCap Earn | Solar (SXP)', 'noimg.jpg', '<p>CoinMarketCap Earn | Solar (SXP)</p>\r\n\r\n<p>🏷 Reward : $25 ( Random 5000 Winner )</p>\r\n\r\n<p>🪂 Register : <a href=\"https://coinmarketcap.jotform.com/220947727078971\">https://coinmarketcap.jotform.com/220947727078971</a></p>\r\n\r\n<p>Answer&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>1. Solar&#39;s governance is set up as:</p>\r\n\r\n<p>Answer: A fully decentralized autonomous organization (DAO)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>2. What innovations will Solar support within its ecosystem?</p>\r\n\r\n<p>Answer: All of the above</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>3. How are node operators chosen?</p>\r\n\r\n<p>Answer: Based on votes by coin holders</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>4. What is the native coin of the Solar network?</p>\r\n\r\n<p>Answer: SXP</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>5. What happens to transaction fees?</p>\r\n\r\n<p>Answer: 90% of fees are burned. The remaining 10% is earned by node operators</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>6. How does Solar help to ensure a sustainable blockchain future?</p>\r\n\r\n<p>Answer: Solar uses a highly energy-efficient consensus mechanism for its own blockchain and native coin.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>7. Solar&#39;s platform is</p>\r\n\r\n<p>Answer: Open source on Github</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>8. What is a delegate?</p>\r\n\r\n<p>Answer: A node operator, who secures the network by validating transactions and minting new blocks.</p>', 'Ardan Anjung', '2022-04-07 19:24:22', '2022-04-07 19:24:22'),
+(114, 'binance-giveaway-nft-mystery-box-220409042156', 'Binance Giveaway Nft Mystery Box', 'noimg.jpg', '<p>Binance Giveaway Nft Mystery Box</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Join Now</p>\r\n\r\n<p><a href=\"https://docs.google.com/forms/d/e/1FAIpQLSfmhzC9yFnPZJszc0ilgJNTQFTlRsPDL8rIUhvs1NNBiM7lIA/viewform\">https://docs.google.com/forms/d/e/1FAIpQLSfmhzC9yFnPZJszc0ilgJNTQFTlRsPDL8rIUhvs1NNBiM7lIA/viewform</a></p>\r\n\r\n<p>Masukan Binance UID ( Must KYC )</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Quiz Answers :</p>\r\n\r\n<p>1. A</p>\r\n\r\n<p>2. B</p>\r\n\r\n<p>3. A</p>\r\n\r\n<p>4. C</p>\r\n\r\n<p>5. A</p>\r\n\r\n<p>6. B</p>\r\n\r\n<p>7. C</p>\r\n\r\n<p>8. A</p>\r\n\r\n<p>9. C</p>\r\n\r\n<p>10. B</p>', 'Ardan Anjung', '2022-04-09 04:21:56', '2022-04-09 04:21:56'),
+(115, 'vaiot-testnet-220409100700', '🏂 Vaiot Testnet', 'noimg.jpg', '<p>🏂 Vaiot Testnet<br />\r\n🎁 Reward Confirmed Airdrop&nbsp;</p>\r\n\r\n<p>👉 Register Testnet : <a href=\"https://testscan.vaiot.ai/\">https://testscan.vaiot.ai/</a></p>\r\n\r\n<p>- Network : Cosmos<br />\r\n- Wallet : <a href=\"https://wallet-dev.vaiot.ai/\">https://wallet-dev.vaiot.ai/</a><br />\r\n- Faucet : <a href=\"https://faucet-dev.vaiot.ai/\">https://faucet-dev.vaiot.ai/</a></p>\r\n\r\n<p>👉 Task :<br />\r\n- Follow And Retweet Post : <a href=\"https://twitter.com/VAIOT_LTD/status/1512419556094091270?t=hF2lZTBajPYnWIJhOYOmoQ&amp;s=19\">https://twitter.com/VAIOT_LTD/status/1512419556094091270?t=hF2lZTBajPYnWIJhOYOmoQ&amp;s=19</a><br />\r\n- Create Wallet (import mnemonic wallet baru ) dan ambil faucet&nbsp;<br />\r\n- Connect ke testnet&nbsp;<br />\r\n- Delegate token : &nbsp;<a href=\"https://testscan.vaiot.ai/validators\">https://testscan.vaiot.ai/validators</a></p>\r\n\r\n<p>Optional Task : Comment Dipost Tweet Dengan Screenshot Delegasi Kalian + Address Vaiot</p>\r\n\r\n<p>Untuk Address , Prhase Nya Bisa Diimport Dari Kpler , Masukin Ke : <a href=\"https://wallet-dev.vaiot.ai/signin?account=&amp;client=https%3A%2F%2Ftestscan.vaiot.ai%2Fvalidators&amp;lcd=https%3A%2F%2Ftestnet-rest.vaiot.ai&amp;path=44%2F118%2F0%2F0%2F0&amp;payload=vaiot\">https://wallet-dev.vaiot.ai/signin?account=&amp;client=https%3A%2F%2Ftestscan.vaiot.ai%2Fvalidators&amp;lcd=https%3A%2F%2Ftestnet-rest.vaiot.ai&amp;path=44%2F118%2F0%2F0%2F0&amp;payload=vaiot</a> ( Chrome )</p>\r\n\r\n<p>👉 Detail : <a href=\"https://vaiotltd.medium.com/vaiot-public-testnet-is-live-59d2362dfd28\">https://vaiotltd.medium.com/vaiot-public-testnet-is-live-59d2362dfd28</a></p>', 'Ardan Anjung', '2022-04-09 10:07:00', '2022-04-09 10:07:00'),
+(116, 'new-airdrops-aidr-220409111453', 'New Airdrops : AIDR', 'noimg.jpg', '<p>New Airdrops : AIDR<br />\r\n🏷 Reward : Up to $100 in AIDR<br />\r\n🪂 Go to Lobstr &amp; Add Asset AIDR<br />\r\n➖ Then Click&nbsp;<a href=\"https://afreum.com/ice/sites/app/index.cfm?sid=3&amp;cid=73&amp;referer=R0FNTVlIS1dWN1hIRlBWTlNSV1lTTVdISUFWSVRQQkZGRlQzUks2N1hRWU83SUVPWVVJREcyQUU=\">https://afreum.com/ice/sites/app/index.cfm?sid=3&amp;cid=73&amp;referer=R0FNTVlIS1dWN1hIRlBWTlNSV1lTTVdISUFWSVRQQkZGRlQzUks2N1hRWU83SUVPWVVJREcyQUU=</a></p>\r\n\r\n<p>➖ Enter Your Stellar Address<br />\r\n➖ Done<br />\r\n➖ If You Have Friend, You Can Invite ( Max 5 ) Get $100 &amp; Task Invite is Optional&nbsp;</p>\r\n\r\n<p>Snapshot and distribution period is April 27, 2022 12PM UTC - April 30 12PM UTC.</p>\r\n\r\n<p>Focus on number 1 &amp; 2<br />\r\n3 &amp; 4 Not Mandatory</p>', 'Ardan Anjung', '2022-04-09 11:21:09', '2022-04-09 11:14:53'),
+(117, 'healthland-airdrop-220409122114', 'Healthland Airdrop', 'noimg.jpg', '<p>Airdrop All User</p>\r\n\r\n<p>Healthland Swap :&nbsp;</p>\r\n\r\n<p><a href=\"http://my.healthland.io/?ref=u1649481484756\">http://my.healthland.io/?ref=u1649481484756</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Konek pake metamask BSC - Klik Profil - Klik Earn Money - Done</p>', 'Ardan Anjung', '2022-04-09 12:21:14', '2022-04-09 12:21:14'),
+(118, 'waitlist-apex-nft-10k-users-220410021003', 'Waitlist APEX NFT 10k users.', 'noimg.jpg', '<p><a href=\"https://waitlist.apenftex.com/0573af90-b89d-11ec-83b0-9b74820e05d8\">https://waitlist.apenftex.com/0573af90-b89d-11ec-83b0-9b74820e05d8</a></p>\r\n\r\n<p>Waitlist APEX NFT 10k users.</p>', 'Ardan Anjung', '2022-04-10 14:10:03', '2022-04-10 14:10:03'),
+(119, 'bora-20-renewal-airdrop-220411011700', 'Bora 2.0 Renewal Airdrop', 'noimg.jpg', '<p>BORA 2.0 Renewal Airdrop</p>\r\n\r\n<p>3000 winner</p>\r\n\r\n<p><a href=\"https://wn.nr/GUUjyn\">https://wn.nr/GUUjyn</a></p>', 'Ardan Anjung', '2022-04-11 13:17:00', '2022-04-11 13:17:00'),
+(120, 'umee-v2-testnet-220414094507', 'Umee V2 Testnet', 'noimg.jpg', '<p>Umee V2&nbsp;</p>\r\n\r\n<p>Register Testnet : <a href=\"https://testnet.umee.cc\">https://testnet.umee.cc</a></p>\r\n\r\n<p>📖 Detail : <a href=\"https://twitter.com/Umee_CrossChain/status/1514608465292922886\">https://twitter.com/Umee_CrossChain/status/1514608465292922886</a></p>\r\n\r\n<p>Ummemania Testnet</p>\r\n\r\n<p>📑 Tutorial : <a href=\"https://docs.umee.cc/umee/user-guides/umeemania-testnet\">https://docs.umee.cc/umee/user-guides/umeemania-testnet</a></p>\r\n\r\n<p>✅ Send Feedback : <a href=\"https://forms.gle/CFhWWa5BhHh4EZnUA\">https://forms.gle/CFhWWa5BhHh4EZnUA</a></p>\r\n\r\n<p>&nbsp;</p>', 'Ardan Anjung', '2022-04-15 07:48:55', '2022-04-14 21:45:07'),
+(121, 'gambit-airdrop-220415080059', 'Gambit Airdrop', 'noimg.jpg', '<p><a href=\"https://vrlps.co/4rgyr5t/cp\">https://vrlps.co/4rgyr5t/cp</a><br />\r\n<br />\r\nModal email! Maksimalkan, next SRLY</p>', 'Ardan Anjung', '2022-04-15 08:00:59', '2022-04-15 08:00:59'),
+(122, 'airdrop-taki-alpha-220418083409', 'Airdrop : Taki Alpha', 'noimg.jpg', '<p>Airdrop : Taki Alpha</p>\r\n\r\n<p>Link : <a href=\"https://taki.app/invite/eqPbBUFAiClb1y\">https://taki.app/invite/eqPbBUFAiClb1y</a></p>\r\n\r\n<p>- Regist via email<br />\r\n- Verify no hp<br />\r\n- Finish daily task</p>\r\n\r\n<p>Max 5 invit</p>', 'Ardan Anjung', '2022-04-18 08:34:09', '2022-04-18 08:34:09'),
+(123, 'new-waitlist-stackedinvested-220418083432', 'New Waitlist : StackedInvested', 'noimg.jpg', '<p>New Waitlist : StackedInvested</p>\r\n\r\n<p>Link : <a href=\"https://waitlist.stackedinvest.com/invest?kid=24DV4R\">https://waitlist.stackedinvest.com/invest?kid=24DV4R</a></p>\r\n\r\n<p>- Input email &amp; verify<br />\r\n- selesaikan task</p>', 'Ardan Anjung', '2022-04-18 08:34:32', '2022-04-18 08:34:32'),
+(124, 'airdrop-mining-battlemechs-220418083502', 'Airdrop Mining : BattleMechs', 'noimg.jpg', '<p>Airdrop Mining : BattleMechs</p>\r\n\r\n<p>Register : <a href=\"https://battlemechs.co/referral?code=fiatama​\">https://battlemechs.co/referral?code=fiatama​</a></p>\r\n\r\n<p>- Download Apk<br />\r\n- Create Mech , masukan kode : fiatama<br />\r\n- Klik mining - mining tiap 6 jam sekali</p>', 'Ardan Anjung', '2022-04-18 08:35:02', '2022-04-18 08:35:02'),
+(125, 'get-3-in-nxd-nft-for-all-220420022343', '🏂 Get 3$ in NXD NFT For All', 'noimg.jpg', '<p>🏂 Get 3$ in NXD NFT For All</p>\r\n\r\n<p>👉 Fill The Form : <a href=\"https://docs.google.com/forms/u/0/d/e/1FAIpQLSeWJqTJkch7OaW8JvVpMPTkWS8C9dXVypoGSLKGGrEpBLOOxg/formResponse\">https://docs.google.com/forms/u/0/d/e/1FAIpQLSeWJqTJkch7OaW8JvVpMPTkWS8C9dXVypoGSLKGGrEpBLOOxg/formResponse</a></p>\r\n\r\n<p>- Complete All Task<br />\r\n- Submit Detail<br />\r\n- Submit MATIC Address<br />\r\n- Done</p>\r\n\r\n<p>👉 Detail : <a href=\"https://twitter.com/Nexus_Dubai/status/1516569761253048325?t=5IBeQ3eE7H9qJjCKZwlhkg&amp;s=19\">https://twitter.com/Nexus_Dubai/status/1516569761253048325?t=5IBeQ3eE7H9qJjCKZwlhkg&amp;s=19</a></p>', 'Ardan Anjung', '2022-04-20 14:23:43', '2022-04-20 14:23:43'),
+(126, 'the-pararel-airdrop-220421103210', 'The pararel airdrop', 'noimg.jpg', '<p>New Airdrops : Theparallel</p>\r\n\r\n<p>➡️ Open With TokenPocket : <a href=\"https://airdrop.theparallel.io/\">https://airdrop.theparallel.io/</a></p>\r\n\r\n<p>➖️ Connect With New ETH Address&nbsp;</p>\r\n\r\n<p>➖️ Enter Referral Code : 837125255</p>\r\n\r\n<p>➖️ View Video</p>\r\n\r\n<p>➖️ Answer Question&nbsp;</p>\r\n\r\n<p>➖️ Quote Tweet &amp; Follow&nbsp;</p>\r\n\r\n<p><a href=\"https://twitter.com/theparallel_io\">https://twitter.com/theparallel_io</a></p>\r\n\r\n<p>➖️ Copy Tweet</p>\r\n\r\n<p>➖️ Submit</p>\r\n\r\n<p>➖️ Unbox</p>', 'Ardan Anjung', '2022-04-21 22:32:10', '2022-04-21 22:32:10'),
+(127, 'aiza-world-quiz-220423044438', 'Aiza World Quiz', 'noimg.jpg', '<p>🚀Aiza World Quiz&nbsp;</p>\r\n\r\n<p>💰Total 300k AIZA for all user</p>\r\n\r\n<p>Fresh airdrop</p>\r\n\r\n<p><a href=\"https://t.me/AizaWorldQuizBot?start=r02266306600\">https://t.me/AizaWorldQuizBot?start=r02266306600</a></p>\r\n\r\n<p>- Complete task</p>\r\n\r\n<p>- Enter data</p>\r\n\r\n<p>- Enter BSC address</p>\r\n\r\n<p>Done</p>\r\n\r\n<p>Complete quiz task</p>\r\n\r\n<p>https://woobox.com/pnxxtw</p>\r\n\r\n<p>Answer :&nbsp;</p>\r\n\r\n<p>➖Loan for play</p>\r\n\r\n<p>➖26 April</p>\r\n\r\n<p>➖ 3</p>\r\n\r\n<p>&nbsp;➖Indoex,vindax,p2pb2b</p>\r\n\r\n<p>➖$0.06</p>\r\n\r\n<p>➖ 24 may 202</p>\r\n\r\n<p>➖Aiza world in the global eyes</p>\r\n\r\n<p>➖300.000</p>', 'Ardan Anjung', '2022-04-23 16:44:38', '2022-04-23 16:44:38'),
+(128, 'nfl-airdrops-220423080725', 'NFL Airdrops', 'noimg.jpg', '<p>New Airdrops : NFL</p>\r\n\r\n<p>Join the waitlist to stay up-to-date on the latest news and access.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>🪂 Register : <a href=\"https://swee.ps/TmMlq_GamjDHV\">https://swee.ps/TmMlq_GamjDHV</a></p>\r\n\r\n<p>➖ Click &#39;JOIN WAITLIST&#39;</p>\r\n\r\n<p>➖ Sign up</p>\r\n\r\n<p>➖ Verify Email</p>\r\n\r\n<p>➖ Done</p>', 'Ardan Anjung', '2022-04-23 20:07:25', '2022-04-23 20:07:25'),
+(129, 'lenster-early-adopter-220427030358', 'Lenster Early Adopter', 'noimg.jpg', '<p>🟢 Before start : please Use New Wallet Polygon Testnet Mumbai.</p>\r\n\r\n<p>🟢 Faucet : <a href=\"https://faucet.polygon.technology/\">https://faucet.polygon.technology/</a></p>\r\n\r\n<p>🟢 RPC : <a href=\"https://t.me/airdropfind/9475\">https://t.me/airdropfind/9475</a></p>\r\n\r\n<p>➡️ Open on Kiwi Browser : <a href=\"https://lenster.xyz/\">https://lenster.xyz/</a></p>\r\n\r\n<p>➖️ Connect Wallet</p>\r\n\r\n<p>➖️ Login</p>\r\n\r\n<p>➖️ Enter your Details</p>\r\n\r\n<p>➖️ Post&nbsp;</p>\r\n\r\n<p>➖️ Comment</p>\r\n\r\n<p>➖️ Mirror (click &harr;)</p>\r\n\r\n<p>➖️ Follow any People&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>➡️ Join Discord : <a href=\"https://discord.gg/S42s3m5X\">https://discord.gg/S42s3m5X</a></p>\r\n\r\n<p>➖️ You will get &#39;Early user&#39; role</p>\r\n\r\n<p>➖️ Go to # address-drop channel</p>\r\n\r\n<p>➖️ Click the Kryptosign link&nbsp;</p>\r\n\r\n<p>➖️ Connect (with wallet that you used to joined testnet)</p>\r\n\r\n<p>➖️ Login with Discord</p>\r\n\r\n<p>➖️ Authorize</p>\r\n\r\n<p>➖️ Sign Document</p>', 'Ardan Anjung', '2022-04-27 15:04:27', '2022-04-27 15:03:58'),
+(130, 'scallop-testnet-220427030603', '🏂 Scallop Testnet', 'noimg.jpg', '<p>🎁 Reward Confirmed</p>\r\n\r\n<p>👉 Register Testnet <a href=\"https://app.scallop.io/\">https://app.scallop.io/</a></p>\r\n\r\n<p>Wallet : Phantom ( New Wallet )<br />\r\nNetwork : Solana Devnet<br />\r\nFaucet : Website</p>\r\n\r\n<p>👉 Task :<br />\r\n- Make a Deposit Of 2 SOL On Lend<br />\r\n- Make a Claim After 1 - 5 Hours&nbsp;<br />\r\n- Make a Complete Withdrawal<br />\r\n- Done</p>\r\n\r\n<p>- Discord : <a href=\"https://discord.gg/uyMvydFfTs\">https://discord.gg/uyMvydFfTs</a></p>\r\n\r\n<p>🏂 Evmos Domains Testnet<br />\r\n🎁 Reward Potential</p>\r\n\r\n<p>👉 Register Testnet :<a href=\"https://test.evmos.domains/\">https://test.evmos.domains/</a></p>\r\n\r\n<p>Faucet : <a href=\"https://faucet.evmos.dev/\">https://faucet.evmos.dev/</a></p>\r\n\r\n<p>👉 Task :&nbsp;<br />\r\n- Connect Your Wallet<br />\r\n- Search Name Or Domains<br />\r\n- Click Name If Available<br />\r\n- Click Register &amp; Confirm On Metamask<br />\r\n- Complete All Step<br />\r\n- Done</p>\r\n\r\n<p>- Discord : <a href=\"https://discord.gg/rSGE39ENM6\">https://discord.gg/rSGE39ENM6</a>&nbsp;( Give Feedback On Discord #testnet To Get Role )</p>', 'Ardan Anjung', '2022-04-27 15:06:03', '2022-04-27 15:06:03'),
+(131, 'fourgods-new-round-220503053003', 'FourGods New Round', 'noimg.jpg', '<p>New Airdrops : FourGods New Round</p>\r\n\r\n<p>🏷 Reward : 10 LUX ( For 100,000 Winner )</p>\r\n\r\n<p>🪂 Register : <a href=\"https://wn.nr/QRxkGZ\">https://wn.nr/QRxkGZ</a></p>\r\n\r\n<p>➖ Join Telegram&nbsp;</p>\r\n\r\n<p>➖ Follow Twitter &amp; Retweet&nbsp;</p>\r\n\r\n<p>➖️ Complete Another Task&nbsp;</p>\r\n\r\n<p>➖ Pre Register&nbsp;</p>\r\n\r\n<p>➖️ Enter Wemix Address</p>', 'Ardan Anjung', '2022-05-03 17:30:59', '2022-05-03 17:30:03'),
+(132, 'airdrop-wallet-yg-suka-tx-polygon-220503092136', 'Airdrop wallet yg suka tx polygon', 'noimg.jpg', '<p>#info</p>\r\n\r\n<p>wallet yg suka tx polygon</p>\r\n\r\n<p>cek skor kalo di atas 50 dpt claim free token mash</p>\r\n\r\n<p>langsung swap aja gratissss</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>cek score</p>\r\n\r\n<p><a href=\"https://polyscore.polygon.technology/\">https://polyscore.polygon.technology/</a></p>\r\n\r\n<p>claim</p>\r\n\r\n<p><a href=\"https://meshswap.fi/assets\">https://meshswap.fi/assets</a></p>', 'Ardan Anjung', '2022-05-03 21:21:36', '2022-05-03 21:21:36'),
+(133, 'mcontent-airdrop-220504093739', '🚀Mcontent Airdrop', 'noimg.jpg', '<p>🚀Mcontent Airdrop</p>\r\n\r\n<p>💰Free 56000000 token ( instan )&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Fresh Airdrop</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>- Download App&nbsp;</p>\r\n\r\n<p>Android : <a href=\"https://play.google.com/store/apps/details?id=com.mcontent\">https://play.google.com/store/apps/details?id=com.mcontent</a></p>\r\n\r\n<p>Ios : <a href=\"https://apps.apple.com/app/mcontent/id1603970931\">https://apps.apple.com/app/mcontent/id1603970931</a></p>\r\n\r\n<p>- Download App&nbsp;</p>\r\n\r\n<p>- Signup with email&nbsp;</p>\r\n\r\n<p>- enter refferal : Fiatama7</p>\r\n\r\n<p>Done&nbsp;</p>', 'Ardan Anjung', '2022-05-04 09:37:39', '2022-05-04 09:37:39'),
+(134, 'blur-airdrops-220505070551', 'Blur Airdrops', 'noimg.jpg', '<p>🏷 Reward : FREE Blur Points&nbsp;</p>\r\n\r\n<p>✅ In the future, members will be rewarded for every point.</p>\r\n\r\n<p>⬇️ Register :&nbsp;</p>\r\n\r\n<p><a href=\"https://blur.io/?r=qQ2lpxbxpsP9p\">https://blur.io/?r=qQ2lpxbxpsP9p</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href=\"https://blur.io/?r=sT7aRxbxGFpf6\">https://blur.io/?r=sT7aRxbxGFpf6</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href=\"https://blur.io/?r=6k40fxbxt399U\">https://blur.io/?r=6k40fxbxt399U</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href=\"https://blur.io/?r=Awyd1xbx5qjda\">https://blur.io/?r=Awyd1xbx5qjda</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><a href=\"https://blur.io/?r=aKSqvxbxyAixh\">https://blur.io/?r=aKSqvxbxyAixh</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>➖ Click &#39;Accept invite&#39;</p>\r\n\r\n<p>➖ Follow Twitter</p>\r\n\r\n<p>➖ Join Discord (React ✅ on Discord)</p>\r\n\r\n<p>➖ Connect Twitter</p>\r\n\r\n<p>➖ Connect Discord</p>\r\n\r\n<p>➖ Connect New Wallet ( ETH )</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>📖 Note : If all links not working, please ask your friend for referral link, MAX 5 INVITES</p>', 'Ardan Anjung', '2022-05-05 19:07:22', '2022-05-05 19:05:51'),
+(135, 'new-testnet-osmosis-220508083347', 'New Testnet OSMOSIS', 'noimg.jpg', '<p>New Tesnet : OSMOSIS</p>\r\n\r\n<p>🏷 Reward : Potensial</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>network : osmosis</p>\r\n\r\n<p>wallet : Keplr</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>🪂 Register : <a href=\"https://testnet.osmosis.zone/\">https://testnet.osmosis.zone/</a></p>\r\n\r\n<p>➖ Join Discord</p>\r\n\r\n<p>➖ Go to #Role select 🧪</p>\r\n\r\n<p>➖ Go to #Testnet server</p>\r\n\r\n<p>➖ Faucet Request &gt;&gt; $request your address</p>\r\n\r\n<p>➖ Swap OSMO &gt;&gt; ION <a href=\"https://testnet.osmosis.zone/\">https://testnet.osmosis.zone/</a></p>\r\n\r\n<p>➖ After swap, go to</p>\r\n\r\n<p><a href=\"https://www.ion.wtf\">https://www.ion.wtf</a></p>\r\n\r\n<p>and try all the features there&nbsp;</p>\r\n\r\n<p>➖ Done</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>➖Discord :</p>\r\n\r\n<p>https://discord.gg/MKYPHC5v</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Send feedback for UI/UX or bug reports click here&nbsp;</p>\r\n\r\n<p>Detail : Here</p>', 'Ardan Anjung', '2022-05-08 20:33:47', '2022-05-08 20:33:47'),
+(136, 'new-airdrops-bibox-x-gilterfinance-220510111459', 'New Airdrops : Bibox X GilterFinance', 'noimg.jpg', '<p>🏷 Reward : $200 for 10 Winner Random<br />\r\n🪂 Register : <a href=\"https://twitter.com/Biboxasian/status/1523575882799263744?t=JdC3eVDrLp6sp1T5-HTKpA&amp;s=19\">https://twitter.com/Biboxasian/status/1523575882799263744?t=JdC3eVDrLp6sp1T5-HTKpA&amp;s=19</a><br />\r\n➖ Join Telegram<br />\r\n➖ Follow Twitter &amp; Retweet<br />\r\n➖ Comment your Bibox UID<br />\r\n➖ Done</p>\r\n\r\n<p>Adu Hoki di kala market merah 😅</p>', 'Ardan Anjung', '2022-05-10 11:14:59', '2022-05-10 11:14:59'),
+(137, 'new-airdrops-sprint-220510111516', 'New Airdrops : SPRINT', 'noimg.jpg', '<p>🏷 Reward : 2,000,000 $SPRINT Token For 900 Random Winner<br />\r\n🪂 Register : <a href=\"https://wn.nr/9nyLDn\">https://wn.nr/9nyLDn</a><br />\r\n➖ Join Telegram<br />\r\n➖ Follow Twitter &amp; Retweet<br />\r\n➖ Complete Another Task<br />\r\n➖ Submit BSC Address</p>\r\n\r\n<p>LFG!!!</p>', 'Ardan Anjung', '2022-05-10 11:15:16', '2022-05-10 11:15:16'),
+(138, 'new-airdrops-gamverse-220510111548', 'New Airdrops : Gamverse', 'noimg.jpg', '<p>🏷 Reward : 1 NFT Random For 1,000<br />\r\n🪂 Register : <a href=\"https://gleam.io/P88l5/gamerse-fire-frenzy-giveaway\">https://gleam.io/P88l5/gamerse-fire-frenzy-giveaway</a><br />\r\n➖ Join Telegram<br />\r\n➖ Follow Twitter &amp; Retweet<br />\r\n➖ Complete Another Task<br />\r\n➖ Submit BSC Address</p>\r\n\r\n<p>Register : <a href=\"https://beta.gamerse.com/presignup\">https://beta.gamerse.com/presignup</a>&nbsp;( Metamask )<br />\r\n➖ Select &#39;Sign Up as Gamer&#39;<br />\r\n➖ Connect Wallet ( BSC )<br />\r\n➖ Submit Detail<br />\r\n➖ Submit Email You Entered In Gleam</p>', 'Ardan Anjung', '2022-05-10 11:15:48', '2022-05-10 11:15:48'),
+(139, 'bagaimana-cara-mendapatkan-passive-income-dari-crypto-staking-solusinya-220511113431', 'Cara mendapatkan passive income dari crypto? Staking solusinya!', 'noimg.jpg', '<p><em>Trading&nbsp;</em>dan investasi bukan satu-satunya cara untuk menghasilkan&nbsp;<em>passive income</em>. Kamu bisa meraih keuntungan dalam industri kripto dengan cara&nbsp;<em>staking</em>.&nbsp;<em>Staking&nbsp;</em>adalah sebuah proses ketika kamu berpartisipasi aktif dalam validasi transaksi dalam&nbsp;<em>blockchain&nbsp;</em>konsensus algoritma&nbsp;<em>Proof of Stake</em>&nbsp;(PoS).&nbsp;</p>\r\n\r\n<p><em>Proof of Stake</em>&nbsp;(PoS) adalah sebuah algoritma yang berperan untuk melakukan validasi transaksi berdasarkan konsensus terdistribusi. Validasi dilakukan berdasarkan berapa jumlah total aset kripto yang dimiliki.</p>\r\n\r\n<p>Dengan&nbsp;<em>staking</em>, kamu akan mendapatkan&nbsp;<em>passive income</em>&nbsp;dalam bentuk&nbsp;<em>reward</em>&nbsp;atau bunga dari aset yang dikunci. Hal ini memudahkan kamu untuk memiliki diversifikasi pendapatan aset digital.&nbsp;</p>\r\n\r\n<p>Dalam&nbsp;<em>blockchain</em>&nbsp;ini, siapa pun yang memiliki saldo minimum dapat memvalidasi transaksi dan mendapatkan imbalan. Dengan mengunci aset kripto tertentu, kamu memiliki kekuatan untuk membuat keputusan dalam jaringan. Ketika kamu berhasil memvalidasi transaksi, kamu akan menghasilkan pendapatan tambahan.</p>\r\n\r\n<p>Jadi secara sederhana,&nbsp;<em>staking coin&nbsp;</em>adalah proses mengunci aset crypto melalui&nbsp;<em>wallet</em>&nbsp;dalam rentang waktu tertentu untuk mendapatkan hadiah atau keuntungan.</p>\r\n\r\n<p>&ldquo;<em>Staking&nbsp;</em>secara&nbsp;<em>simple</em>nya adalah, Anda memiliki koin yang Anda simpan di&nbsp;<em>wallet</em>.&nbsp;Itu nanti Anda akan&nbsp;<em>lock</em>&nbsp;atau dikunci selama periode tertentu, nanti Anda akan dapat bunga.</p>\r\n\r\n<p>Dengan melakukan&nbsp;<em>staking coin</em>, Anda dapat menghasilkan&nbsp;<em>passive income</em>&nbsp;atau keuntungan tanpa harus melakukan aktivitas&nbsp;<em>trading</em>&nbsp;atau&nbsp;<em>mining</em>&nbsp;pada aset crypto.&nbsp;<em>Staking coin</em>&nbsp;juga dianggap memiliki risiko yang lebih kecil jika dibandingkan dengan melakukan aktivitas&nbsp;<em>trading&nbsp;</em>atau&nbsp;<em>mining</em>.&nbsp;<br />\r\n<br />\r\nSource:</p>\r\n\r\n<ul>\r\n	<li><a href=\"https://www.alinea.id/\">https://www.alinea.id/</a></li>\r\n	<li><a href=\"https://zipmex.com/\">https://zipmex.com/</a></li>\r\n</ul>', 'Ardan Anjung', '2022-05-11 11:37:11', '2022-05-11 11:34:31'),
+(140, 'pre-register-indus-incentivized-testnet-220513110405', 'Pre-Register Indus Incentivized Testnet ', 'noimg.jpg', '<p>Link : <a href=\"https://www.eventbrite.com/e/indus-testnet-launch-by-moi-tickets-336645314197\">https://www.eventbrite.com/e/indus-testnet-launch-by-moi-tickets-336645314197</a></p>\r\n\r\n<p>More than 250 millions in MOI up for grabs , this definitely is an event to watch out for!</p>', 'Ardan Anjung', '2022-05-13 23:04:05', '2022-05-13 23:04:05'),
+(141, 'new-airdrops-wesendit-220513110427', 'New Airdrops : Wesendit', 'noimg.jpg', '<p>🏷 Reward : 60M ( For 10,000 Users )<br />\r\n🪂 Register : <a href=\"https://bit.ly/Wesendit\">https://bit.ly/Wesendit</a><br />\r\n➖️ Enter Email<br />\r\n➖️ Verify<br />\r\n➖️ Complete Task<br />\r\n➖️ Invite At Least 1 Friend<br />\r\n➖️ Done LFG</p>', 'Ardan Anjung', '2022-05-13 23:04:27', '2022-05-13 23:04:27'),
+(142, 'new-event-tokocrypto-pulang-mudik-lebaran-dapat-cuan-miliaran-220513110612', 'New Event Tokocrypto : Pulang Mudik Lebaran Dapat Cuan Miliaran++', 'noimg.jpg', '<p>🏷 Reward : First 100,000 Participants&nbsp;<br />\r\n➡️ Rewards for complete KYC<br />\r\n- First 500 Users = Rp. 200,000<br />\r\n- First 1000 Users = Rp. 150,000<br />\r\n- First 7500 Users = Rp. 100,000<br />\r\n- First 91000 Users = Rp. 75,000</p>\r\n\r\n<p>➡️ Rewards for 1st trade $25 ( First Trade )<br />\r\n- First 500 Users = Rp. 300,000<br />\r\n- First 1000 Users = Rp. 200,000<br />\r\n- First 7500 Users = Rp. 150,000<br />\r\n- First 91000 Users = Rp. 75,000</p>\r\n\r\n<p>🟢 Contoh : Anda First 1000 Users Melakukan KYC dan Trading $25 akan mendapatkan total hadiah Rp. 350,000&nbsp;<br />\r\n&nbsp;<br />\r\n➡️ Register : <a href=\"https://www.tokocrypto.com/\">https://www.tokocrypto.com/</a></p>\r\n\r\n<p>1. Pengguna registrasi mulai dari tanggal 1 April 15:00 WIB - 31 Mei 23:59:00 2022 dapat mengikuti event ini<br />\r\n2. Pengguna yang menyelesaikan verifikasi (KYC level 1) periode 11 Mei 00:00 WIB - 31 Mei 23:59 WIB, Akan mendapatkan reward senilai IDR 200.000<br />\r\n3. Reward Trader Pertama (first trade) hanya berlaku untuk pengguna yang melakukan di periode KYC 11 Mei - 31 Mei.<br />\r\n4. Trader Pertama akan mendapatkan extra IDR 300,000, jika melakukan trading sebesar $25<br />\r\n5. Topup Via Gopay Dapat Cashback&nbsp;</p>\r\n\r\n<p>📖 Details : <a href=\"https://support.tokocrypto.com/hc/id/articles/6147521511949\">https://support.tokocrypto.com/hc/id/articles/6147521511949</a></p>', 'Ardan Anjung', '2022-05-13 23:06:12', '2022-05-13 23:06:12'),
+(143, 'new-airdrops-omlira-220513110649', 'New Airdrops : Omlira', 'noimg.jpg', '<p>🏷 Reward : Up to 300 Tokens ( For All )<br />\r\n🪂 Open With Metamask : <a href=\"https://bit.ly/Omchain\">https://bit.ly/Omchain</a><br />\r\n➖ Connect New BSC Wallet&nbsp;<br />\r\n➖ Complete All Task&nbsp;<br />\r\n➖️ Give Rating on CoinMarketCap&nbsp;<br />\r\n➖️ Comment on CoinMarketCap&nbsp;<br />\r\n➖️ Retweet Pinned Post &amp; Tag #OMC #omchain<br />\r\n➖️ Done</p>\r\n\r\n<p>📖 OMC Listed on MEXC, PancakeSwap, &nbsp;Etc</p>', 'Ardan Anjung', '2022-05-13 23:06:49', '2022-05-13 23:06:49'),
+(144, 'new-airdrops-rcg-bytesmix-220513110730', 'New Airdrops : RCG × Bytesmix', 'noimg.jpg', '<p>🏷 Reward : $10 ( Random 1500 Winner )<br />\r\n➡️ Download : <a href=\"https://www.bytesmix.com/invitations?q=f9f4f49853&amp;v=18636496\">https://www.bytesmix.com/invitations?q=f9f4f49853&amp;v=18636496</a><br />\r\n➖️ Login With Google &amp; Verify<br />\r\n➖️ Click Banner RCG &amp; Click Interested to Going<br />\r\n➖️ Comments<br />\r\n➖️ Click Wallet - RCG - Receive - Generate Wallet&nbsp;<br />\r\n➖️ Done</p>', 'Ardan Anjung', '2022-05-13 23:07:30', '2022-05-13 23:07:30'),
+(145, 'boomco-mining-airdrop-220514101914', 'Boomco mining airdrop', 'noimg.jpg', '<p>Free $LER For Mining &amp; $KLAY By Refer Friends</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Masih fresh&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>- Register : <a href=\"https://referral.boomco.io/GOY39F\">https://referral.boomco.io/GOY39F</a></p>\r\n\r\n<p>- Download App&nbsp;</p>\r\n\r\n<p>- Signin With Google</p>\r\n\r\n<p>- Enter Ref Code : GOY39F ( ketik manual )&nbsp;</p>\r\n\r\n<p>Done</p>', 'Ardan Anjung', '2022-05-14 10:19:14', '2022-05-14 10:19:14'),
+(146, 'daftar-top-channel-telegram-airdrop-220515114551', 'Daftar TOP Channel Telegram Airdrop', 'noimg.jpg', '<p>Berikut adalah daftar channel Indonesia yang paling sering mimin ikutin untuk informasi airdrop dan ngambil info airdrop juga dari channel channel dibawah.</p>\r\n\r\n<ul>\r\n	<li><a href=\"https://t.me/airdropfind\">Airdropfind</a></li>\r\n	<li><a href=\"https://t.me/PemburuAirdropsIO\">Pemburu Airdrops IO</a></li>\r\n	<li><a href=\"https://t.me/airdropsultanindonesia\">Airdrop Sultan</a></li>\r\n	<li><a href=\"https://t.me/Airdrop_Jack\">Airdrop Jack Info</a></li>\r\n	<li><a href=\"https://t.me/airdropPegasus\">Airdrop Pegasus</a></li>\r\n	<li><a href=\"https://t.me/EOCommunity\">EO Community</a></li>\r\n	<li><a href=\"https://t.me/ScavehuntAirdrop\">ScavengerHunt Airdrop</a></li>\r\n	<li><a href=\"https://t.me/CryptoProID\">CryptoPROID</a></li>\r\n	<li><a href=\"https://t.me/NPWP1\">Ngapain Crypto?</a></li>\r\n	<li><a href=\"https://t.me/DuniaCryptoIDChanelss\">Dunia Crypto ID</a></li>\r\n	<li><a href=\"https://t.me/tribunairdrop\">Tribun Airdrops</a></li>\r\n</ul>\r\n\r\n<p>Terimakasih untuk para admin yang selalu on dan update mengenai informasi airdrop, data airdrop dari website ini diambil dari beberapa channel telegram diatas. 😁🙏 Salam cuan~</p>', 'Ardan Anjung', '2022-05-15 23:45:51', '2022-05-15 23:45:51'),
+(147, 'new-airdrops-apeisland-220515115229', 'New Airdrops : APEISLAND', 'noimg.jpg', '<p>🏷 Reward : $3 ( Random 5000 Winner )<br />\r\n🪂 Register : <a href=\"https://t.me/ApeisLandAirdropBot?start=5088850999\">https://t.me/ApeisLandAirdropBot?start=5088850999</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖ Submit BSC Address&nbsp;<br />\r\n➖️ Done</p>', 'Ardan Anjung', '2022-05-15 23:52:29', '2022-05-15 23:52:29'),
+(148, 'new-airdrops-cmp-onto-220515115312', 'New Airdrops : CMP × ONTO', 'noimg.jpg', '<p>🏷 Reward : For New Users ONTO<br />\r\n🪂 Register : <a href=\"https://wn.nr/dqZNPp\">https://wn.nr/dqZNPp</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖️ Complete Another Task&nbsp;<br />\r\n➖ Submit Your Details<br />\r\n➖️ Done</p>', 'Ardan Anjung', '2022-05-15 23:53:12', '2022-05-15 23:53:12'),
+(149, 'new-airdrops-eze-220515115336', 'New Airdrops : EZE', 'noimg.jpg', '<p>🏷 Reward : $33K ( Random 5000 Winner )<br />\r\n🪂 Register : <a href=\"https://share-w.in/0rayla-57021\">https://share-w.in/0rayla-57021</a><br />\r\n➖ Join Telegram&nbsp;<br />\r\n➖ Follow Twitter &amp; Retweet&nbsp;<br />\r\n➖️ Complete Another Task&nbsp;<br />\r\n➖ Submit ETH Address</p>', 'Ardan Anjung', '2022-05-15 23:53:36', '2022-05-15 23:53:36');
 
 -- --------------------------------------------------------
 
@@ -333,10 +488,10 @@ CREATE TABLE `crypto_wallet` (
 --
 
 INSERT INTO `crypto_wallet` (`id_wallet`, `nama_wallet`, `ukuran_aplikasi`, `nft_showcase`, `rating`, `platform_support`, `total_user_install`, `last_update_data`, `link_playstore`, `created_at`, `updated_at`) VALUES
-(1, 'Trust Wallet', 13.33, 1, 4.70, 2, 10000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp', '2022-01-18 06:03:31', '2022-01-18 06:03:31'),
-(2, 'Safepal', 32.28, 1, 4.40, 3, 500000, '2021-11-17', 'https://play.google.com/store/apps/details?id=io.safepal.wallet', '2022-01-18 00:12:28', '2022-01-18 00:12:28'),
-(3, 'Enjin Wallet', 32.18, 1, 4.40, 2, 1000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.enjin.mobile.wallet', '2022-01-18 07:16:19', '2022-01-18 07:16:19'),
-(4, 'TokenPocket', 33.12, 0, 4.30, 3, 1000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=vip.mytokenpocket', '2022-01-18 07:17:39', '2022-01-18 07:17:39'),
+(1, 'Trust Wallet', 39.00, 1, 4.70, 2, 10000000, '2022-05-15', 'https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp', '2022-01-18 06:03:31', '2022-05-15 20:40:02'),
+(2, 'Safepal', 48.00, 1, 4.30, 3, 1000000, '2022-05-15', 'https://play.google.com/store/apps/details?id=io.safepal.wallet', '2022-01-18 00:12:28', '2022-05-15 20:32:56'),
+(3, 'Enjin Wallet', 32.00, 1, 4.30, 2, 1000000, '2022-05-15', 'https://play.google.com/store/apps/details?id=com.enjin.mobile.wallet', '2022-01-18 07:16:19', '2022-05-15 20:43:40'),
+(4, 'TokenPocket', 43.00, 0, 4.60, 3, 1000000, '2022-05-15', 'https://play.google.com/store/apps/details?id=vip.mytokenpocket', '2022-01-18 07:17:39', '2022-05-15 23:32:23'),
 (5, 'imToken', 81.54, 1, 4.20, 2, 500000, '2021-11-17', 'https://play.google.com/store/apps/details?id=im.token.app', '2022-01-20 15:33:57', '2022-01-20 15:33:57'),
 (6, 'TronLink Wallet', 30.79, 0, 4.30, 2, 1000000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.tronlinkpro.wallet', '2022-01-20 15:34:30', '2022-01-20 15:34:30'),
 (7, 'MyEtherWallet (MEW)', 43.81, 0, 4.40, 3, 500000, '2021-11-17', 'https://play.google.com/store/apps/details?id=com.myetherwallet.mewwallet', '2022-01-20 15:35:02', '2022-01-20 15:35:02'),
@@ -506,7 +661,15 @@ INSERT INTO `jenis_coin` (`id_jenis_coin`, `nama_coin`, `singkatan_coin`, `creat
 (119, 'Stargaze', 'STARGAZE', '2022-03-02 16:20:32', '2022-03-02 16:20:32'),
 (120, 'Starname', 'STARNAME', '2022-03-02 16:20:38', '2022-03-02 16:20:38'),
 (121, 'Umee', 'UMEE', '2022-03-02 16:20:42', '2022-03-02 16:20:42'),
-(122, 'Sommelier', 'SOMM', '2022-03-02 16:31:13', '2022-03-02 16:31:13');
+(122, 'Sommelier', 'SOMM', '2022-03-02 16:31:13', '2022-03-02 16:31:13'),
+(123, 'Nervos L2 Godwoken', 'GODWOKEN', '2022-05-15 20:20:46', '2022-05-15 20:20:46'),
+(124, 'Songbird', 'SGB', '2022-05-15 20:22:18', '2022-05-15 20:22:18'),
+(125, 'Gnosis', 'GNO', '2022-05-15 20:36:34', '2022-05-15 20:36:34'),
+(126, 'WAX', 'WAXP', '2022-05-15 21:06:43', '2022-05-15 21:06:43'),
+(127, 'Aurora (EVM)', 'Aurora (EVM)', '2022-05-15 21:08:38', '2022-05-15 21:08:38'),
+(128, 'PlatON', 'LAT', '2022-05-15 23:27:39', '2022-05-15 23:27:39'),
+(129, 'Moonbeam', 'GLMR', '2022-05-15 23:28:33', '2022-05-15 23:28:33'),
+(130, 'Conflux', 'CFX', '2022-05-15 23:29:15', '2022-05-15 23:29:42');
 
 -- --------------------------------------------------------
 
@@ -614,7 +777,40 @@ INSERT INTO `jenis_network` (`id_jenis_network`, `nama_network`, `singkatan_netw
 (87, 'Stargaze', 'STARGAZE', '2022-03-02 16:15:45', '2022-03-02 16:15:45'),
 (88, 'Starname', 'STARNAME', '2022-03-02 16:15:51', '2022-03-02 16:15:51'),
 (89, 'Umee', 'UMEE', '2022-03-02 16:15:57', '2022-03-02 16:15:57'),
-(90, 'Sommelier', 'Sommelier', '2022-03-02 16:32:07', '2022-03-02 16:32:07');
+(90, 'Sommelier', 'Sommelier', '2022-03-02 16:32:07', '2022-03-02 16:32:07'),
+(91, 'Nervos L2 Godwoken', 'GODWOKEN', '2022-05-15 20:20:15', '2022-05-15 20:20:15'),
+(92, 'Songbird', 'SGB', '2022-05-15 20:22:28', '2022-05-15 20:22:28'),
+(93, 'Gnosis Chain', 'GNO', '2022-05-15 20:36:41', '2022-05-15 20:36:41'),
+(94, 'Harmony', 'ONE', '2022-05-15 20:48:26', '2022-05-15 20:48:26'),
+(95, 'WAX', 'WAXP', '2022-05-15 21:06:38', '2022-05-15 21:06:38'),
+(96, 'Aurora (EVM)', 'Aurora (EVM)', '2022-05-15 21:08:29', '2022-05-15 21:08:29'),
+(97, 'PlatON', 'LAT', '2022-05-15 23:27:33', '2022-05-15 23:27:33'),
+(98, 'Moonbeam', 'GLMR', '2022-05-15 23:28:40', '2022-05-15 23:28:40'),
+(99, 'Conflux', 'CFX', '2022-05-15 23:29:55', '2022-05-15 23:29:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `krisar`
+--
+
+CREATE TABLE `krisar` (
+  `id_krisar` int(12) NOT NULL,
+  `email_pengirim` varchar(100) NOT NULL,
+  `kategori` varchar(100) NOT NULL,
+  `isi` longtext NOT NULL,
+  `is_resolved` varchar(100) NOT NULL DEFAULT 'Not Resolved Yet',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `krisar`
+--
+
+INSERT INTO `krisar` (`id_krisar`, `email_pengirim`, `kategori`, `isi`, `is_resolved`, `created_at`, `updated_at`) VALUES
+(3, 'maeeel@gmail.com', 'Saran', 'Tambahin wallet yang support chain boba dong', 'Not Resolved Yet', '2022-04-20 08:12:50', '2022-04-20 08:12:50'),
+(4, 'rizazul@gmail.com', 'Kritik', 'Adakan fitur filter artikel (mengenai airdrop)', 'Resolved', '2022-04-20 08:26:41', '2022-04-20 08:45:45');
 
 -- --------------------------------------------------------
 
@@ -672,6 +868,10 @@ CREATE TABLE `model_has_roles` (
 --
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
+(1, 'App\\User', 1),
+(1, 'App\\User', 2),
+(1, 'App\\User', 4),
+(1, 'App\\User', 5),
 (2, 'App\\User', 1);
 
 -- --------------------------------------------------------
@@ -743,7 +943,7 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_hp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -758,7 +958,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `alamat`, `no_hp`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Ardan Anjung', 'Bojonegoro', '085212345678', 'ardan', 'ardan@gmail.com', NULL, '$2y$10$sErCMUjG21eoyBTWcKJC5u7YY41mWTJcw9Qhxlqwo9wLrP1I4Cbim', NULL, '2022-01-17 08:45:24', '2022-01-17 08:45:24');
+(1, 'Ardan Anjung', 'Bojonegoro', '085212345678', 'ardan', 'ardan@gmail.com', NULL, '$2y$10$sErCMUjG21eoyBTWcKJC5u7YY41mWTJcw9Qhxlqwo9wLrP1I4Cbim', NULL, '2022-01-17 08:45:24', '2022-01-17 08:45:24'),
+(2, 'Ahmad Kholilur', 'Tuban', '081234578237', 'kholil', 'kholil@gmail.com', NULL, '$2y$10$/RGbKTakpCL10VQVmY8beOKkOIVx.frKWgLvJLBqsJVwp756puyWC', NULL, '2022-05-16 04:44:30', '2022-05-16 04:44:30'),
+(4, 'Gunawan Kurniya', 'Kapas', '0832123123', 'gunawan', 'gunawan@gmail.com', NULL, '$2y$10$Jql0ukZ4Nee9E2OSZd2Qz.xe2VVuvfEQxLeig4wMranltZpP1J2.e', NULL, '2022-05-16 08:08:50', '2022-05-16 08:08:50'),
+(5, 'Fiatama Iqbal', 'Ledok', '087987237641', 'fiatama', 'fiatama@gmail.com', NULL, '$2y$10$WnT44Zbmq5Br/5UTUNOxFeCP/6CvDfulAPIlq4IMoD/JrqQTy.1pC', NULL, '2022-05-16 08:10:10', '2022-05-16 08:10:10');
 
 -- --------------------------------------------------------
 
@@ -1029,7 +1232,30 @@ INSERT INTO `wallet_coin` (`id_wallet_coin`, `id_jenis_coin`, `id_wallet`, `crea
 (255, 57, 21, '2022-03-02 16:30:22', '2022-03-02 16:30:22'),
 (256, 95, 21, '2022-03-02 16:30:25', '2022-03-02 16:30:25'),
 (257, 122, 21, '2022-03-02 16:32:14', '2022-03-02 16:32:14'),
-(258, 121, 21, '2022-03-02 16:32:20', '2022-03-02 16:32:20');
+(258, 121, 21, '2022-03-02 16:32:20', '2022-03-02 16:32:20'),
+(259, 106, 2, '2022-05-15 20:17:26', '2022-05-15 20:17:26'),
+(260, 5, 2, '2022-05-15 20:17:29', '2022-05-15 20:17:29'),
+(261, 68, 2, '2022-05-15 20:17:36', '2022-05-15 20:17:36'),
+(262, 11, 2, '2022-05-15 20:19:42', '2022-05-15 20:19:42'),
+(263, 123, 2, '2022-05-15 20:20:55', '2022-05-15 20:20:55'),
+(264, 56, 2, '2022-05-15 20:21:18', '2022-05-15 20:21:18'),
+(265, 124, 2, '2022-05-15 20:22:41', '2022-05-15 20:22:41'),
+(266, 125, 1, '2022-05-15 20:38:49', '2022-05-15 20:38:49'),
+(267, 34, 1, '2022-05-15 20:39:11', '2022-05-15 20:39:11'),
+(268, 16, 1, '2022-05-15 20:39:22', '2022-05-15 20:39:22'),
+(269, 126, 4, '2022-05-15 21:06:51', '2022-05-15 21:06:51'),
+(270, 127, 4, '2022-05-15 21:08:47', '2022-05-15 21:08:47'),
+(271, 65, 4, '2022-05-15 21:09:04', '2022-05-15 21:09:04'),
+(272, 6, 4, '2022-05-15 21:09:05', '2022-05-15 21:09:05'),
+(273, 44, 4, '2022-05-15 21:09:12', '2022-05-15 21:09:12'),
+(274, 32, 4, '2022-05-15 21:09:19', '2022-05-15 21:09:19'),
+(275, 25, 4, '2022-05-15 21:09:30', '2022-05-15 21:09:30'),
+(276, 5, 4, '2022-05-15 21:09:31', '2022-05-15 21:09:31'),
+(277, 125, 4, '2022-05-15 23:28:00', '2022-05-15 23:28:00'),
+(279, 130, 4, '2022-05-15 23:30:15', '2022-05-15 23:30:15'),
+(280, 128, 4, '2022-05-15 23:30:23', '2022-05-15 23:30:23'),
+(281, 129, 4, '2022-05-15 23:30:26', '2022-05-15 23:30:26'),
+(282, 56, 4, '2022-05-15 23:30:55', '2022-05-15 23:30:55');
 
 -- --------------------------------------------------------
 
@@ -1195,7 +1421,34 @@ INSERT INTO `wallet_network` (`id_wallet_network`, `id_jenis_network`, `id_walle
 (149, 81, 21, '2022-03-02 16:32:39', '2022-03-02 16:32:39'),
 (150, 62, 21, '2022-03-02 16:32:40', '2022-03-02 16:32:40'),
 (151, 90, 21, '2022-03-02 16:32:42', '2022-03-02 16:32:42'),
-(152, 89, 21, '2022-03-02 16:32:45', '2022-03-02 16:32:45');
+(152, 89, 21, '2022-03-02 16:32:45', '2022-03-02 16:32:45'),
+(153, 51, 2, '2022-05-15 10:01:32', '2022-05-15 10:01:32'),
+(154, 2, 2, '2022-05-15 20:08:59', '2022-05-15 20:08:59'),
+(155, 73, 2, '2022-05-15 20:10:02', '2022-05-15 20:10:02'),
+(156, 8, 2, '2022-05-15 20:19:38', '2022-05-15 20:19:38'),
+(157, 91, 2, '2022-05-15 20:20:52', '2022-05-15 20:20:52'),
+(158, 35, 2, '2022-05-15 20:21:16', '2022-05-15 20:21:16'),
+(160, 92, 2, '2022-05-15 20:22:46', '2022-05-15 20:22:46'),
+(161, 35, 1, '2022-05-15 20:35:30', '2022-05-15 20:35:30'),
+(162, 11, 1, '2022-05-15 20:35:34', '2022-05-15 20:35:34'),
+(163, 2, 1, '2022-05-15 20:35:43', '2022-05-15 20:35:43'),
+(164, 93, 1, '2022-05-15 20:37:38', '2022-05-15 20:37:38'),
+(165, 23, 1, '2022-05-15 20:37:48', '2022-05-15 20:37:48'),
+(166, 18, 1, '2022-05-15 20:37:57', '2022-05-15 20:37:57'),
+(167, 13, 1, '2022-05-15 20:38:09', '2022-05-15 20:38:09'),
+(168, 41, 4, '2022-05-15 20:46:17', '2022-05-15 20:46:17'),
+(169, 3, 4, '2022-05-15 20:47:16', '2022-05-15 20:47:16'),
+(170, 28, 4, '2022-05-15 20:47:55', '2022-05-15 20:47:55'),
+(171, 94, 4, '2022-05-15 20:48:41', '2022-05-15 20:48:41'),
+(172, 95, 4, '2022-05-15 21:06:49', '2022-05-15 21:06:49'),
+(173, 18, 4, '2022-05-15 21:07:09', '2022-05-15 21:07:09'),
+(174, 2, 4, '2022-05-15 21:07:25', '2022-05-15 21:07:25'),
+(175, 96, 4, '2022-05-15 21:08:44', '2022-05-15 21:08:44'),
+(176, 35, 4, '2022-05-15 21:09:41', '2022-05-15 21:09:41'),
+(177, 93, 4, '2022-05-15 23:27:57', '2022-05-15 23:27:57'),
+(178, 99, 4, '2022-05-15 23:30:06', '2022-05-15 23:30:06'),
+(179, 97, 4, '2022-05-15 23:30:21', '2022-05-15 23:30:21'),
+(180, 98, 4, '2022-05-15 23:30:28', '2022-05-15 23:30:28');
 
 --
 -- Indexes for dumped tables
@@ -1237,6 +1490,12 @@ ALTER TABLE `jenis_coin`
 --
 ALTER TABLE `jenis_network`
   ADD PRIMARY KEY (`id_jenis_network`);
+
+--
+-- Indexes for table `krisar`
+--
+ALTER TABLE `krisar`
+  ADD PRIMARY KEY (`id_krisar`);
 
 --
 -- Indexes for table `migrations`
@@ -1317,13 +1576,13 @@ ALTER TABLE `wallet_network`
 -- AUTO_INCREMENT for table `arcategory`
 --
 ALTER TABLE `arcategory`
-  MODIFY `id_arcategory` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
+  MODIFY `id_arcategory` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=271;
 
 --
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id_artikel` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT for table `crypto_wallet`
@@ -1341,13 +1600,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jenis_coin`
 --
 ALTER TABLE `jenis_coin`
-  MODIFY `id_jenis_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id_jenis_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT for table `jenis_network`
 --
 ALTER TABLE `jenis_network`
-  MODIFY `id_jenis_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id_jenis_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `krisar`
+--
+ALTER TABLE `krisar`
+  MODIFY `id_krisar` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1371,19 +1636,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `wallet_coin`
 --
 ALTER TABLE `wallet_coin`
-  MODIFY `id_wallet_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=259;
+  MODIFY `id_wallet_coin` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=283;
 
 --
 -- AUTO_INCREMENT for table `wallet_network`
 --
 ALTER TABLE `wallet_network`
-  MODIFY `id_wallet_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `id_wallet_network` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
 -- Constraints for dumped tables

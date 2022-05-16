@@ -63,13 +63,13 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="state">
                                 <h6>Kritik & Saran</h6>
-                                <h2>..</h2>
+                                <h2>{{ $count_krisar }}</h2>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-inbox"></i>
                             </div>
                         </div>
-                        <small class="text-small mt-10 d-block">Total Comments</small>
+                        <small class="text-small mt-10 d-block">Total Kritik & Saran Diterima</small>
                     </div>
                     <div class="progress progress-sm bg-info">
                     </div>
