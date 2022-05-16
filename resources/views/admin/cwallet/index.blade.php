@@ -99,17 +99,24 @@
                         <label style="font-weight: bold;">Nama Aplikasi</label>
                         <input type="text" class="form-control" placeholder="Nama" name="nama_wallet" required>
                     </div>
-                    <div class="form-group">
-                        <label style="font-weight: bold;">Ukuran Aplikasi (Satuan mb)</label>
-                        <input type="text" class="form-control" placeholder="0" name="ukuran_aplikasi" required>
-                    </div>
-                    <div class="form-group">
-                        <label style="font-weight: bold;">NFT Showcase</label>
-                        <select class="form-control" name="nft_showcase" required>
-                            <option value="" disabled selected>Pilih Opsi Dibawah</option>
-                            <option value="1">Ada</option>
-                            <option value="0">Tidak Ada</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                            <div class="form-group">
+                                <label style="font-weight: bold;">Ukuran Aplikasi (Satuan mb)</label>
+                                <input type="text" class="form-control" placeholder="0" name="ukuran_aplikasi" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label style="font-weight: bold;">NFT Showcase</label>
+                                <select class="form-control" name="nft_showcase" required>
+                                    <option value="" disabled selected>Pilih Opsi Dibawah</option>
+                                    <option value="1">Ada</option>
+                                    <option value="0">Tidak Ada</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label style="font-weight: bold;">Rating</label>
