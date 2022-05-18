@@ -34,9 +34,9 @@
                 <div class="col-lg-12">
                     <h5>🔍 Hasil dari pemilihannya adalah sebagai berikut</h5>
                     <?php if($result[0] == 'Empty'){ ?>
-                    Maaf, wallet dengan kriteria yang anda pilih tak ditemukan. 😥🙏 <br>
+                    Maaf, wallet dengan kriteria yang anda pilih <b>tidak ada di Google Playstore</b>. 😥🙏 <br>
                     <a href="/krisar" style="color: blue">Beri kami
-                        kritik & saran jika berkenan.</a>
+                        kritik & saran jika berkenan 📧</a>
                     <?php }else{ ?>
                     <ol>
                         <?php

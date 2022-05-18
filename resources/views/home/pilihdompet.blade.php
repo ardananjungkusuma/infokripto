@@ -31,10 +31,11 @@
                 </button>
             </div>
             @endif
-            <h5 style="font-weight: bold;">Pemilihan Crypto Wallet(eg. Trust Wallet, Slope) menggunakan <a
+            <span id="begin">
+            </span>
+            <h5 style="font-weight: bold;">Sistem Pemilihan Crypto Wallet(eg. Trust Wallet, Slope) menggunakan <a
                     href="https://raharja.ac.id/2020/04/15/simple-multi-attribute-rating-technique-smart/"
-                    target="_blank">metode SMART</a>
-                🐱‍🏍🕵️‍♂️
+                    target="_blank">metode SMART</a>🕵️‍♂️
             </h5>
             <div class="row">
                 <hr>
@@ -110,14 +111,14 @@
                     </span>
                     <span id="title-coin-dipilih">
                         <hr>
-                        <h5><i class="fa fa-coins"></i> Coin</h5>
+                        <h5>Coin</h5>
                     </span>
                     <ul id="list-coin-dipilih">
 
                     </ul>
                     <span id="title-network-dipilih">
                         <hr>
-                        <h5><i class="fa fa-link"></i> Chain Network (Jaringan eg: BEP20, ERC20)</h5>
+                        <h5>Chain Network (Jaringan eg: BEP20, ERC20)</h5>
                     </span>
                     <ul id="list-network-dipilih">
 
