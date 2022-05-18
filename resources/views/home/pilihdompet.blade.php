@@ -31,7 +31,10 @@
                 </button>
             </div>
             @endif
-            <h5 style="font-weight: bold;">Pemilihan Crypto Wallet(eg. Trust Wallet, Slope) menggunakan metode SMART
+            <h5 style="font-weight: bold;">Pemilihan Crypto Wallet(eg. Trust Wallet, Slope) menggunakan <a
+                    href="https://raharja.ac.id/2020/04/15/simple-multi-attribute-rating-technique-smart/"
+                    target="_blank">metode SMART</a>
+                🐱‍🏍🕵️‍♂️
             </h5>
             <div class="row">
                 <hr>
@@ -40,8 +43,8 @@
                             pemilihan akan dipilih secara universal</b>.</p>
                     <div class="row">
                         <div class="col-lg-10">
-                            <div class="form-group mb-2">
-                                <label style="font-weight: bold;">Pilih Coin</label>
+                            <div class="form-group mb-3">
+                                <label style="font-weight: bold;"><i class="fa fa-coins"></i> Pilih Coin</label>
                                 <select class="form-control js-example-basic-single" id="id_jenis_coin"
                                     name="id_jenis_coin">
                                     <option value="" disabled selected>Pilih Coin</option>
@@ -53,8 +56,9 @@
                             </div>
                             {{-- <button class="btn-sm btn-success mt-2 mb-2" onclick="tambahCoin()"><i
                                     class="fa fa-coins"></i> Tambah Coin</button> --}}
-                            <div class="form-group mb-2">
-                                <label style="font-weight: bold;">Pilih Chain Network (Jaringan eg: BEP20,
+                            <div class="form-group mb-3">
+                                <label style="font-weight: bold;"><i class="fa fa-link"></i> Pilih Chain Network
+                                    (Jaringan eg: BEP20,
                                     ERC20)</label>
                                 <select class="form-control js-example-basic-single" id="id_jenis_network"
                                     name="id_jenis_network">
@@ -70,7 +74,8 @@
                             <form action="/home/cariDompet" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label style="font-weight: bold;">Apakah anda ingin Wallet yang support
+                                    <label style="font-weight: bold;"><i class="fa fa-store"></i> Apakah anda ingin
+                                        Wallet yang support
                                         <a href="/content/fitur-nft-preview-pada-crypto-wallet-220518123824"
                                             target="_blank">Showcase/Preview
                                             NFT?</a></label>
@@ -88,7 +93,8 @@
 
                                 </span>
                                 <center>
-                                    <button class="btn-sm btn-primary mt-3" type="submit"><i class="fa fa-search"></i>
+                                    <button class="btn-sm btn-primary mt-3 mb-3" type="submit"><i
+                                            class="fa fa-search"></i>
                                         Cari Wallet</button>
                                 </center>
                             </form>
@@ -97,21 +103,21 @@
                 </div>
                 <div class="col-lg-6">
                     <span id="title-res">
-                        <h4 style="font-weight: bold">Data Yang Anda Pilih</h4>
+                        <h4 style="font-weight: bold">Data Yang Anda Pilih 📋</h4>
                     </span>
                     <span id="empty-title-res">
-                        <h4>Anda belum memilih data.</h4>
+                        <h4>Anda belum memilih data❌</h4>
                     </span>
                     <span id="title-coin-dipilih">
                         <hr>
-                        <h5>Coin</h5>
+                        <h5><i class="fa fa-coins"></i> Coin</h5>
                     </span>
                     <ul id="list-coin-dipilih">
 
                     </ul>
                     <span id="title-network-dipilih">
                         <hr>
-                        <h5>Chain Network (Jaringan eg: BEP20, ERC20)</h5>
+                        <h5><i class="fa fa-link"></i> Chain Network (Jaringan eg: BEP20, ERC20)</h5>
                     </span>
                     <ul id="list-network-dipilih">
 
@@ -119,7 +125,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <h4 style="font-weight: bold;">Cek Artikel Terbaru Kami</h4>
+                        <h4 style="font-weight: bold;">📜 Cek Artikel Terbaru Kami</h4>
                         <ul>
                             @foreach($artikel as $a)
                             <li>

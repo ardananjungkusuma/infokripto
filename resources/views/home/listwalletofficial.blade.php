@@ -11,7 +11,6 @@
                 </h2>
                 <ol>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/content">Artikel</a></li>
                     <li>List Official Wallet</li>
                 </ol>
             </div>
