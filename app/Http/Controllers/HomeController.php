@@ -33,16 +33,6 @@ class HomeController extends Controller
 
     public function cariDompet(Request $request)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'nft' => 'required'
-        // ]);
-
-        // if ($validator->fails()) {
-        //     return redirect('/cnetwork/edit/' . $request->id_jenis_network)
-        //         ->withErrors($validator)
-        //         ->withInput();
-        // }
-
         if ($request->hidden_coin_id !== null) {
             $selectedCoin = array();
             $count_coin = count($request->hidden_coin_id);
@@ -175,7 +165,6 @@ class HomeController extends Controller
             // echo "ITUNG KABEH";
             $unfiltered_res = $this->spkSMART($arrayFinalFilter);
             $hasil_wallet = [];
-            // $nilai_wallet = [];
             // dd($unfiltered_res);
 
             // lanjut filtering nft
@@ -196,19 +185,6 @@ class HomeController extends Controller
             } else {
                 $filtered_res = $unfiltered_res;
             }
-
-            // Deprecated
-            // i < 3 karena hanya diambil ranking 3 teratas saja.
-            // for ($i = 0; $i < 3; $i++) {
-            //     for ($j = 0; $j < count($unfiltered_res[$i]); $j++) {
-            //         if ($j == 0) {
-            //             $hasil_wallet[$i] = $unfiltered_res[$i][$j];
-            //         }
-            //         if ($j == 1) {
-            //             $nilai_wallet[$i] = $unfiltered_res[$i][$j];
-            //         }
-            //     }
-            // }
 
             // i < 3 karena hanya diambil ranking 3 teratas saja.
             for ($i = 0; $i < 3; $i++) {
@@ -277,7 +253,6 @@ class HomeController extends Controller
                 // $arrayFinalFilter = array_intersect($finalWallet, $listNFTSupport);
                 $arrayFinalFilter = array_values($finalWallet);
                 // dd($arrayFinalFilter);
-                // dd($arrayFinalFilter);
                 // FIXED error division by zero jika milih coin BTC, ETH. Chain network BEP 20/BSC, NFT YA. Wallet Result 1,2,5,9.
                 // TODO Terakhir error division by zero jika milih coin SOLANA. Chain network ga milih, NFT YA. Wallet Result 1,2,9,11,13.
                 if (count($arrayFinalFilter) < 1) {
@@ -311,18 +286,6 @@ class HomeController extends Controller
                             $hasil_wallet[$i] = $filtered_res[$i];
                         }
 
-                        // Deprecated
-                        // for ($i = 0; $i < 3; $i++) {
-                        //     for ($j = 0; $j < count($filtered_res[$i]); $j++) {
-                        //         if ($j == 0) {
-                        //             $hasil_wallet[$i] = $filtered_res[$i][$j];
-                        //         }
-                        //         // if ($j == 1) {
-                        //         //     $nilai_wallet[$i] = $filtered_res[$i][$j];
-                        //         // }
-                        //     }
-                        // }
-
                         $arrayFinalHasilWallet = [];
                         for ($i = 0; $i < count($hasil_wallet); $i++) {
                             $id_now = $hasil_wallet[$i];
@@ -347,17 +310,6 @@ class HomeController extends Controller
                                 $hasil_wallet[$i] = $filtered_res[$i];
                             }
 
-                            // Deprecated
-                            // for ($i = 0; $i < count($unfiltered_res); $i++) {
-                            //     for ($j = 0; $j < count($unfiltered_res[$i]); $j++) {
-                            //         if ($j == 0) {
-                            //             $hasil_wallet[$i] = $unfiltered_res[$i][$j];
-                            //         }
-                            //         if ($j == 1) {
-                            //             $nilai_wallet[$i] = $unfiltered_res[$i][$j];
-                            //         }
-                            //     }
-                            // }
                             $arrayFinalHasilWallet = [];
                             for ($i = 0; $i < count($hasil_wallet); $i++) {
                                 $id_now = $hasil_wallet[$i];

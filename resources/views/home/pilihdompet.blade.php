@@ -31,7 +31,8 @@
                 </button>
             </div>
             @endif
-            <h5 style="font-weight: bold;">Pemilihan Crypto Wallet menggunakan metode SMART</h5>
+            <h5 style="font-weight: bold;">Pemilihan Crypto Wallet(eg. Trust Wallet, Slope) menggunakan metode SMART
+            </h5>
             <div class="row">
                 <hr>
                 <div class="col-lg-6">
@@ -53,10 +54,11 @@
                             {{-- <button class="btn-sm btn-success mt-2 mb-2" onclick="tambahCoin()"><i
                                     class="fa fa-coins"></i> Tambah Coin</button> --}}
                             <div class="form-group mb-2">
-                                <label style="font-weight: bold;">Pilih Network Chain</label>
+                                <label style="font-weight: bold;">Pilih Chain Network (Jaringan eg: BEP20,
+                                    ERC20)</label>
                                 <select class="form-control js-example-basic-single" id="id_jenis_network"
                                     name="id_jenis_network">
-                                    <option value="" disabled selected>Pilih Network Chain</option>
+                                    <option value="" disabled selected>Pilih Chain Network</option>
                                     @foreach ($cnetwork as $n) {
                                     <option value="{{ $n->id_jenis_network }}|{{ $n->nama_network }}">
                                         {{ $n->nama_network . " (" . $n->singkatan_network . ")" }}</option>
@@ -69,7 +71,9 @@
                                 @csrf
                                 <div class="form-group">
                                     <label style="font-weight: bold;">Apakah anda ingin Wallet yang support
-                                        Showcase/Preview NFT?</label>
+                                        <a href="/content/fitur-nft-preview-pada-crypto-wallet-220518123824"
+                                            target="_blank">Showcase/Preview
+                                            NFT?</a></label>
                                     <select name="nft" class="form-control">
                                         <option value="" disabled selected>Pilih Opsi NFT</option>
                                         <option value="1">Wajib Ada</option>
@@ -93,7 +97,7 @@
                 </div>
                 <div class="col-lg-6">
                     <span id="title-res">
-                        <h4>Data Yang Anda Pilih</h4>
+                        <h4 style="font-weight: bold">Data Yang Anda Pilih</h4>
                     </span>
                     <span id="empty-title-res">
                         <h4>Anda belum memilih data.</h4>
@@ -101,15 +105,13 @@
                     <span id="title-coin-dipilih">
                         <hr>
                         <h5>Coin</h5>
-                        <hr>
                     </span>
                     <ul id="list-coin-dipilih">
 
                     </ul>
                     <span id="title-network-dipilih">
                         <hr>
-                        <h5>Network Chain</h5>
-                        <hr>
+                        <h5>Chain Network (Jaringan eg: BEP20, ERC20)</h5>
                     </span>
                     <ul id="list-network-dipilih">
 

@@ -12,7 +12,7 @@
                 <ol>
                     <li><a href="/">Home</a></li>
                     <li><a href="/content">Artikel</a></li>
-                    <li>{{ $artikel->judul }}</li>
+                    <li>List Official Wallet</li>
                 </ol>
             </div>
 
