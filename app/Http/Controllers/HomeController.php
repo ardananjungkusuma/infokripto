@@ -9,6 +9,7 @@ use App\Cwallet;
 use App\Walletcoin;
 use App\Walletnetwork;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -29,6 +30,35 @@ class HomeController extends Controller
         $cnetwork = Cnetwork::all();
         $artikel = Artikel::orderBy('created_at', 'DESC')->limit(5)->get();
         return view('home.pilihdompet', compact('coin', 'cnetwork', 'artikel'));
+    }
+
+    public function listWallet()
+    {
+        $wallet = Cwallet::orderBy('nama_wallet')->get();;
+        return view('home.listwalletofficial', compact('wallet'));
+    }
+
+    public function walletDetail($id)
+    {
+        if (empty($id)) {
+            return redirect('/home/listWallet');
+        } else {
+            $dw = Cwallet::find($id);
+            // dd($dw);
+            if ($dw === NULL) {
+                return redirect('/home/listWallet');
+            } else {
+                $jumlahcoin = Walletcoin::where('id_wallet', $id)->count();
+                $jumlahnetwork = Walletnetwork::where('id_wallet', $id)->count();
+                $coindata = DB::table('wallet_coin')
+                    ->join('jenis_coin', 'wallet_coin.id_jenis_coin', '=', 'jenis_coin.id_jenis_coin')
+                    ->where('wallet_coin.id_wallet', $id)->get();
+                $networkdata = DB::table('wallet_network')
+                    ->join('jenis_network', 'wallet_network.id_jenis_network', '=', 'jenis_network.id_jenis_network')
+                    ->where('wallet_network.id_wallet', $id)->get();
+                return view('home.detailwallet', compact('dw', 'jumlahcoin', 'jumlahnetwork', 'coindata', 'networkdata'));
+            }
+        }
     }
 
     public function cariDompet(Request $request)

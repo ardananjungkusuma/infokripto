@@ -25,7 +25,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/home/css/style.css') }}" rel="stylesheet">
-
+    @yield('externalcss')
     <!-- =======================================================
     * Template Name: Bocor - v4.7.0
     * Template URL: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/
@@ -62,6 +62,7 @@
                     <li><a class="nav-link scrollto" href="/content/category/airdrop">Airdrop</a></li>
                     <li class="dropdown"><a href="#"><span>Others</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
+                            <li><a href="/home/listWallet">List Wallet Terdaftar</a></li>
                             <li><a href="/content/category/testnet">Testnet</a></li>
                             <li><a href="#" onclick="apyCalc()">APY
                                     Calculator</a></li>
@@ -109,6 +110,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/home/js/main.js') }}"></script>
+    @yield('externaljs')
     <script>
         function apyCalc(){
             window.open('https://www.calculatestuff.com/financial/apy-calculator?display_type=popup','APY Calculator','width=700,height=700,resizable=1,scrollbars=1,toolbar=0,menubar=0');

@@ -1,4 +1,8 @@
 @extends('home.layout.master')
+@section('externalcss')
+<link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('assets/admin/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
+@endsection
 @section('content')
 <main id="main">
 
@@ -7,11 +11,11 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2 style="font-weight: bold;">{{ $artikel->judul }}
+                <h2 style="font-weight: bold;">List Wallet Terdaftar Pada Sistem
                 </h2>
                 <ol>
                     <li><a href="/">Home</a></li>
-                    <li>List Official Wallet</li>
+                    <li>List Wallet</li>
                 </ol>
             </div>
 
@@ -22,40 +26,50 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <center>
-                        <h2>{{ $artikel->judul }}</h2>
-                        Posted : {{ date('H:i', strtotime($artikel->updated_at))  }} |
-                        {{ date("d-m-Y", strtotime($artikel->updated_at->toDateString())) }}
-                        <br><br>
-                        @if($artikel->gambar_sampul != "noimg.jpg")
-                        <img src="{{ asset('img_sampul/' . $artikel->gambar_sampul) }}" class="rounded mx-auto d-block"
-                            style="max-width: 500px;width: 100%;">
-                        @endif
-                    </center>
-                </div>
-                <div class="col-lg-12 mt-2">
-                    <span style="font-size: 20px">
-                        {!! $artikel->isi !!}
-                    </span>
-                    <br><br>
-                    <span>
-                        <label style="font-weight: bold">Author : </label>
-                        {{ $artikel->author }} <br>
-                        <label style="font-weight: bold">Kategori : </label>
-                        <?php $no = 1; ?>
-                        @foreach($category as $c)
-                        @if(count($category) != $no)
-                        <a href="/content/category/{{ $c->kategori }}">{{ $c->kategori }}</a>,
-                        @else
-                        <a href="/content/category/{{ $c->kategori }}">{{ $c->kategori }}</a>
-                        @endif
-                        <?php $no++ ?>
-                        @endforeach
-                    </span>
+                    <h4>Berikut adalah daftar Crypto Wallet yang terdaftar pada sistem.</h4>
+                    <hr>
+                    <table id="table1" class="table table-striped">
+                        <thead style="background-color: #213B52;color: white">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Wallet</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $no = 1;?>
+                            @foreach($wallet as $w)
+                            <tr>
+                                <td>{{ $no  }}</td>
+                                <td>{{ $w->nama_wallet }}</td>
+                                <td>
+                                    <a href="/home/wallet/detail/{{ $w->id_wallet }}" class="btn btn-info m-1"><i
+                                            class="fa fa-eye"></i> Detail</a>
+                                    <a href="{{ $w->link_playstore }}" target="_blank" class="btn btn-secondary"><i
+                                            class="fa fa-download"></i>
+                                        Download</a>
+
+                                </td>
+                            </tr>
+                            <?php
+                                $no++; ?>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
 
 </main><!-- End #main -->
+@endsection
+@section('externaljs')
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+                $('#table1').DataTable();
+            });
+</script>
 @endsection

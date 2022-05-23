@@ -26,6 +26,8 @@ Route::get('/home/pilihDompet', 'HomeController@pilihDompet');
 Route::post('/home/cariDompet', 'HomeController@cariDompet');
 Route::get('/krisar', 'KrisarController@index');
 Route::post('/krisar/kirim', 'KrisarController@kirim');
+Route::get('/home/listWallet', 'HomeController@listWallet');
+Route::get('/home/wallet/detail/{id}', 'HomeController@walletDetail');
 
 // Auth::routes();
 Route::get('/auth', 'AuthController@index');
