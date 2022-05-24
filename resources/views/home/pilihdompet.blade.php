@@ -128,19 +128,19 @@
 
                     </ul>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-12">
                         <h4 style="font-weight: bold;">📜 Cek Artikel Terbaru Kami</h4>
                         <ul>
                             @foreach($artikel as $a)
                             <li>
                                 <a href="/content/{{ $a['slug'] }}">{{ $a['judul'] }}</a>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
+                </li>
+                @endforeach
+                </ul>
             </div>
+        </div> --}}
+        </div>
 
         </div>
     </section>
