@@ -25,13 +25,12 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/home/css/style.css') }}" rel="stylesheet">
-    @yield('externalcss')
     <!-- =======================================================
-    * Template Name: Bocor - v4.7.0
-    * Template URL: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
+        * Template Name: Bocor - v4.7.0
+        * Template URL: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -42,6 +41,7 @@
     <script src="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.js"></script>
 
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
+    @yield('externalcss')
 </head>
 
 <body style="display:flex; flex-direction:column; min-height:100vh;">

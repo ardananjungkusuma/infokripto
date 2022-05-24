@@ -1,4 +1,8 @@
 @extends('home.layout.master')
+@section('externalcss')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+@endsection
 @section('content')
 <main id="main">
 
@@ -148,6 +152,23 @@
         document.getElementById("title-res").style.display = "none";
         document.getElementById("title-coin-dipilih").style.display = "none";
         document.getElementById("title-network-dipilih").style.display = "none";
+        toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+        }
     });
 
     $('#id_jenis_network').on('change', function (e) {
@@ -205,7 +226,8 @@
                 `);
 
                 // Ngosongi value select
-                document.getElementById('id_jenis_coin').selectedIndex = 0;
+                // document.getElementById('id_jenis_coin').selectedIndex = 0;
+                toastr.success(`Berhasil Menambah Coin ${splitCoin[1]}`);
             }
         } else {
             swal("Error!", "Anda belum memilih coin!", "error");
@@ -255,7 +277,9 @@
                 `);
 
                 // Ngosongi value select
-                document.getElementById('id_jenis_network').selectedIndex = 0;
+                // document.getElementById('id_jenis_network').selectedIndex = 0;
+
+                toastr.success(`Berhasil Menambah Network ${splitNetwork[1]}`);
             }
         } else {
             swal("Error!", "Anda belum memilih chain network!", "error");
