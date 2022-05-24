@@ -46,7 +46,8 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Isi Kritik/Saran</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="isi"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="isi"
+                            required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary mt-2 mb-2">Submit</button>
                 </form>
