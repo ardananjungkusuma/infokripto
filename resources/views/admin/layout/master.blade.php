@@ -56,7 +56,7 @@
                                 aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>
                                 {{ Auth::user()->name }}</a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i>
+                                {{-- <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i>
                                     Profile</a>
                                 <a class="dropdown-item" href="#"><i class="ik ik-settings dropdown-icon"></i>
                                     Settings</a>
@@ -64,7 +64,7 @@
                                             class="badge badge-primary">6</span></span><i
                                         class="ik ik-mail dropdown-icon"></i> Inbox</a>
                                 <a class="dropdown-item" href="#"><i class="ik ik-navigation dropdown-icon"></i>
-                                    Message</a>
+                                    Message</a> --}}
                                 <a class="dropdown-item" href="{{ asset('') }}auth/logout"><i
                                         class="ik ik-power dropdown-icon"></i> Logout</a>
                             </div>
