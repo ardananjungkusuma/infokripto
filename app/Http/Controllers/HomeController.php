@@ -8,6 +8,7 @@ use App\Coin;
 use App\Cwallet;
 use App\Walletcoin;
 use App\Walletnetwork;
+use App\Webstats;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -422,6 +423,17 @@ class HomeController extends Controller
                 $isinotif = 'Berikut hasil dari perangkingan dan pemfilteran wallet sesuai dengan kriteria yang anda inginkan.';
             }
         }
+
+        // For stats
+        if ($result[0] == "Empty") {
+            $status = "SPK_FAILED";
+        } else {
+            $status = "SPK_SUCCESS";
+        }
+        $webstats = new Webstats;
+        $webstats->status = $status;
+        $webstats->save();
+
         $artikel = Artikel::orderBy('created_at', 'DESC')->limit(5)->get();
 
         // dd($result);

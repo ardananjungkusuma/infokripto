@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth', 'role:superadmin']], function () {
 
 Route::group(['middleware' => ['auth', 'role:superadmin|admin']], function () {
     Route::get('/admin', 'AdminController@index');
+    Route::get('/admin/countSPK/{startDate}/{endDate}', 'AdminController@getCountSPK');
 
     Route::get('/cwallet', 'CwalletController@index')->name('cwallet');
     Route::post('/cwallet/tambah', 'CwalletController@tambah');

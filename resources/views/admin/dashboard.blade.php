@@ -75,6 +75,47 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="widget">
+                    <div class="widget-body">
+                        <h6 style="font-weight: bold">Filter Count SPK Stats</h6>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h6>Start Date: </h6>
+                                <input type="date" required id="dateStart">
+                            </div>
+                            <div class="col-lg-6">
+                                <h6>End Date: </h6>
+                                <input type="date" required id="dateEnd">
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-primary mt-1" type="button" onclick="filterCountSPK()"><i
+                                class="fa fa-search"></i> Filter
+                            Data</button>
+                        {{-- <small class="text-small mt-10 d-block">Total Kritik & Saran Diterima</small> --}}
+                    </div>
+                    <div class="progress progress-sm bg-secondary">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-6 col-sm-12">
+                <div class="widget">
+                    <div class="widget-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="state">
+                                <h6>Total SPK Used</h6>
+                                <h2 id="count_webstats">{{ $count_webstats }}</h2>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-calculator"></i>
+                            </div>
+                        </div>
+                        <small class="text-small mt-10 d-block">Total Fitur SPK Dijalankan</small>
+                    </div>
+                    <div class="progress progress-sm bg-secondary">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card">
             <div class="card-header row">
@@ -88,4 +129,29 @@
         </div>
     </div>
 </div>
+<script>
+    function filterCountSPK(){
+        let startDate = document.getElementById("dateStart").value;
+        let endDate = document.getElementById("dateEnd").value;
+        if(startDate === "" || endDate === ""){
+            alert("Start Date or End Date cannot be empty!")
+        } else if((Date.parse(endDate) < Date.parse(startDate))){
+            alert("End date should be greater than Start date");
+            document.getElementById("dateEnd").value = "";
+        } else {
+            // console.log(startDate);
+            // console.log(endDate);
+            $.ajax({
+                type: 'GET',
+                url: `/admin/countSPK/${startDate}/${endDate}`,
+                dataType: 'json',
+                success: (hasil) => {
+                    // console.log(hasil);
+                    $('#count_webstats').html(`${hasil}`);
+                }
+            });
+        }
+    }
+    
+</script>
 @endsection
