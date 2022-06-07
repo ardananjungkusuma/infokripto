@@ -65,7 +65,7 @@
                                 <h6>Kritik & Saran</h6>
                                 <h2>{{ $count_krisar }}</h2>
                             </div>
-                            <div class="icon">
+                            <div id="showcounter" class="icon">
                                 <i class="fa fa-inbox"></i>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="col-lg-3 col-md-6 col-sm-12 counterSPKnya">
                 <div class="widget">
                     <div class="widget-body">
                         <h6 style="font-weight: bold">Filter Count SPK Stats</h6>
@@ -98,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9 col-md-6 col-sm-12">
+            <div class="col-lg-9 col-md-6 col-sm-12 counterSPKnya">
                 <div class="widget">
                     <div class="widget-body">
                         <div class="d-flex justify-content-between align-items-center">
@@ -130,6 +130,12 @@
     </div>
 </div>
 <script>
+    $(document).ready(function(){
+        $(".counterSPKnya").hide();
+        $("#showcounter").click(function(){
+            $(".counterSPKnya").show();
+        });
+    });
     function filterCountSPK(){
         let startDate = document.getElementById("dateStart").value;
         let endDate = document.getElementById("dateEnd").value;
