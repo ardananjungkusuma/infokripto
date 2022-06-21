@@ -245,11 +245,27 @@ class HomeController extends Controller
                 // Filtering Wallet berdasarkan NFT Showcase
                 // Tetep nunjukin alternatif wallet yang gaada NFT nya.
                 $arrayFinalFilter = array_intersect($finalWallet, $listNFTSupport);
-                $result = $arrayFinalFilter;
                 if (count($arrayFinalFilter) < 1) {
                     $isinotif = 'Wallet dengan kriteria yang anda pilih tak ditemukan';
                     $result = ['Empty'];
                 } else {
+                    $isinotif = 'Berikut hasil dari perangkingan dan pemfilteran wallet sesuai dengan kriteria yang anda inginkan.';
+                    $arrayFinalFilter = array_values($arrayFinalFilter);
+                    // dd($arrayFinalFilter);
+                    $arrayFinalHasilWallet = [];
+                    for ($i = 0; $i < count($arrayFinalFilter); $i++) {
+                        $id_now = $arrayFinalFilter[$i];
+                        $data = Cwallet::where('id_wallet', $id_now)->get();
+                        $num = 0;
+                        foreach ($data as $result) {
+                            $arrayFinalHasilWallet[$i][$num] = $result->id_wallet;
+                            $num++;
+                            $arrayFinalHasilWallet[$i][$num] = $result->nama_wallet;
+                            $num++;
+                            $arrayFinalHasilWallet[$i][$num] = $result->link_playstore;
+                        }
+                    }
+                    $result = $arrayFinalHasilWallet;
                     $isinotif = 'Berikut hasil dari perangkingan dan pemfilteran wallet sesuai dengan kriteria yang anda inginkan.';
                 }
             } else if ($nft == 0) {
