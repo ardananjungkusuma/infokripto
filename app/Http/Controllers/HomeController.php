@@ -478,6 +478,15 @@ class HomeController extends Controller
         $b_platform_support = 3.42;
         $b_total_user_install = 3.92;
 
+        // urutan bobot dummy excel
+        // $b_ukuran_aplikasi = 4;
+        // $b_chain_support = 5;
+        // $b_coin_support = 5;
+        // $b_nft_showcase = 3;
+        // $b_rating = 3;
+        // $b_platform_support = 4;
+        // $b_total_user_install = 3;
+
         // Melakukan pengecekan kalo nilai NFT nya hanya 1 jenis maka tidak dihitung dalam SPK.
         $checkingNFT = array_unique($arrayColumnNFT);
         // dd(count($checkingNFT));
@@ -485,11 +494,17 @@ class HomeController extends Controller
             // Kalo cuma 1 brarti dihilangin bagian NFT (Index ke 3 array) karena nilainya sama semua jadi tidak usah dihitung.
             $arrayBobot = [3.59, 4.39, 4.45, 4.19, 3.42, 3.92];
 
+            // dummy excel
+            // $arrayBobot = [4, 5, 5, 3, 4, 3];
+
             // C untuk cost, B untuk benefit
             $kriteriaBobot = ['C', 'B', 'B', 'B', 'B', 'B'];
         } else {
             // Kalo hasil 2 brarti NFT nya ada yang berbeda nilainya maka dari itu dihitung di SPK.
             $arrayBobot = [3.59, 4.39, 4.45, 3.53, 4.19, 3.42, 3.92];
+
+            // dummy excel
+            // $arrayBobot = [4, 5, 5, 3, 3, 4, 3];
 
             // C untuk cost, B untuk benefit
             $kriteriaBobot = ['C', 'B', 'B', 'B', 'B', 'B', 'B'];
