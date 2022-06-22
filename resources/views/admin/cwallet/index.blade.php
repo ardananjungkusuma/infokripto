@@ -104,7 +104,8 @@
 
                             <div class="form-group">
                                 <label style="font-weight: bold;">Ukuran Aplikasi (Satuan mb)</label>
-                                <input type="text" class="form-control" placeholder="0" name="ukuran_aplikasi" required>
+                                <input type="number" step=".01" class="form-control" placeholder="0"
+                                    name="ukuran_aplikasi" required>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -120,7 +121,7 @@
                     </div>
                     <div class="form-group">
                         <label style="font-weight: bold;">Rating</label>
-                        <input type="text" class="form-control" placeholder="0" name="rating" required>
+                        <input type="number" class="form-control" placeholder="0" step=".01" name="rating" required>
                     </div>
                     <div class="form-group">
                         <label style="font-weight: bold;">Jumlah Platform Support</label>

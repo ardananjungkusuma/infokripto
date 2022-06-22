@@ -25,8 +25,8 @@
                     </div>
                     <div class="form-group">
                         <label style="font-weight: bold;">Ukuran Aplikasi (Satuan mb)</label>
-                        <input type="text" class="form-control" placeholder="0" value="{{ $dw->ukuran_aplikasi  }}"
-                            name="ukuran_aplikasi" required>
+                        <input type="number" step=".01" class="form-control" placeholder="0"
+                            value="{{ $dw->ukuran_aplikasi  }}" name="ukuran_aplikasi" required>
                     </div>
                     <div class="form-group">
                         <label style="font-weight: bold;">NFT Showcase</label>
@@ -39,8 +39,8 @@
                     </div>
                     <div class="form-group">
                         <label style="font-weight: bold;">Rating</label>
-                        <input type="text" class="form-control" placeholder="0" value="{{ $dw->rating }}" name="rating"
-                            required>
+                        <input type="number" step=".01" class="form-control" placeholder="0" value="{{ $dw->rating }}"
+                            name="rating" required>
                     </div>
                     <div class="form-group">
                         <label style="font-weight: bold;">Jumlah Platform Support</label>

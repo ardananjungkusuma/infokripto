@@ -119,12 +119,12 @@
                                 <a href="/artikel/manage/gambar"><i class="ik ik-image"></i><span>Manajemen
                                         Gambar</span></a>
                             </div> --}}
-                            @role('superadmin')
+                            {{-- @role('superadmin')
                             <div class="nav-item">
                                 <a href="/user/manage"><i class="ik ik-users"></i><span>Manajemen
                                         User</span></a>
                             </div>
-                            @endrole
+                            @endrole --}}
                         </nav>
                     </div>
                 </div>
